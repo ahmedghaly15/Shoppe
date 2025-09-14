@@ -9,3 +9,19 @@
 // coverage:ignore-file
 
 part of 'app_router.dart';
+
+/// generated route for
+/// [StartView]
+class StartRoute extends PageRouteInfo<void> {
+  const StartRoute({List<PageRouteInfo>? children})
+    : super(StartRoute.name, initialChildren: children);
+
+  static const String name = 'StartRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const StartView();
+    },
+  );
+}
