@@ -28,6 +28,7 @@ class ShoppeApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               title: ConstStrings.appName,
               theme: Theme.of(context),
+              themeMode: ThemeMode.light,
               builder: (_, child) => ShadAppBuilder(child: child),
               routerConfig: appRouter.config(
                 navigatorObservers: () => [

@@ -9,7 +9,7 @@ class ThemeManager {
   ThemeManager._();
 
   static ShadThemeData get lightMode => ShadThemeData(
-    colorScheme: const ShadSlateColorScheme.dark(
+    colorScheme: const ShadSlateColorScheme.light(
       background: Colors.white,
       primary: AppColors.primaryColor,
     ),
@@ -17,6 +17,7 @@ class ThemeManager {
     primaryButtonTheme: ShadButtonTheme(
       size: ShadButtonSize.lg,
       pressedBackgroundColor: AppColors.primaryColor.withAlpha(102),
+      height: 61.h,
       decoration: ShadDecoration(
         border: ShadBorder(radius: BorderRadius.circular(16.r)),
       ),
