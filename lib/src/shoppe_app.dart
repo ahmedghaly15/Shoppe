@@ -22,7 +22,7 @@ class ShoppeApp extends StatelessWidget {
         theme: ThemeManager.lightMode,
         themeMode: ThemeMode.light,
         appBuilder: (context) => Consumer(
-          builder: (context, ref, child) {
+          builder: (context, ref, _) {
             final appRouter = ref.read(appRouterProvider);
             return MaterialApp.router(
               debugShowCheckedModeBanner: false,
