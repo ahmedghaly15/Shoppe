@@ -5,4 +5,10 @@ class AppStrings {
       'Shopping made simple\nlet’s get started.';
   static const String letsGetStarted = 'Let’s get started';
   static const String alreadyHaveAnAccount = 'I already have an account';
+  static const String createAccount = 'Create\nAccount';
+  static const String email = 'Email';
+  static const String name = 'Name';
+  static const String password = 'Password';
+  static const String done = 'Done';
+  static const String cancel = 'Cancel';
 }
