@@ -37,5 +37,9 @@ class Assets {
   /// Assets for svgsStartViewGreyBubble
   /// assets/svgs/start_view_grey_bubble.svg
   static const String svgsStartViewGreyBubble = "assets/svgs/start_view_grey_bubble.svg";
+
+  /// Assets for svgsUploadPhoto
+  /// assets/svgs/upload_photo.svg
+  static const String svgsUploadPhoto = "assets/svgs/upload_photo.svg";
 }
 
