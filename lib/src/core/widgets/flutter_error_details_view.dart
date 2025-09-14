@@ -20,7 +20,7 @@ class FlutterErrorDetailsView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Flexible(child: Icon(LucideIcons.circleAlert)),
+            const Flexible(child: Icon(LucideIcons.circleAlert)),
             Text(
               ApiErrorMessage.defaultError,
               style: context.shadTextTheme.h4,
