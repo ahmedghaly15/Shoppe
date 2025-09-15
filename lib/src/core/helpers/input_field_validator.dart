@@ -5,7 +5,7 @@ import '../utils/app_regex.dart';
 class InputFieldValidator {
   InputFieldValidator._();
 
-  static String? validatingEmailField(String? value) {
+  static String? validateEmailField(String? value) {
     if (value.isNullOrEmpty) {
       return "Email can't be blank!";
     } else if (!AppRegex.isEmailValid(value!)) {
@@ -14,7 +14,7 @@ class InputFieldValidator {
     return null;
   }
 
-  static String? validatingPasswordField(String? value) {
+  static String? validatePasswordField(String? value) {
     if (value.isNullOrEmpty) {
       return "Password can't be blank!";
     } else if (!AppRegex.isPasswordValid(value!)) {
@@ -23,7 +23,7 @@ class InputFieldValidator {
     return null;
   }
 
-  static String? validatingNameField(String? value) {
+  static String? validateNameField(String? value) {
     if (value.isNullOrEmpty) {
       return "Name can't be blank!";
     } else if (value!.split(' ').length < 2) {

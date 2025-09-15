@@ -7,7 +7,7 @@ import '../../../../config/theming/app_text_styles.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../../core/widgets/primary_button.dart';
-import 'widgets/register_form.dart';
+import 'widgets/register_form_consumer.dart';
 
 @RoutePage()
 class RegisterView extends StatelessWidget {
