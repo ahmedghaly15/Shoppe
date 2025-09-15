@@ -10,7 +10,7 @@ part 'register_provider.g.dart';
 @riverpod
 class Register extends _$Register {
   @override
-  AsyncValue<void> build() => const AsyncValue.data(null);
+  AsyncValue<bool> build() => const AsyncValue.data(false);
 
   void _register() async {
     state = const AsyncValue.loading();
@@ -25,7 +25,7 @@ class Register extends _$Register {
     );
     final result = await ref.read(registerRepoProvider).register(requestBody);
     result.when(
-      success: (_) => state = const AsyncValue.data(null),
+      success: (_) => state = const AsyncValue.data(true),
       failure: (error) =>
           state = AsyncValue.error(error.toString(), StackTrace.current),
     );

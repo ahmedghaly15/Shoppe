@@ -13,7 +13,7 @@ part of 'register_provider.dart';
 const registerProvider = RegisterProvider._();
 
 final class RegisterProvider
-    extends $NotifierProvider<Register, AsyncValue<void>> {
+    extends $NotifierProvider<Register, AsyncValue<bool>> {
   const RegisterProvider._()
     : super(
         from: null,
@@ -33,28 +33,28 @@ final class RegisterProvider
   Register create() => Register();
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(AsyncValue<void> value) {
+  Override overrideWithValue(AsyncValue<bool> value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<AsyncValue<void>>(value),
+      providerOverride: $SyncValueProvider<AsyncValue<bool>>(value),
     );
   }
 }
 
-String _$registerHash() => r'a1d51112867e8a985671b1ae849c0b3016a6ec40';
+String _$registerHash() => r'32f3f1f4d0b008375840570ff6dee850e770adc1';
 
-abstract class _$Register extends $Notifier<AsyncValue<void>> {
-  AsyncValue<void> build();
+abstract class _$Register extends $Notifier<AsyncValue<bool>> {
+  AsyncValue<bool> build();
   @$mustCallSuper
   @override
   void runBuild() {
     final created = build();
-    final ref = this.ref as $Ref<AsyncValue<void>, AsyncValue<void>>;
+    final ref = this.ref as $Ref<AsyncValue<bool>, AsyncValue<bool>>;
     final element =
         ref.element
             as $ClassProviderElement<
-              AnyNotifier<AsyncValue<void>, AsyncValue<void>>,
-              AsyncValue<void>,
+              AnyNotifier<AsyncValue<bool>, AsyncValue<bool>>,
+              AsyncValue<bool>,
               Object?,
               Object?
             >;

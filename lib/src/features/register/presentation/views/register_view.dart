@@ -6,7 +6,7 @@ import 'package:shadcn_ui/shadcn_ui.dart' show SvgPicture;
 import '../../../../config/theming/app_text_styles.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/assets.dart';
-import '../../../../core/widgets/primary_button.dart';
+import 'widgets/register_consumer_button.dart';
 import 'widgets/register_form_consumer.dart';
 
 @RoutePage()
@@ -53,11 +53,7 @@ class RegisterView extends StatelessWidget {
                         const RegisterForm(),
                         Container(
                           margin: EdgeInsets.only(top: 52.h, bottom: 24.h),
-                          child: PrimaryButton(
-                            onPressed: () {},
-                            expands: true,
-                            text: AppStrings.done,
-                          ),
+                          child: const RegisterConsumerButton(),
                         ),
                         Center(
                           child: TextButton(
