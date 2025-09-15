@@ -11,4 +11,6 @@ class AppStrings {
   static const String password = 'Password';
   static const String done = 'Done';
   static const String cancel = 'Cancel';
+  static const String userCreatedSuccessfully =
+      'User created successfully!. Please login to continue.';
 }
