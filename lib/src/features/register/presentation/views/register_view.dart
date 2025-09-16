@@ -6,6 +6,7 @@ import 'package:shadcn_ui/shadcn_ui.dart' show SvgPicture;
 import '../../../../config/theming/app_text_styles.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/assets.dart';
+import '../../../../core/widgets/cancel_text_button.dart';
 import 'widgets/register_consumer_button.dart';
 import 'widgets/register_form_consumer.dart';
 
@@ -55,12 +56,7 @@ class RegisterView extends StatelessWidget {
                           margin: EdgeInsets.only(top: 52.h, bottom: 24.h),
                           child: const RegisterConsumerButton(),
                         ),
-                        Center(
-                          child: TextButton(
-                            onPressed: () => context.pop(),
-                            child: const Text(AppStrings.cancel),
-                          ),
-                        ),
+                        const Center(child: CancelTextButton()),
                       ],
                     ),
                   ),
