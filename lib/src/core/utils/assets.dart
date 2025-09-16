@@ -30,6 +30,18 @@ class Assets {
   /// assets/svgs/app_logo.svg
   static const String svgsAppLogo = "assets/svgs/app_logo.svg";
 
+  /// Assets for svgsBlueBubbleAboveGrey
+  /// assets/svgs/blue_bubble_above_grey.svg
+  static const String svgsBlueBubbleAboveGrey = "assets/svgs/blue_bubble_above_grey.svg";
+
+  /// Assets for svgsLargeGreyBubble
+  /// assets/svgs/large_grey_bubble.svg
+  static const String svgsLargeGreyBubble = "assets/svgs/large_grey_bubble.svg";
+
+  /// Assets for svgsSmallBlueBubble
+  /// assets/svgs/small_blue_bubble.svg
+  static const String svgsSmallBlueBubble = "assets/svgs/small_blue_bubble.svg";
+
   /// Assets for svgsStartViewBlueBubble
   /// assets/svgs/start_view_blue_bubble.svg
   static const String svgsStartViewBlueBubble = "assets/svgs/start_view_blue_bubble.svg";

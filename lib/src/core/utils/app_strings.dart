@@ -13,4 +13,7 @@ class AppStrings {
   static const String cancel = 'Cancel';
   static const String userCreatedSuccessfully =
       'User created successfully!. Please login to continue.';
+  static const String goodToSeeYouBack = 'Good to see you back!';
+  static const String login = 'Login';
+  static const String next = 'Next';
 }
