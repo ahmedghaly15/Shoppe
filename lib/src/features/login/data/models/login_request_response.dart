@@ -15,4 +15,7 @@ class LoginRequestResponse {
   factory LoginRequestResponse.fromJson(Map<String, dynamic> json) =>
       _$LoginRequestResponseFromJson(json);
   Map<String, dynamic> toJson() => _$LoginRequestResponseToJson(this);
+
+  factory LoginRequestResponse.empty() =>
+      LoginRequestResponse(accessToken: '', refreshToken: '', expiresAtUtc: '');
 }
