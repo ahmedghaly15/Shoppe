@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider;
 
 import '../../features/login/presentation/views/login_view.dart';
+import '../../features/otp/presentation/views/otp_view.dart';
 import '../../features/register/presentation/views/register_view.dart';
 import '../../features/start/presentation/views/start_view.dart';
 

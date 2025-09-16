@@ -4,6 +4,7 @@ List<AutoRoute> get appRoutes => [
   AutoRoute(page: StartRoute.page, initial: true),
   _buildCustomRoute(page: RegisterRoute.page),
   _buildCustomRoute(page: LoginRoute.page),
+  _buildCustomRoute(page: OtpRoute.page),
 ];
 
 CustomRoute _buildCustomRoute({

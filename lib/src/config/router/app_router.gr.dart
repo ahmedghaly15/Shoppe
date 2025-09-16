@@ -27,6 +27,50 @@ class LoginRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [OtpView]
+class OtpRoute extends PageRouteInfo<OtpRouteArgs> {
+  OtpRoute({Key? key, required String email, List<PageRouteInfo>? children})
+    : super(
+        OtpRoute.name,
+        args: OtpRouteArgs(key: key, email: email),
+        initialChildren: children,
+      );
+
+  static const String name = 'OtpRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<OtpRouteArgs>();
+      return OtpView(key: args.key, email: args.email);
+    },
+  );
+}
+
+class OtpRouteArgs {
+  const OtpRouteArgs({this.key, required this.email});
+
+  final Key? key;
+
+  final String email;
+
+  @override
+  String toString() {
+    return 'OtpRouteArgs{key: $key, email: $email}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! OtpRouteArgs) return false;
+    return key == other.key && email == other.email;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ email.hashCode;
+}
+
+/// generated route for
 /// [RegisterView]
 class RegisterRoute extends PageRouteInfo<void> {
   const RegisterRoute({List<PageRouteInfo>? children})
