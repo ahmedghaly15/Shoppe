@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 import '../../config/theming/app_text_styles.dart';
@@ -30,6 +31,7 @@ class PrimaryButton extends StatelessWidget {
       onPressed: onPressed,
       leading: leading,
       expands: expands,
+      padding: EdgeInsets.symmetric(vertical: 8.h),
       child:
           child ??
           Text(

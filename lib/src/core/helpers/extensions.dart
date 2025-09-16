@@ -19,7 +19,9 @@ extension ShowToast on BuildContext {
     return ScaffoldMessenger.of(this).showSnackBar(
       SnackBar(
         duration: duration,
-        content: Text(message, style: const TextStyle(color: Colors.white)),
+        content: Expanded(
+          child: Text(message, style: const TextStyle(color: Colors.white)),
+        ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16.r),
         ),

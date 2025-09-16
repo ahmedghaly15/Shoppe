@@ -19,4 +19,6 @@ class AppStrings {
   static const String weHaveSentYouOtp =
       "Type the OTP below.\nWe've sent you an OTP on your email.";
   static const String verify = 'Verify';
+  static const String accountVerifiedSuccessfully =
+      'Account verified successfully!. Please login to continue.';
 }
