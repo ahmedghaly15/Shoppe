@@ -6,7 +6,6 @@ import 'package:shadcn_ui/shadcn_ui.dart' show SvgPicture;
 import '../../../../config/theming/app_text_styles.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/assets.dart';
-import '../../../../core/widgets/custom_sized_box.dart';
 import '../../../../core/widgets/primary_button.dart';
 import 'widgets/otp_pinput.dart';
 
@@ -44,8 +43,13 @@ class OtpView extends StatelessWidget {
                         ),
                       ),
                       const OtpPinput(),
-                      MySizedBox.height50,
-                      PrimaryButton(onPressed: () {}, text: AppStrings.verify),
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 50.h),
+                        child: PrimaryButton(
+                          onPressed: () {},
+                          text: AppStrings.verify,
+                        ),
+                      ),
                     ],
                   ),
                 ),

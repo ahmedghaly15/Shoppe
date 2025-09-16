@@ -14,9 +14,11 @@ extension ShadThemeAccess on BuildContext {
 extension ShowToast on BuildContext {
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showToast({
     required String message,
+    Duration duration = const Duration(seconds: 3),
   }) {
     return ScaffoldMessenger.of(this).showSnackBar(
       SnackBar(
+        duration: duration,
         content: Text(message, style: const TextStyle(color: Colors.white)),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16.r),
