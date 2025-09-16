@@ -7,7 +7,7 @@ import '../../../../config/theming/app_text_styles.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../../core/widgets/cancel_text_button.dart';
-import '../../../../core/widgets/primary_button.dart';
+import 'widgets/login_consumer_button.dart';
 import 'widgets/login_form_consumer.dart';
 
 @RoutePage()
@@ -57,10 +57,7 @@ class LoginView extends StatelessWidget {
                       const LoginFormConsumer(),
                       Container(
                         margin: EdgeInsets.only(top: 36.h, bottom: 14.h),
-                        child: PrimaryButton(
-                          onPressed: () {},
-                          text: AppStrings.next,
-                        ),
+                        child: const LoginConsumerButton(),
                       ),
                       Container(
                         margin: EdgeInsets.only(bottom: 14.h),
