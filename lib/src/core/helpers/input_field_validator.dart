@@ -33,4 +33,13 @@ class InputFieldValidator {
     }
     return null;
   }
+
+  static String? validateOtpField(String? value) {
+    if (value.isNullOrEmpty) {
+      return "OTP can't be blank!";
+    } else if (value?.length != 6) {
+      return "Please enter a valid OTP";
+    }
+    return null;
+  }
 }

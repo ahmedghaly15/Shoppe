@@ -33,6 +33,8 @@ dependencies:
   auto_route: ^10.1.2
   # Caches images
   cached_network_image: ^3.4.1
+  # Provides a simple way to validate OTP
+  pinput: ^5.0.2
 
 dev_dependencies:
   flutter_test:

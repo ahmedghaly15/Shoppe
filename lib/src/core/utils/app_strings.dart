@@ -15,4 +15,8 @@ class AppStrings {
       'User created successfully!. Please login to continue.';
   static const String goodToSeeYouBack = 'Good to see you back!';
   static const String login = 'Login';
+  static const String hello = 'Hello';
+  static const String weHaveSentYouOtp =
+      "Type the OTP below.\nWe've sent you an OTP on your email.";
+  static const String verify = 'Verify';
 }
