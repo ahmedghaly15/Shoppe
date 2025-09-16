@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider;
 
+import '../../features/login/presentation/views/login_view.dart';
 import '../../features/register/presentation/views/register_view.dart';
 import '../../features/start/presentation/views/start_view.dart';
 

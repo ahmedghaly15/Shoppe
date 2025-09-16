@@ -3,6 +3,7 @@ part of 'app_router.dart';
 List<AutoRoute> get appRoutes => [
   AutoRoute(page: StartRoute.page, initial: true),
   _buildCustomRoute(page: RegisterRoute.page),
+  _buildCustomRoute(page: LoginRoute.page),
 ];
 
 CustomRoute _buildCustomRoute({

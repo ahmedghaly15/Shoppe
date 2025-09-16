@@ -10,7 +10,7 @@ class PrimaryButton extends StatelessWidget {
     this.child,
     this.leading,
     this.onPressed,
-    this.expands,
+    this.expands = true,
     this.size,
     this.decoration,
   });

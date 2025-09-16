@@ -17,7 +17,6 @@ class RegisterConsumerButton extends ConsumerWidget {
     return PrimaryButton(
       onPressed: () =>
           ref.read(registerProvider.notifier).validateFormAndRegister(),
-      expands: true,
       text: AppStrings.done,
       child: asyncRegister.isLoading
           ? const AdaptiveCircularProgressIndicator()

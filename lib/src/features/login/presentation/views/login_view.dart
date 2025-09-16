@@ -31,6 +31,7 @@ class LoginView extends StatelessWidget {
                 PositionedDirectional(
                   top: 0,
                   bottom: 0,
+                  end: 0,
                   child: SvgPicture.asset(Assets.svgsSmallBlueBubble),
                 ),
                 PositionedDirectional(
@@ -61,7 +62,11 @@ class LoginView extends StatelessWidget {
                           text: AppStrings.next,
                         ),
                       ),
-                      const CancelTextButton(),
+                      Container(
+                        margin: EdgeInsets.only(bottom: 14.h),
+                        alignment: Alignment.center,
+                        child: const CancelTextButton(),
+                      ),
                     ],
                   ),
                 ),
