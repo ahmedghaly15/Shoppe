@@ -1,41 +1,35 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../config/router/app_router.dart';
 import '../../../../../config/theming/app_text_styles.dart';
 import '../../../../../core/utils/app_strings.dart';
 import '../../../../../core/widgets/cancel_text_button.dart';
-import 'login_consumer_button.dart';
-import 'login_form_consumer.dart';
+import '../../../../../core/widgets/primary_button.dart';
+import 'forgot_password_form_consumer.dart';
 
-class LoginSection extends StatelessWidget {
-  const LoginSection({super.key});
+class ForgotPassSection extends StatelessWidget {
+  const ForgotPassSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(AppStrings.login, style: AppTextStyles.font52Bold),
+        Text(
+          AppStrings.forgotPasswordViewTitle,
+          style: AppTextStyles.font52Bold,
+        ),
         Container(
           margin: EdgeInsets.only(top: 8.h, bottom: 18.h),
           child: Text(
-            AppStrings.goodToSeeYouBack,
+            AppStrings.typeEmailToRecoverPassword,
             style: AppTextStyles.font19Regular,
           ),
         ),
-        const LoginFormConsumer(),
-        Align(
-          alignment: AlignmentDirectional.centerEnd,
-          child: TextButton(
-            onPressed: () => context.pushRoute(const ForgotPasswordRoute()),
-            child: const Text(AppStrings.forgotPass),
-          ),
-        ),
+        const ForgotPasswordFormConsumer(),
         Container(
           margin: EdgeInsets.only(top: 36.h, bottom: 14.h),
-          child: const LoginConsumerButton(),
+          child: PrimaryButton(onPressed: () {}, text: AppStrings.next),
         ),
         Container(
           margin: EdgeInsets.only(bottom: 14.h),
