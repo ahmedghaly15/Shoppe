@@ -23,6 +23,15 @@ class InputFieldValidator {
     return null;
   }
 
+  static String? validateConfirmPass(String? value, String password) {
+    if (value.isNullOrEmpty) {
+      return "Confirm Password can't be blank!";
+    } else if (value != password) {
+      return "Password and Confirm Password do not match";
+    }
+    return null;
+  }
+
   static String? validateNameField(String? value) {
     if (value.isNullOrEmpty) {
       return "Name can't be blank!";

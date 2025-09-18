@@ -50,6 +50,10 @@ class Assets {
   /// assets/svgs/start_view_grey_bubble.svg
   static const String svgsStartViewGreyBubble = "assets/svgs/start_view_grey_bubble.svg";
 
+  /// Assets for svgsTopStartBlueAboveGreyBubble
+  /// assets/svgs/top_start_blue_above_grey_bubble.svg
+  static const String svgsTopStartBlueAboveGreyBubble = "assets/svgs/top_start_blue_above_grey_bubble.svg";
+
   /// Assets for svgsUploadPhoto
   /// assets/svgs/upload_photo.svg
   static const String svgsUploadPhoto = "assets/svgs/upload_photo.svg";

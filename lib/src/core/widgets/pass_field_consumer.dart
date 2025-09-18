@@ -8,7 +8,12 @@ import '../utils/app_strings.dart';
 import 'custom_input_form_field.dart';
 
 class PassFieldConsumer extends ConsumerWidget {
-  const PassFieldConsumer({super.key});
+  const PassFieldConsumer({
+    super.key,
+    this.placeholderText = AppStrings.password,
+  });
+
+  final String placeholderText;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -20,7 +25,7 @@ class PassFieldConsumer extends ConsumerWidget {
       autovalidateMode: autovalidateMode,
       keyboardType: TextInputType.visiblePassword,
       autofillHints: const [AutofillHints.password],
-      placeholderText: AppStrings.password,
+      placeholderText: placeholderText,
       obscureText: isObscure,
       trailing: IconButton(
         onPressed: () => ref.read(passwordObscureProvider.notifier).toggle(),

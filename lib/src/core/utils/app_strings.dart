@@ -26,4 +26,9 @@ class AppStrings {
   static const String typeEmailToRecoverPassword =
       'Type your email to recover your password';
   static const String next = 'Next';
+  static const String setupNewPass = 'Setup New Password';
+  static const String pleaseSetupNewPass =
+      'Please, setup a new password for\nyour account';
+  static const String newPass = 'New Password';
+  static const String save = 'Save';
 }
