@@ -20,7 +20,7 @@ class _ForgotPassApiService implements ForgotPassApiService {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<void> forgotPass(ForgotPassRequestBody body) async {
+  Future<void> forgotPass(EmailRequestBody body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};

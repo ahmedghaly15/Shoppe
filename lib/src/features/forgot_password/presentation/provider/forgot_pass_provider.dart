@@ -1,8 +1,8 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../../core/api/api_request_result.dart';
 
+import '../../../../core/models/email_request_body.dart';
 import '../../../../core/providers/form_providers.dart';
-import '../../data/models/forgot_pass_request_body.dart';
 import '../../data/repo/forgot_pass_repo.dart';
 
 part 'forgot_pass_provider.g.dart';
@@ -14,7 +14,7 @@ class ForgotPassword extends _$ForgotPassword {
 
   void _forgotPass() async {
     state = const AsyncValue.loading();
-    final requestBody = ForgotPassRequestBody(
+    final requestBody = EmailRequestBody(
       email: ref.watch(emailProvider).text.trim(),
     );
     final result = await ref

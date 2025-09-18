@@ -7,4 +7,5 @@ class EndPoints {
   static const String register = '${auth}register';
   static const String verifyEmail = '${auth}verify-email';
   static const String forgotPass = '${auth}forgot-password';
+  static const String resendOtp = '${auth}resend-otp';
 }

@@ -4,7 +4,7 @@ import 'package:retrofit/retrofit.dart';
 
 import '../../../../core/api/dio_factory.dart';
 import '../../../../core/api/end_points.dart';
-import '../models/forgot_pass_request_body.dart';
+import '../../../../core/models/email_request_body.dart';
 
 part 'forgot_pass_api_service.g.dart';
 
@@ -21,5 +21,5 @@ abstract class ForgotPassApiService {
       _ForgotPassApiService;
 
   @POST(EndPoints.forgotPass)
-  Future<void> forgotPass(@Body() ForgotPassRequestBody body);
+  Future<void> forgotPass(@Body() EmailRequestBody body);
 }
