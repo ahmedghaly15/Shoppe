@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../core/api/api_request_result.dart';
+import '../../../../core/models/email_request_body.dart';
+import '../../../../core/providers/form_providers.dart';
 import '../../data/models/otp_request_body.dart';
 import '../../data/repo/otp_repo.dart';
 
@@ -24,6 +26,52 @@ class VerifyEmail extends _$VerifyEmail {
       otp: ref.watch(otpProvider).text.trim(),
     );
     final result = await ref.read(otpRepoProvider).verifyEmail(requestBody);
+    result.when(
+      success: (_) => state = const AsyncValue.data(true),
+      failure: (error) =>
+          state = AsyncValue.error(error.toString(), StackTrace.current),
+    );
+  }
+}
+
+@riverpod
+class ResendOtp extends _$ResendOtp {
+  @override
+  AsyncValue<bool> build() => const AsyncValue.data(false);
+
+  void _resend() async {
+    state = const AsyncValue.loading();
+    final body = EmailRequestBody(email: ref.watch(emailProvider).text.trim());
+    final result = await ref.read(otpRepoProvider).resendOtp(body);
+    result.when(
+      success: (_) => state = const AsyncValue.data(true),
+      failure: (error) =>
+          state = AsyncValue.error(error.toString(), StackTrace.current),
+    );
+  }
+
+  void validateAndResend() {
+    final formKey = ref.watch(formKeyProvider);
+    if (formKey.currentState!.validate()) {
+      _resend();
+    } else {
+      ref.read(autovalidateModeProvider.notifier).enable();
+    }
+  }
+}
+
+@riverpod
+class ValidateOtp extends _$ValidateOtp {
+  @override
+  AsyncValue<bool> build() => const AsyncValue.data(false);
+
+  void validate() async {
+    state = const AsyncValue.loading();
+    final body = OtpRequestBody(
+      email: ref.watch(emailProvider).text.trim(),
+      otp: ref.watch(otpProvider).text.trim(),
+    );
+    final result = await ref.read(otpRepoProvider).validateOtp(body);
     result.when(
       success: (_) => state = const AsyncValue.data(true),
       failure: (error) =>
