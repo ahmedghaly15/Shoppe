@@ -10,6 +10,10 @@ final passwordProvider = Provider.autoDispose<TextEditingController>((ref) {
   return TextEditingController();
 });
 
+final confirmPassProvider = Provider.autoDispose<TextEditingController>((ref) {
+  return TextEditingController();
+});
+
 final nameProvider = Provider.autoDispose<TextEditingController>((ref) {
   return TextEditingController();
 });
@@ -41,3 +45,8 @@ final passwordObscureProvider =
     NotifierProvider.autoDispose<PasswordObscureNotifier, bool>(
       PasswordObscureNotifier.new,
     );
+
+final confirmPassObscureProvider =
+    NotifierProvider.autoDispose<PasswordObscureNotifier, bool>(
+  PasswordObscureNotifier.new,
+);

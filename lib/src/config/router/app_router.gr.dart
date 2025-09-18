@@ -103,6 +103,22 @@ class RegisterRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [ResetPassView]
+class ResetPassRoute extends PageRouteInfo<void> {
+  const ResetPassRoute({List<PageRouteInfo>? children})
+    : super(ResetPassRoute.name, initialChildren: children);
+
+  static const String name = 'ResetPassRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const ResetPassView();
+    },
+  );
+}
+
+/// generated route for
 /// [StartView]
 class StartRoute extends PageRouteInfo<void> {
   const StartRoute({List<PageRouteInfo>? children})

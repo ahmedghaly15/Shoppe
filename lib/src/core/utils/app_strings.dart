@@ -31,4 +31,5 @@ class AppStrings {
       'Please, setup a new password for\nyour account';
   static const String newPass = 'New Password';
   static const String save = 'Save';
+  static const String confirmPass = 'Confirm Password';
 }
