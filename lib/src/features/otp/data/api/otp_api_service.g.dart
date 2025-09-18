@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'verify_email_api_service.dart';
+part of 'otp_api_service.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'verify_email_api_service.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations,unused_element_parameter
 
-class _VerifyEmailApiService implements VerifyEmailApiService {
-  _VerifyEmailApiService(this._dio, {this.baseUrl, this.errorLogger}) {
+class _OtpApiService implements OtpApiService {
+  _OtpApiService(this._dio, {this.baseUrl, this.errorLogger}) {
     baseUrl ??= 'https://accessories-eshop.runasp.net/api/';
   }
 
@@ -20,7 +20,7 @@ class _VerifyEmailApiService implements VerifyEmailApiService {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<void> verifyEmail(VerifyEmailRequestBody body) async {
+  Future<void> verifyEmail(OtpRequestBody body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -31,6 +31,46 @@ class _VerifyEmailApiService implements VerifyEmailApiService {
           .compose(
             _dio.options,
             'https://accessories-eshop.runasp.net/api/auth/verify-email',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    await _dio.fetch<void>(_options);
+  }
+
+  @override
+  Future<void> resendOtp(EmailRequestBody body) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _options = _setStreamType<void>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'https://accessories-eshop.runasp.net/api/auth/resend-otp',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    await _dio.fetch<void>(_options);
+  }
+
+  @override
+  Future<void> validateOtp(OtpRequestBody body) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _options = _setStreamType<void>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'https://accessories-eshop.runasp.net/api/auth/validate-otp',
             queryParameters: queryParameters,
             data: _data,
           )

@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../core/api/api_request_result.dart';
-import '../../data/models/verify_email_request_body.dart';
-import '../../data/repo/verify_email_repo.dart';
+import '../../data/models/otp_request_body.dart';
+import '../../data/repo/otp_repo.dart';
 
 part 'otp_providers.g.dart';
 
@@ -19,13 +19,11 @@ class VerifyEmail extends _$VerifyEmail {
 
   void verify(String email) async {
     state = const AsyncValue.loading();
-    final requestBody = VerifyEmailRequestBody(
+    final requestBody = OtpRequestBody(
       email: email,
       otp: ref.watch(otpProvider).text.trim(),
     );
-    final result = await ref
-        .read(verifyEmailRepoProvider)
-        .verifyEmail(requestBody);
+    final result = await ref.read(otpRepoProvider).verifyEmail(requestBody);
     result.when(
       success: (_) => state = const AsyncValue.data(true),
       failure: (error) =>

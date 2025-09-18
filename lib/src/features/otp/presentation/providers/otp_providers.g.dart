@@ -41,7 +41,7 @@ final class VerifyEmailProvider
   }
 }
 
-String _$verifyEmailHash() => r'cdbc6459cdd98a55869070f3382d6d8bfd59ce50';
+String _$verifyEmailHash() => r'45fc5d9ea0416bd13e29dde134c4ca168b069232';
 
 abstract class _$VerifyEmail extends $Notifier<AsyncValue<bool>> {
   AsyncValue<bool> build();
