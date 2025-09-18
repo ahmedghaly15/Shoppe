@@ -21,4 +21,8 @@ class AppStrings {
   static const String verify = 'Verify';
   static const String accountVerifiedSuccessfully =
       'Account verified successfully!. Please login to continue.';
+  static const String forgotPassword = 'Forgot Password';
+  static const String typeEmailToRecoverPassword =
+      'Type your email to recover your password';
+  static const String next = 'Next';
 }
