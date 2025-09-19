@@ -83,6 +83,9 @@ jobs:
         with:
           channel: 'stable'
           flutter-version: '3.x'
+    
+      - name: Accept Android SDK licenses
+        run: yes | /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --licenses
 
       - name: Add google-services.json
         run: |
