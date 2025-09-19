@@ -7,6 +7,7 @@ import 'src/core/widgets/flutter_error_details_view.dart';
 import 'src/shoppe_app.dart';
 
 void main() async {
+  // Testing deployment via Firebase App Distribution
   WidgetsFlutterBinding.ensureInitialized();
 
   await ScreenUtil.ensureScreenSize();
