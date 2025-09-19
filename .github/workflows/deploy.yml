@@ -3,7 +3,7 @@ name: Build and Distribute Shoppe
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
     inputs:
       version_bump_strategy:
