@@ -889,10 +889,10 @@ packages:
     dependency: transitive
     description:
       name: pool
-      sha256: "20fe868b6314b322ea036ba325e6fc0711a22948856475e2c2b6306e8ab39c2a"
+      sha256: "978783255c543aa3586a1b3c21f6e9d720eb315376a915872c61ef8b5c20177d"
       url: "https://pub.dev"
     source: hosted
-    version: "1.5.1"
+    version: "1.5.2"
   posix:
     dependency: transitive
     description:
@@ -1001,10 +1001,10 @@ packages:
     dependency: "direct main"
     description:
       name: shadcn_ui
-      sha256: e4a3f7a36291f7d81d3d9f0409c3890dd66f5f3c593e621ce918f9044aa7462f
+      sha256: "11c33f47634641fb9ab71aeb31402d8f513440c4b61b8e4873f15ace7d3ad559"
       url: "https://pub.dev"
     source: hosted
-    version: "0.31.2"
+    version: "0.31.7"
   shared_preferences:
     dependency: "direct main"
     description:
