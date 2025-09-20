@@ -7,6 +7,7 @@ import '../../../../config/theming/app_text_styles.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/assets.dart';
 import 'widgets/otp_pinput.dart';
+import 'widgets/resend_otp_text_button_consumer.dart';
 import 'widgets/verify_email_consumer_button.dart';
 
 @RoutePage()
@@ -18,37 +19,47 @@ class OtpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: Stack(
+      body: Stack(
+        children: [
+          PositionedDirectional(
+            top: 0,
+            start: 0,
+            child: SvgPicture.asset(Assets.svgsBlueBubbleAboveGrey),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 24.w, right: 24.w, top: 64.h),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                PositionedDirectional(
-                  top: 0,
-                  start: 0,
-                  child: SvgPicture.asset(Assets.svgsBlueBubbleAboveGrey),
-                ),
-                Positioned(
-                  top: 0,
-                  bottom: 0,
-                  child: Column(
-                    children: [
-                      Text('Hello, $email!!', style: AppTextStyles.font28Bold),
-                      Container(
-                        margin: EdgeInsets.only(top: 30.h, bottom: 23.h),
-                        child: Text(
-                          AppStrings.weHaveSentYouOtp,
-                          style: AppTextStyles.font19Regular,
-                        ),
-                      ),
-                      const OtpPinput(),
-                      Container(
-                        margin: EdgeInsets.symmetric(vertical: 50.h),
-                        child: const VerifyEmailConsumerButton(),
-                      ),
-                    ],
+                FittedBox(
+                  child: Text(
+                    'Hello, $email!!',
+                    style: AppTextStyles.font28Bold,
                   ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 30.h, bottom: 23.h),
+                  child: Text(
+                    AppStrings.weHaveSentYouOtp,
+                    style: AppTextStyles.font15Regular,
+                  ),
+                ),
+                const OtpPinput(),
+                Container(
+                  margin: EdgeInsets.only(top: 36.h, bottom: 8.h),
+                  child: const VerifyEmailConsumerButton(),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  spacing: 5.w,
+                  children: [
+                    Text(
+                      AppStrings.didntReceiveOtp,
+                      style: AppTextStyles.font15Regular,
+                    ),
+                    const ResendOtpTextButtonConsumer(),
+                  ],
                 ),
               ],
             ),
