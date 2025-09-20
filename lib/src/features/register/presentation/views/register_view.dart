@@ -12,32 +12,32 @@ class RegisterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: Stack(
-              children: [
-                PositionedDirectional(
-                  top: 0,
-                  start: 0,
-                  child: SvgPicture.asset(Assets.svgsStartViewGreyBubble),
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          PositionedDirectional(
+            top: 0,
+            start: 0,
+            child: SvgPicture.asset(Assets.svgsStartViewGreyBubble),
+          ),
+          PositionedDirectional(
+            top: 72.h,
+            end: 0,
+            child: SvgPicture.asset(Assets.svgsStartViewBlueBubble),
+          ),
+          SafeArea(
+            child: SingleChildScrollView(
+              child: Container(
+                margin: EdgeInsets.only(
+                  bottom: 54.h,
+                  top: size.height * 0.13,
+                  left: 24.w,
+                  right: 24.w,
                 ),
-                PositionedDirectional(
-                  top: 72.h,
-                  end: 0,
-                  child: SvgPicture.asset(Assets.svgsStartViewBlueBubble),
-                ),
-                PositionedDirectional(
-                  start: 20.w,
-                  end: 20.w,
-                  child: Container(
-                    margin: EdgeInsets.only(bottom: 54.h, top: 72.h),
-                    child: const RegisterSection(),
-                  ),
-                ),
-              ],
+                child: const RegisterSection(),
+              ),
             ),
           ),
         ],
