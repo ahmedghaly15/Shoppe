@@ -28,7 +28,7 @@ class AppStrings {
   static const String next = 'Next';
   static const String setupNewPass = 'Setup New Password';
   static const String pleaseSetupNewPass =
-      'Please, setup a new password for\nyour account';
+      'Please, setup a new password\nfor your account';
   static const String newPass = 'New Password';
   static const String save = 'Save';
   static const String confirmPass = 'Confirm Password';
@@ -36,4 +36,9 @@ class AppStrings {
   static const String didntReceiveOtp = "Didn't receive OTP?";
   static const String otpResentSuccessfully =
       'OTP resent successfully!. Please check your email.';
+  static const String resetPassOtpSent =
+      'Reset password OTP sent successfully!. Please check your email to validate and continue.';
+  static const String otpValidation = 'OTP Validation';
+  static const String otpValidationDesc =
+      'If the email is registered, you will receive an OTP to reset your password.';
 }

@@ -27,4 +27,10 @@ class OtpRepo {
       () async => await _apiService.resendOtp(body),
     );
   }
+
+  Future<ApiRequestResult<void>> validateOtp(OtpRequestBody body) {
+    return executeAndHandleErrors(
+      () async => await _apiService.validateOtp(body),
+    );
+  }
 }

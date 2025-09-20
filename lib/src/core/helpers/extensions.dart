@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
+import '../widgets/shad_dialog_view.dart';
+
 extension StringExtension on String? {
   bool get isNullOrEmpty => this?.isEmpty ?? true;
 }
@@ -35,6 +37,29 @@ extension ShowToast on BuildContext {
         backgroundColor: Colors.black87,
         margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      ),
+    );
+  }
+}
+
+extension ShowShadDialog on BuildContext {
+  void showDialog(
+    Widget child, {
+    Widget? title,
+    Widget? description,
+    String? titleText,
+    String? descriptionText,
+    List<Widget> actions = const [],
+  }) {
+    showShadDialog(
+      context: this,
+      builder: (context) => ShadDialogView(
+        title: title,
+        description: description,
+        titleText: titleText,
+        descriptionText: descriptionText,
+        actions: actions,
+        child: child,
       ),
     );
   }

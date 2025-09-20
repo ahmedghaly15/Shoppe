@@ -4,6 +4,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../core/api/api_request_result.dart';
 import '../../../../core/models/email_request_body.dart';
+import '../../../../core/providers/form_providers.dart';
 import '../../data/models/otp_request_body.dart';
 import '../../data/repo/otp_repo.dart';
 
@@ -42,6 +43,26 @@ class ResendOtp extends _$ResendOtp {
     state = const AsyncValue.loading();
     final body = EmailRequestBody(email: email);
     final result = await ref.read(otpRepoProvider).resendOtp(body);
+    result.when(
+      success: (_) => state = const AsyncValue.data(true),
+      failure: (error) =>
+          state = AsyncValue.error(error.getAllErrorMsgs(), StackTrace.current),
+    );
+  }
+}
+
+@riverpod
+class ValidateOtp extends _$ValidateOtp {
+  @override
+  AsyncValue<bool> build() => const AsyncValue.data(false);
+
+  void validateOtp() async {
+    state = const AsyncValue.loading();
+    final requestBody = OtpRequestBody(
+      email: ref.watch(emailProvider).text.trim(),
+      otp: ref.watch(otpProvider).text.trim(),
+    );
+    final result = await ref.read(otpRepoProvider).validateOtp(requestBody);
     result.when(
       success: (_) => state = const AsyncValue.data(true),
       failure: (error) =>
