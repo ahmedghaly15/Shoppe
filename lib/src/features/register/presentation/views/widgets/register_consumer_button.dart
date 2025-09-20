@@ -18,8 +18,9 @@ class RegisterConsumerButton extends ConsumerWidget {
     final asyncRegister = ref.watch(registerProvider);
     _registerProviderListener(ref, context);
     return PrimaryButton(
-      onPressed: () =>
-          ref.read(registerProvider.notifier).validateFormAndRegister(),
+      onPressed: asyncRegister.isLoading
+          ? null
+          : () => ref.read(registerProvider.notifier).validateFormAndRegister(),
       text: AppStrings.done,
       child: asyncRegister.isLoading
           ? const AdaptiveCircularProgressIndicator()
@@ -30,13 +31,14 @@ class RegisterConsumerButton extends ConsumerWidget {
   void _registerProviderListener(WidgetRef ref, BuildContext context) {
     ref.listen<AsyncValue<bool>>(
       registerProvider,
-      (_, current) => current.whenOrNull(
+      (_, current) => current.when(
+        loading: () => context.unfocusKeyboard(),
         data: (registered) async {
           if (registered) {
             await _showToastAndPushOtpView(context, ref);
           }
         },
-        error: (error, _) => context.showToast(message: error.toString()),
+        error: (error, _) => context.showToast(error.toString()),
       ),
     );
   }
@@ -45,8 +47,8 @@ class RegisterConsumerButton extends ConsumerWidget {
     BuildContext context,
     WidgetRef ref,
   ) async {
-    context.showToast(message: AppStrings.userCreatedSuccessfully);
-    await Future.delayed(const Duration(seconds: 3));
-    context.pushRoute(OtpRoute(email: ref.watch(emailProvider).text.trim()));
+    context.showToast(AppStrings.userCreatedSuccessfully);
+    await Future.delayed(const Duration(milliseconds: 3500));
+    context.replaceRoute(OtpRoute(email: ref.watch(emailProvider).text.trim()));
   }
 }

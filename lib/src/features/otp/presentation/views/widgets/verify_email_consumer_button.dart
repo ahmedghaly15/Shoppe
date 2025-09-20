@@ -16,11 +16,12 @@ class VerifyEmailConsumerButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final asyncVerify = ref.watch(verifyEmailProvider);
     final route = context.routeData;
-    final args = route.argsAs<OtpRouteArgs>();
+    final email = route.argsAs<OtpRouteArgs>().email;
     _verifyEmailProviderListener(ref, context);
     return PrimaryButton(
-      onPressed: () =>
-          ref.read(verifyEmailProvider.notifier).verify(args.email),
+      onPressed: asyncVerify.isLoading
+          ? null
+          : () => ref.read(verifyEmailProvider.notifier).verify(email),
       text: AppStrings.verify,
       child: asyncVerify.isLoading
           ? const AdaptiveCircularProgressIndicator()
@@ -29,15 +30,16 @@ class VerifyEmailConsumerButton extends ConsumerWidget {
   }
 
   void _verifyEmailProviderListener(WidgetRef ref, BuildContext context) {
-    ref.listen<AsyncValue<bool>>(verifyEmailProvider, (_, current) {
-      current.whenOrNull(
+    ref.listen<AsyncValue<bool>>(
+      verifyEmailProvider,
+      (_, current) => current.whenOrNull(
         data: (verified) {
           if (verified) {
-            context.showToast(message: AppStrings.accountVerifiedSuccessfully);
+            context.showToast(AppStrings.accountVerifiedSuccessfully);
           }
         },
-        error: (error, _) => context.showToast(message: error.toString()),
-      );
-    });
+        error: (error, _) => context.showToast(error.toString()),
+      ),
+    );
   }
 }
