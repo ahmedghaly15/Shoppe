@@ -5,7 +5,7 @@ import 'package:shoppe/src/core/helpers/extensions.dart';
 import '../../../../../core/utils/app_strings.dart';
 import '../../../../../core/widgets/adaptive_circular_progress_indicator.dart';
 import '../../../../../core/widgets/primary_button.dart';
-import '../../provider/forgot_pass_provider.dart';
+import '../../providers/forgot_pass_provider.dart';
 
 class ForgotPassButtonConsumer extends ConsumerWidget {
   const ForgotPassButtonConsumer({super.key});

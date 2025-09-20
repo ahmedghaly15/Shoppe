@@ -3,3 +3,6 @@ New release notes:
     - Updated register/verify-email providers listeners
     - Handled Resend-Otp in UI
     - Changed icon launcher for Android & IOS
+    - Fixed Bug in Forgot-Password feature's UI
+    - Handled Forgot-Password UI logic
+    - Handled Validate-Otp logic
