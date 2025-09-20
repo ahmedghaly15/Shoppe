@@ -6,6 +6,7 @@ import 'package:shoppe/src/core/helpers/extensions.dart';
 import '../../../../../core/utils/app_strings.dart';
 import '../../../../../core/widgets/adaptive_circular_progress_indicator.dart';
 import '../../../../../core/widgets/primary_button.dart';
+import '../../../../otp/presentation/views/widgets/didnt_receive_otp.dart';
 import '../../../../otp/presentation/views/widgets/otp_pinput.dart';
 import '../../../../otp/presentation/views/widgets/validate_otp_button_consumer.dart';
 import '../../providers/forgot_pass_provider.dart';
@@ -42,7 +43,11 @@ class ForgotPassButtonConsumer extends ConsumerWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 16.h,
-                children: const [OtpPinput(), ValidateOtpButtonConsumer()],
+                children: const [
+                  OtpPinput(),
+                  ValidateOtpButtonConsumer(),
+                  DidntReceiveOtp(),
+                ],
               ),
               titleText: AppStrings.otpValidation,
               descriptionText: AppStrings.resetPassOtpSent,

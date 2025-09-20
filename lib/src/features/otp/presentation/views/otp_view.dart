@@ -6,8 +6,8 @@ import 'package:shadcn_ui/shadcn_ui.dart' show SvgPicture;
 import '../../../../config/theming/app_text_styles.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/assets.dart';
+import 'widgets/didnt_receive_otp.dart';
 import 'widgets/otp_pinput.dart';
-import 'widgets/resend_otp_text_button_consumer.dart';
 import 'widgets/verify_email_consumer_button.dart';
 
 @RoutePage()
@@ -50,17 +50,7 @@ class OtpView extends StatelessWidget {
                   margin: EdgeInsets.only(top: 36.h, bottom: 8.h),
                   child: const VerifyEmailConsumerButton(),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  spacing: 5.w,
-                  children: [
-                    Text(
-                      AppStrings.didntReceiveOtp,
-                      style: AppTextStyles.font15Regular,
-                    ),
-                    const ResendOtpTextButtonConsumer(),
-                  ],
-                ),
+                const DidntReceiveOtp(),
               ],
             ),
           ),
