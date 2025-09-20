@@ -13,36 +13,29 @@ class ForgotPasswordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: Stack(
-              children: [
-                PositionedDirectional(
-                  top: 0,
-                  start: 0,
-                  child: SvgPicture.asset(Assets.svgsBlueBubbleAboveGrey),
-                ),
-                PositionedDirectional(
-                  top: 0,
-                  bottom: 0,
-                  end: 0,
-                  child: SvgPicture.asset(Assets.svgsSmallBlueBubble),
-                ),
-                PositionedDirectional(
-                  bottom: 0,
-                  end: 0,
-                  child: SvgPicture.asset(Assets.svgsLargeGreyBubble),
-                ),
-                PositionedDirectional(
-                  bottom: 0,
-                  start: 20.w,
-                  end: 20.w,
-                  child: const ForgotPassSection(),
-                ),
-              ],
-            ),
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          PositionedDirectional(
+            top: 0,
+            start: 0,
+            child: SvgPicture.asset(Assets.svgsBlueBubbleAboveGrey),
+          ),
+          PositionedDirectional(
+            top: 0,
+            bottom: 0,
+            end: 0,
+            child: SvgPicture.asset(Assets.svgsSmallBlueBubble),
+          ),
+          PositionedDirectional(
+            bottom: 0,
+            end: 0,
+            child: SvgPicture.asset(Assets.svgsLargeGreyBubble),
+          ),
+          Container(
+            alignment: Alignment.bottomCenter,
+            margin: EdgeInsets.symmetric(horizontal: 20.w),
+            child: const SingleChildScrollView(child: ForgotPassSection()),
           ),
         ],
       ),

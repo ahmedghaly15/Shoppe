@@ -41,7 +41,7 @@ final class ForgotPasswordProvider
   }
 }
 
-String _$forgotPasswordHash() => r'32e8f4e0f3505fad5fbe40c6fa17f4cd65f6f8d8';
+String _$forgotPasswordHash() => r'e56e2c6c32b5d5a9328fa130818c9b04b69e1f63';
 
 abstract class _$ForgotPassword extends $Notifier<AsyncValue<bool>> {
   AsyncValue<bool> build();

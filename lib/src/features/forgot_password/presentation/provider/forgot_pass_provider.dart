@@ -27,7 +27,7 @@ class ForgotPassword extends _$ForgotPassword {
     );
   }
 
-  void validateAndForgotPass() {
+  void validateAndSendEmail() {
     final formKey = ref.watch(forgotPassFormKeyProvider);
     if (formKey.currentState!.validate()) {
       _forgotPass();
