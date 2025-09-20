@@ -94,62 +94,9 @@ final class ResendOtpProvider
   }
 }
 
-String _$resendOtpHash() => r'43ae2329fe314c1abd081cc1eabf0111b1c19896';
+String _$resendOtpHash() => r'68befdebd870f2311089c2de800d0c0e7bc9324d';
 
 abstract class _$ResendOtp extends $Notifier<AsyncValue<bool>> {
-  AsyncValue<bool> build();
-  @$mustCallSuper
-  @override
-  void runBuild() {
-    final created = build();
-    final ref = this.ref as $Ref<AsyncValue<bool>, AsyncValue<bool>>;
-    final element =
-        ref.element
-            as $ClassProviderElement<
-              AnyNotifier<AsyncValue<bool>, AsyncValue<bool>>,
-              AsyncValue<bool>,
-              Object?,
-              Object?
-            >;
-    element.handleValue(ref, created);
-  }
-}
-
-@ProviderFor(ValidateOtp)
-const validateOtpProvider = ValidateOtpProvider._();
-
-final class ValidateOtpProvider
-    extends $NotifierProvider<ValidateOtp, AsyncValue<bool>> {
-  const ValidateOtpProvider._()
-    : super(
-        from: null,
-        argument: null,
-        retry: null,
-        name: r'validateOtpProvider',
-        isAutoDispose: true,
-        dependencies: null,
-        $allTransitiveDependencies: null,
-      );
-
-  @override
-  String debugGetCreateSourceHash() => _$validateOtpHash();
-
-  @$internal
-  @override
-  ValidateOtp create() => ValidateOtp();
-
-  /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(AsyncValue<bool> value) {
-    return $ProviderOverride(
-      origin: this,
-      providerOverride: $SyncValueProvider<AsyncValue<bool>>(value),
-    );
-  }
-}
-
-String _$validateOtpHash() => r'5ef67b6d91df17e30f7f4cd066b91fcede79b089';
-
-abstract class _$ValidateOtp extends $Notifier<AsyncValue<bool>> {
   AsyncValue<bool> build();
   @$mustCallSuper
   @override

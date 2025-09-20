@@ -23,7 +23,4 @@ abstract class OtpApiService {
 
   @POST(EndPoints.resendOtp)
   Future<void> resendOtp(@Body() EmailRequestBody body);
-
-  @POST(EndPoints.validateOtp)
-  Future<void> validateOtp(@Body() OtpRequestBody body);
 }
