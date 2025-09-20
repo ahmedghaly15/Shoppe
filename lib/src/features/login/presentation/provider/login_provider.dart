@@ -24,7 +24,7 @@ class Login extends _$Login {
     result.when(
       success: (response) => state = AsyncValue.data(response),
       failure: (error) =>
-          state = AsyncValue.error(error.message, StackTrace.current),
+          state = AsyncValue.error(error.getAllErrorMsgs(), StackTrace.current),
     );
   }
 

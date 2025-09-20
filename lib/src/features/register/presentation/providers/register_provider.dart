@@ -27,7 +27,7 @@ class Register extends _$Register {
     result.when(
       success: (_) => state = const AsyncValue.data(true),
       failure: (error) =>
-          state = AsyncValue.error(error.message, StackTrace.current),
+          state = AsyncValue.error(error.getAllErrorMsgs(), StackTrace.current),
     );
   }
 

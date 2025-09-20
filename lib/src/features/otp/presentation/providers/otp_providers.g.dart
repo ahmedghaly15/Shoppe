@@ -41,7 +41,7 @@ final class VerifyEmailProvider
   }
 }
 
-String _$verifyEmailHash() => r'45fc5d9ea0416bd13e29dde134c4ca168b069232';
+String _$verifyEmailHash() => r'64be6123e82fcb453eb3aec896e0cad4e3b9a180';
 
 abstract class _$VerifyEmail extends $Notifier<AsyncValue<bool>> {
   AsyncValue<bool> build();
@@ -94,7 +94,7 @@ final class ResendOtpProvider
   }
 }
 
-String _$resendOtpHash() => r'da0b1bb6a1c3f262244ffd6a95acc4682b0dde09';
+String _$resendOtpHash() => r'43ae2329fe314c1abd081cc1eabf0111b1c19896';
 
 abstract class _$ResendOtp extends $Notifier<AsyncValue<bool>> {
   AsyncValue<bool> build();
@@ -147,7 +147,7 @@ final class ValidateOtpProvider
   }
 }
 
-String _$validateOtpHash() => r'2b6421abc277cce6831857026ce94c11e28659c4';
+String _$validateOtpHash() => r'5ef67b6d91df17e30f7f4cd066b91fcede79b089';
 
 abstract class _$ValidateOtp extends $Notifier<AsyncValue<bool>> {
   AsyncValue<bool> build();

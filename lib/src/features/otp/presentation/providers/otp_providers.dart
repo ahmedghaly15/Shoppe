@@ -29,7 +29,7 @@ class VerifyEmail extends _$VerifyEmail {
     result.when(
       success: (_) => state = const AsyncValue.data(true),
       failure: (error) =>
-          state = AsyncValue.error(error.toString(), StackTrace.current),
+          state = AsyncValue.error(error.getAllErrorMsgs(), StackTrace.current),
     );
   }
 }
@@ -46,7 +46,7 @@ class ResendOtp extends _$ResendOtp {
     result.when(
       success: (_) => state = const AsyncValue.data(true),
       failure: (error) =>
-          state = AsyncValue.error(error.toString(), StackTrace.current),
+          state = AsyncValue.error(error.getAllErrorMsgs(), StackTrace.current),
     );
   }
 
@@ -75,7 +75,7 @@ class ValidateOtp extends _$ValidateOtp {
     result.when(
       success: (_) => state = const AsyncValue.data(true),
       failure: (error) =>
-          state = AsyncValue.error(error.toString(), StackTrace.current),
+          state = AsyncValue.error(error.getAllErrorMsgs(), StackTrace.current),
     );
   }
 }

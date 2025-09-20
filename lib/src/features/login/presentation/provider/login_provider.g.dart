@@ -43,7 +43,7 @@ final class LoginProvider
   }
 }
 
-String _$loginHash() => r'479891f8b92cf02840785110809a8123e7ee847b';
+String _$loginHash() => r'da7b8c2ffb0865bd2aca381c9f649d483b8fef9b';
 
 abstract class _$Login extends $Notifier<AsyncValue<LoginRequestResponse>> {
   AsyncValue<LoginRequestResponse> build();
