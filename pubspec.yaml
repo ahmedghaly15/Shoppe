@@ -60,6 +60,8 @@ dev_dependencies:
   rename_app: ^1.6.5
   # Auto-route generator
   auto_route_generator: ^10.2.4
+  # Simplifies the task of updating the app's launcher icon
+  icons_launcher: ^3.0.2
 
 flutter:
   uses-material-design: true
