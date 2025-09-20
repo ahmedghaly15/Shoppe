@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../config/theming/app_text_styles.dart';
 import '../../../../../core/utils/app_strings.dart';
 import '../../../../../core/widgets/cancel_text_button.dart';
-import '../../../../../core/widgets/primary_button.dart';
+import 'forgot_pass_button_consumer.dart';
 import 'forgot_password_form_consumer.dart';
 
 class ForgotPassSection extends StatelessWidget {
@@ -29,7 +29,7 @@ class ForgotPassSection extends StatelessWidget {
         const ForgotPasswordFormConsumer(),
         Container(
           margin: EdgeInsets.only(top: 36.h, bottom: 14.h),
-          child: PrimaryButton(onPressed: () {}, text: AppStrings.next),
+          child: const ForgotPassButtonConsumer(),
         ),
         Container(
           margin: EdgeInsets.only(bottom: 14.h),

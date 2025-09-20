@@ -1,1 +1,5 @@
-Testing deployment
+New release notes:
+    - Refactored Login / Register feature's UIs
+    - Updated register/verify-email providers listeners
+    - Handled Resend-Otp in UI
+    - Changed icon launcher for Android & IOS
