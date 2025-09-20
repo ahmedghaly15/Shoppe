@@ -29,7 +29,7 @@ class LoginSection extends StatelessWidget {
         Align(
           alignment: AlignmentDirectional.centerEnd,
           child: TextButton(
-            onPressed: () => context.pushRoute(const ForgotPasswordRoute()),
+            onPressed: () => context.pushRoute(const ResetPassProcessRoute()),
             child: const Text(AppStrings.forgotPass),
           ),
         ),

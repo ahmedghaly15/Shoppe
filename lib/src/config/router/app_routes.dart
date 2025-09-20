@@ -5,8 +5,17 @@ List<AutoRoute> get appRoutes => [
   _buildCustomRoute(page: RegisterRoute.page),
   _buildCustomRoute(page: LoginRoute.page),
   _buildCustomRoute(page: OtpRoute.page),
-  _buildCustomRoute(page: ForgotPasswordRoute.page),
-  _buildCustomRoute(page: ResetPassRoute.page),
+  _buildCustomRoute(
+    page: ResetPassProcessRoute.page,
+    children: [
+      _buildCustomRoute(page: ForgotPasswordRoute.page, initial: true),
+      _buildCustomRoute(
+        page: ShadDialogRoute.page,
+        transitionsBuilder: TransitionsBuilders.fadeIn,
+      ),
+      _buildCustomRoute(page: ResetPassRoute.page),
+    ],
+  ),
 ];
 
 CustomRoute _buildCustomRoute({
@@ -16,10 +25,12 @@ CustomRoute _buildCustomRoute({
   Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
   transitionsBuilder,
   Duration duration = const Duration(milliseconds: 500),
+  bool fullscreenDialog = false,
 }) => CustomRoute(
   initial: initial,
   page: page,
   transitionsBuilder: transitionsBuilder ?? TransitionsBuilders.slideRight,
   duration: duration,
   children: children,
+  fullscreenDialog: fullscreenDialog,
 );
