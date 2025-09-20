@@ -21,6 +21,10 @@ final nameProvider = Provider.autoDispose<TextEditingController>((ref) {
 final formKeyProvider = Provider.autoDispose<GlobalKey<ShadFormState>>((ref) {
   return GlobalKey<ShadFormState>();
 });
+final forgotPassFormKeyProvider =
+    Provider.autoDispose<GlobalKey<ShadFormState>>((ref) {
+      return GlobalKey<ShadFormState>();
+    });
 
 class AutovalidateModeNotifier extends Notifier<AutovalidateMode> {
   @override
@@ -48,5 +52,5 @@ final passwordObscureProvider =
 
 final confirmPassObscureProvider =
     NotifierProvider.autoDispose<PasswordObscureNotifier, bool>(
-  PasswordObscureNotifier.new,
-);
+      PasswordObscureNotifier.new,
+    );

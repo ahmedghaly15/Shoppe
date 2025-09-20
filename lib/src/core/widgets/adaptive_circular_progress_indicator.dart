@@ -5,9 +5,9 @@ class AdaptiveCircularProgressIndicator extends StatelessWidget {
   const AdaptiveCircularProgressIndicator({
     super.key,
     this.color = Colors.white,
-    this.strokeWidth = 2,
+    this.strokeWidth = 1.5,
     this.backgroundColor,
-    this.dimension = 16,
+    this.dimension = 24,
   });
 
   final Color color;

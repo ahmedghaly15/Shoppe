@@ -14,12 +14,12 @@ final Logger _logger = Logger(
 final class RiverpodObserver extends ProviderObserver {
   @override
   void didAddProvider(ProviderObserverContext context, Object? value) {
-    _logger.d('🎉 Provider Added: ${_getProviderName(context)} → $value');
+    _logger.i('🎉 Provider Added: ${_getProviderName(context)} → $value');
   }
 
   @override
   void didDisposeProvider(ProviderObserverContext context) {
-    _logger.d('🚫 Provider Removed: ${_getProviderName(context)}');
+    _logger.e('🚫 Provider Removed: ${_getProviderName(context)}');
   }
 
   @override

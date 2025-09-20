@@ -32,4 +32,8 @@ class AppStrings {
   static const String newPass = 'New Password';
   static const String save = 'Save';
   static const String confirmPass = 'Confirm Password';
+  static const String resend = 'Resend';
+  static const String didntReceiveOtp = "Didn't receive OTP?";
+  static const String otpResentSuccessfully =
+      'OTP resent successfully!. Please check your email.';
 }

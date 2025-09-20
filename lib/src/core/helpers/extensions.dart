@@ -6,14 +6,18 @@ extension StringExtension on String? {
   bool get isNullOrEmpty => this?.isEmpty ?? true;
 }
 
+extension KeyboardUnfocus on BuildContext {
+  void unfocusKeyboard() => FocusScope.of(this).unfocus();
+}
+
 extension ShadThemeAccess on BuildContext {
   ShadThemeData get shadTheme => ShadTheme.of(this);
   ShadTextTheme get shadTextTheme => shadTheme.textTheme;
 }
 
 extension ShowToast on BuildContext {
-  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showToast({
-    required String message,
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showToast(
+    String message, {
     Duration duration = const Duration(seconds: 3),
   }) {
     return ScaffoldMessenger.of(this).showSnackBar(
