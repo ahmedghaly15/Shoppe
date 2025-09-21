@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider;
 import '../../core/widgets/shad_dialog_view.dart';
 import '../../features/forgot_password/presentation/views/forgot_password_view.dart';
 import '../../features/login/presentation/views/login_view.dart';
+import '../../features/onboarding/presentation/views/onboarding_view.dart';
 import '../../features/otp/presentation/views/otp_view.dart';
 import '../../features/register/presentation/views/register_view.dart';
 import '../../features/reset_pass/data/models/reset_pass_view_params.dart';
