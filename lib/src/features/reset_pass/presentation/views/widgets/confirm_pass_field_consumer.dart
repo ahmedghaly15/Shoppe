@@ -19,7 +19,7 @@ class ConfirmPassFieldConsumer extends ConsumerWidget {
     return CustomInputFormField(
       controller: controller,
       autovalidateMode: autovalidateMode,
-      placeholderText: AppStrings.confirmPass,
+      placeholderText: AppStrings.repeatPass,
       keyboardType: TextInputType.visiblePassword,
       autofillHints: const [AutofillHints.password],
       validator: (value) =>

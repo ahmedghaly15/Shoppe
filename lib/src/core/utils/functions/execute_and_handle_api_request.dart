@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../api/api_error_handler.dart';
 import '../../api/api_request_result.dart';
 
-Future<ApiRequestResult<T>> executeAndHandleErrors<T>(
+Future<ApiRequestResult<T>> executeAndHandleApiRequest<T>(
   Future<T> Function() function,
 ) async {
   try {
