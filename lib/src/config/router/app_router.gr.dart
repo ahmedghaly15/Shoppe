@@ -123,7 +123,7 @@ class ResetPassProcessRoute extends PageRouteInfo<void> {
 class ResetPassRoute extends PageRouteInfo<ResetPassRouteArgs> {
   ResetPassRoute({
     Key? key,
-    required ResetPassViewArgs params,
+    required ResetPassViewParams params,
     List<PageRouteInfo>? children,
   }) : super(
          ResetPassRoute.name,
@@ -147,7 +147,7 @@ class ResetPassRouteArgs {
 
   final Key? key;
 
-  final ResetPassViewArgs params;
+  final ResetPassViewParams params;
 
   @override
   String toString() {

@@ -7,15 +7,15 @@ import '../../../../config/theming/app_text_styles.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../../core/widgets/cancel_text_button.dart';
-import '../../../../core/widgets/primary_button.dart';
-import '../../data/models/reset_pass_view_args.dart';
+import '../../data/models/reset_pass_view_params.dart';
+import 'widgets/reset_pass_button_consumer.dart';
 import 'widgets/reset_pass_form_consumer.dart';
 
 @RoutePage()
 class ResetPassView extends StatelessWidget {
   const ResetPassView({super.key, required this.params});
 
-  final ResetPassViewArgs params;
+  final ResetPassViewParams params;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class ResetPassView extends StatelessWidget {
                         ),
                         const ResetPassFormConsumer(),
                         const Spacer(),
-                        PrimaryButton(onPressed: () {}, text: AppStrings.save),
+                        const ResetPassButtonConsumer(),
                         Container(
                           alignment: Alignment.center,
                           margin: EdgeInsets.symmetric(vertical: 24.h),
