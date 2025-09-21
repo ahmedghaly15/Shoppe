@@ -2,6 +2,10 @@
 class Assets {
   Assets._();
   
+  /// Assets for appIcon
+  /// assets/app_icon.png
+  static const String appIcon = "assets/app_icon.png";
+
   /// Assets for fontsRalewayRalewayBold
   /// assets/fonts/Raleway/Raleway-Bold.ttf
   static const String fontsRalewayRalewayBold = "assets/fonts/Raleway/Raleway-Bold.ttf";
@@ -34,9 +38,33 @@ class Assets {
   /// assets/svgs/blue_bubble_above_grey.svg
   static const String svgsBlueBubbleAboveGrey = "assets/svgs/blue_bubble_above_grey.svg";
 
+  /// Assets for svgsEasyCartPageView
+  /// assets/svgs/easy-cart-page-view.svg
+  static const String svgsEasyCartPageView = "assets/svgs/easy-cart-page-view.svg";
+
   /// Assets for svgsLargeGreyBubble
   /// assets/svgs/large_grey_bubble.svg
   static const String svgsLargeGreyBubble = "assets/svgs/large_grey_bubble.svg";
+
+  /// Assets for svgsOffersPageView
+  /// assets/svgs/offers-page-view.svg
+  static const String svgsOffersPageView = "assets/svgs/offers-page-view.svg";
+
+  /// Assets for svgsOnbaordingBlueBubble
+  /// assets/svgs/onbaording-blue-bubble.svg
+  static const String svgsOnbaordingBlueBubble = "assets/svgs/onbaording-blue-bubble.svg";
+
+  /// Assets for svgsOnbaordingGreyBubble
+  /// assets/svgs/onbaording-grey-bubble.svg
+  static const String svgsOnbaordingGreyBubble = "assets/svgs/onbaording-grey-bubble.svg";
+
+  /// Assets for svgsProductsPageView
+  /// assets/svgs/products-page-view.svg
+  static const String svgsProductsPageView = "assets/svgs/products-page-view.svg";
+
+  /// Assets for svgsShopSmartPageView
+  /// assets/svgs/shop-smart-page-view.svg
+  static const String svgsShopSmartPageView = "assets/svgs/shop-smart-page-view.svg";
 
   /// Assets for svgsSmallBlueBubble
   /// assets/svgs/small_blue_bubble.svg
