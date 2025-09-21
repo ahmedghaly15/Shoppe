@@ -8,11 +8,14 @@ import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../../core/widgets/cancel_text_button.dart';
 import '../../../../core/widgets/primary_button.dart';
+import '../../data/models/reset_pass_view_args.dart';
 import 'widgets/reset_pass_form_consumer.dart';
 
 @RoutePage()
 class ResetPassView extends StatelessWidget {
-  const ResetPassView({super.key});
+  const ResetPassView({super.key, required this.params});
+
+  final ResetPassViewArgs params;
 
   @override
   Widget build(BuildContext context) {

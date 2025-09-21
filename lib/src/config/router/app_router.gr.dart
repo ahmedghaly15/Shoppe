@@ -120,18 +120,49 @@ class ResetPassProcessRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [ResetPassView]
-class ResetPassRoute extends PageRouteInfo<void> {
-  const ResetPassRoute({List<PageRouteInfo>? children})
-    : super(ResetPassRoute.name, initialChildren: children);
+class ResetPassRoute extends PageRouteInfo<ResetPassRouteArgs> {
+  ResetPassRoute({
+    Key? key,
+    required ResetPassViewArgs params,
+    List<PageRouteInfo>? children,
+  }) : super(
+         ResetPassRoute.name,
+         args: ResetPassRouteArgs(key: key, params: params),
+         initialChildren: children,
+       );
 
   static const String name = 'ResetPassRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const ResetPassView();
+      final args = data.argsAs<ResetPassRouteArgs>();
+      return ResetPassView(key: args.key, params: args.params);
     },
   );
+}
+
+class ResetPassRouteArgs {
+  const ResetPassRouteArgs({this.key, required this.params});
+
+  final Key? key;
+
+  final ResetPassViewArgs params;
+
+  @override
+  String toString() {
+    return 'ResetPassRouteArgs{key: $key, params: $params}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! ResetPassRouteArgs) return false;
+    return key == other.key && params == other.params;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ params.hashCode;
 }
 
 /// generated route for
@@ -145,8 +176,6 @@ class ShadDialogRoute extends PageRouteInfo<ShadDialogRouteArgs> {
     Widget? description,
     String? titleText,
     String? descriptionText,
-    double? gap = 24.0,
-    double? radius = 16.0,
     List<PageRouteInfo>? children,
   }) : super(
          ShadDialogRoute.name,
@@ -158,8 +187,6 @@ class ShadDialogRoute extends PageRouteInfo<ShadDialogRouteArgs> {
            description: description,
            titleText: titleText,
            descriptionText: descriptionText,
-           gap: gap,
-           radius: radius,
          ),
          initialChildren: children,
        );
@@ -192,8 +219,6 @@ class ShadDialogRouteArgs {
     this.description,
     this.titleText,
     this.descriptionText,
-    this.gap = 24.0,
-    this.radius = 16.0,
   });
 
   final Key? key;
@@ -210,13 +235,9 @@ class ShadDialogRouteArgs {
 
   final String? descriptionText;
 
-  final double? gap;
-
-  final double? radius;
-
   @override
   String toString() {
-    return 'ShadDialogRouteArgs{key: $key, child: $child, actions: $actions, title: $title, description: $description, titleText: $titleText, descriptionText: $descriptionText, gap: $gap, radius: $radius}';
+    return 'ShadDialogRouteArgs{key: $key, child: $child, actions: $actions, title: $title, description: $description, titleText: $titleText, descriptionText: $descriptionText}';
   }
 
   @override
@@ -229,9 +250,7 @@ class ShadDialogRouteArgs {
         title == other.title &&
         description == other.description &&
         titleText == other.titleText &&
-        descriptionText == other.descriptionText &&
-        gap == other.gap &&
-        radius == other.radius;
+        descriptionText == other.descriptionText;
   }
 
   @override
@@ -242,9 +261,7 @@ class ShadDialogRouteArgs {
       title.hashCode ^
       description.hashCode ^
       titleText.hashCode ^
-      descriptionText.hashCode ^
-      gap.hashCode ^
-      radius.hashCode;
+      descriptionText.hashCode;
 }
 
 /// generated route for

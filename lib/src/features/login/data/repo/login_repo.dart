@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider;
 
 import '../../../../core/api/api_request_result.dart';
-import '../../../../core/utils/functions/execute_and_handle_errors.dart';
+import '../../../../core/utils/functions/execute_and_handle_api_request.dart';
 import '../api/login_api_service.dart';
 import '../models/login_request_body.dart';
 import '../models/login_request_response.dart';
@@ -19,7 +19,7 @@ class LoginRepo {
   Future<ApiRequestResult<LoginRequestResponse>> login(
     LoginRequestBody requestBody,
   ) {
-    return executeAndHandleErrors<LoginRequestResponse>(
+    return executeAndHandleApiRequest<LoginRequestResponse>(
       () async => await _apiService.login(requestBody),
     );
   }
