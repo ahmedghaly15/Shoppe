@@ -43,4 +43,16 @@ class AppStrings {
       'If the email is registered, you will receive an OTP to reset your password.';
   static const String passChangedSuccessfully =
       'Password changed successfully!. Please login to continue.';
+  static const String onboardingTitle1 = 'Shop Smart, Shop Fast';
+  static const String onboardingSubtitle1 =
+      'Quick, secure, and hassle-free payments so you can shop with total confidence.';
+  static const String onboardingTitle2 = 'Hot Offers & Coupons';
+  static const String onboardingSubtitle2 =
+      'Unlock exclusive offers and smart coupons to save more every time you shop.';
+  static const String onboardingTitle3 = 'Endless Products';
+  static const String onboardingSubtitle3 =
+      'Browse a wide range of products from every category — everything you need, right at your fingertips.';
+  static const String onboardingTitle4 = 'Easy Cart & Orders';
+  static const String onboardingSubtitle4 =
+      'Add items in seconds, track your orders in real time, and enjoy a seamless shopping experience.';
 }

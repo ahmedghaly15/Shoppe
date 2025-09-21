@@ -41,7 +41,7 @@ final class ResetPassProvider
   }
 }
 
-String _$resetPassHash() => r'1e5e472e37c6b55f94de185c279e834904cce298';
+String _$resetPassHash() => r'd07569ffa4e715f21a7f98d13668224812cfe96d';
 
 abstract class _$ResetPass extends $Notifier<AsyncValue<bool>> {
   AsyncValue<bool> build();

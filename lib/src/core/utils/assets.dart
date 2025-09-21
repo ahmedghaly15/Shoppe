@@ -50,13 +50,13 @@ class Assets {
   /// assets/svgs/offers-page-view.svg
   static const String svgsOffersPageView = "assets/svgs/offers-page-view.svg";
 
-  /// Assets for svgsOnbaordingBlueBubble
-  /// assets/svgs/onbaording-blue-bubble.svg
-  static const String svgsOnbaordingBlueBubble = "assets/svgs/onbaording-blue-bubble.svg";
+  /// Assets for svgsOnboardingBlueBubble
+  /// assets/svgs/onboarding-blue-bubble.svg
+  static const String svgsOnboardingBlueBubble = "assets/svgs/onboarding-blue-bubble.svg";
 
-  /// Assets for svgsOnbaordingGreyBubble
-  /// assets/svgs/onbaording-grey-bubble.svg
-  static const String svgsOnbaordingGreyBubble = "assets/svgs/onbaording-grey-bubble.svg";
+  /// Assets for svgsOnboardingGreyBubble
+  /// assets/svgs/onboarding-grey-bubble.svg
+  static const String svgsOnboardingGreyBubble = "assets/svgs/onboarding-grey-bubble.svg";
 
   /// Assets for svgsProductsPageView
   /// assets/svgs/products-page-view.svg
