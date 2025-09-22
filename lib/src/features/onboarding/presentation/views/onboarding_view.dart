@@ -13,6 +13,7 @@ class OnboardingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
     return Scaffold(
       body: Stack(
         children: [
@@ -27,12 +28,18 @@ class OnboardingView extends StatelessWidget {
             child: SvgPicture.asset(Assets.svgsOnboardingGreyBubble),
           ),
           PositionedDirectional(
-            bottom: 20.h,
-            start: 0,
+            bottom: 40.h,
             end: 0,
+            start: 0,
             child: const SafeArea(child: CustomDotIndicatorsConsumer()),
           ),
-          const OnboardingPageViewConsumer(),
+          Container(
+            margin: EdgeInsets.symmetric(
+              vertical: size.height * 0.1,
+              horizontal: 24.w,
+            ),
+            child: const OnboardingPageViewConsumer(),
+          ),
         ],
       ),
     );

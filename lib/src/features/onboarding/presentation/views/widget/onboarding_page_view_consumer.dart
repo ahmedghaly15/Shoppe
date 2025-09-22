@@ -1,10 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shadcn_ui/shadcn_ui.dart' show SvgPicture;
 
 import '../../../../../config/theming/app_text_styles.dart';
 import '../../providers/onboarding_providers.dart';
+import 'package:shoppe/src/features/onboarding/data/models/page_view_attributes.dart';
 import 'page_view_next_button_consumer.dart';
 
 class OnboardingPageViewConsumer extends ConsumerWidget {
@@ -20,38 +20,59 @@ class OnboardingPageViewConsumer extends ConsumerWidget {
       scrollDirection: Axis.horizontal,
       itemBuilder: (_, index) {
         final pageView = pageViews[index];
-        return Container(
-          padding: EdgeInsets.only(bottom: 16.h),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(30.r),
-            boxShadow: [
-              BoxShadow(
-                offset: Offset(0, 10.h),
-                blurRadius: 37.r,
-                spreadRadius: 0,
-                color: Colors.black.withAlpha(41),
-              ),
-            ],
-          ),
-          child: Column(
-            children: [
-              Expanded(child: SvgPicture.asset(pageView.imagePath)),
-              Container(
-                margin: EdgeInsets.only(bottom: 12.h, top: 46.h),
-                child: Text(pageView.title, style: AppTextStyles.font21Bold),
-              ),
-              Text(pageView.subtitle, style: AppTextStyles.font12Regular),
-              Container(
-                margin: EdgeInsets.only(top: 30.h),
-                child: const PageViewNextButtonConsumer(),
-              ),
-            ],
-          ),
-        );
+        return _buildPageItemCard(pageView);
       },
       onPageChanged: (index) =>
           ref.read(currentIndexProvider.notifier).onPageChanged(index),
+    );
+  }
+
+  Card _buildPageItemCard(PageViewAttributes pageView) {
+    return Card(
+      elevation: 4.h,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.r)),
+      color: Colors.white,
+      child: Padding(
+        padding: EdgeInsets.only(bottom: 44.h),
+        child: Column(
+          children: [
+            Expanded(
+              child: ClipRRect(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30.r),
+                  topRight: Radius.circular(30.r),
+                ),
+                child: Image.asset(
+                  pageView.imagePath,
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                bottom: 12.h,
+                top: 46.h,
+                left: 24.w,
+                right: 24.w,
+              ),
+              child: Text(pageView.title, style: AppTextStyles.font21Bold),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Text(
+                pageView.subtitle,
+                style: AppTextStyles.font12Regular,
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 30.h, left: 62.w, right: 62.w),
+              child: const PageViewNextButtonConsumer(),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
