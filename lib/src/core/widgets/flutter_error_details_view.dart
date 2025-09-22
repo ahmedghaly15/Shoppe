@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shadcn_ui/shadcn_ui.dart';
-import 'package:shoppe/src/core/helpers/extensions.dart';
-
-import '../api/api_error_message.dart';
+part of 'core_widgets.dart';
 
 class FlutterErrorDetailsView extends StatelessWidget {
   const FlutterErrorDetailsView({super.key, required this.details});

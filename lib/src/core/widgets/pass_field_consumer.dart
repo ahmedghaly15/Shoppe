@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shadcn_ui/shadcn_ui.dart' show LucideIcons;
-
-import '../helpers/input_field_validator.dart';
-import '../providers/form_providers.dart';
-import '../utils/app_strings.dart';
-import 'custom_input_form_field.dart';
+part of 'core_widgets.dart';
 
 class PassFieldConsumer extends ConsumerWidget {
   const PassFieldConsumer({

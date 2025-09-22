@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shadcn_ui/shadcn_ui.dart';
-import '../widgets/shad_dialog_view.dart';
+part of 'helpers.dart';
 
 extension StringExtension on String? {
   bool get isNullOrEmpty => this?.isEmpty ?? true;

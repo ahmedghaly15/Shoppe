@@ -2,9 +2,8 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../core/providers/form_providers.dart';
 import '../../../../core/api/api_request_result.dart';
-import '../../data/models/reset_pass_view_params.dart';
 import '../../data/models/reset_pass_request_body.dart';
-import '../../data/repo/reset_pass_repo.dart';
+import '../../reset_pass.dart';
 
 part 'reset_pass_provider.g.dart';
 

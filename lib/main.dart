@@ -4,10 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart' show ScreenUtil;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'riverpod_observer.dart';
-import 'src/config/cache/cache_helper.dart';
-import 'src/core/utils/functions/check_if_onboarding_visited_for_email.dart';
-import 'src/core/utils/functions/check_if_user_is_logged_in.dart';
-import 'src/core/widgets/flutter_error_details_view.dart';
+import 'src/config/cache/cache.dart';
+import 'src/core/utils/utils.dart';
+import 'src/core/widgets/core_widgets.dart' show FlutterErrorDetailsView;
 import 'src/shoppe_app.dart';
 
 void main() async {

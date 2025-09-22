@@ -1,9 +1,4 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shadcn_ui/shadcn_ui.dart';
-
-import '../../config/theming/app_text_styles.dart';
+part of 'core_widgets.dart';
 
 @RoutePage()
 @RoutePage()

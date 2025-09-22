@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider;
-import 'package:shared_preferences/shared_preferences.dart';
+part of 'cache.dart';
 
 // remove FutureProvider and use Provider
 final sharedPrefProvider = Provider<SharedPreferences>((ref) {

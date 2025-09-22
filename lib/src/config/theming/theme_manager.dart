@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shadcn_ui/shadcn_ui.dart';
-
-import '../../core/utils/const_strings.dart';
-import 'app_colors.dart';
-import 'app_text_styles.dart';
+part of 'theming.dart';
 
 class ThemeManager {
   ThemeManager._();

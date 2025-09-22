@@ -1,10 +1,4 @@
-import 'dart:convert';
-
-import 'package:flutter/material.dart' show debugPrint;
-
-import '../../features/login/data/models/login_request_response.dart';
-import 'cache_helper.dart';
-import 'cache_keys.dart';
+part of 'cache.dart';
 
 extension LoginResponseCacheHelper on CacheHelper {
   Future<void> cacheLoginResponse(LoginRequestResponse response) async {

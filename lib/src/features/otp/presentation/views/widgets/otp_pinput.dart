@@ -1,11 +1,4 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pinput/pinput.dart';
-
-import '../../../../../config/theming/app_colors.dart';
-import '../../../../../core/helpers/input_field_validator.dart';
-import '../../providers/otp_providers.dart';
+part of '../../../otp.dart';
 
 class OtpPinput extends ConsumerWidget {
   const OtpPinput({super.key});

@@ -1,11 +1,4 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shadcn_ui/shadcn_ui.dart' show SvgPicture;
-
-import '../../../../core/utils/assets.dart';
-import 'widget/custom_dot_indicators_consumer.dart';
-import 'widget/onboarding_page_view_consumer.dart';
+part of '../../onboarding.dart';
 
 @RoutePage()
 class OnboardingView extends StatelessWidget {

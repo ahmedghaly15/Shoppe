@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shadcn_ui/shadcn_ui.dart';
-
-import '../../../../../core/utils/assets.dart';
+part of '../../../start.dart';
 
 class CircleShadowAppLogo extends StatelessWidget {
   const CircleShadowAppLogo({super.key});

@@ -1,15 +1,4 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter/material.dart';
-import 'package:shoppe/src/core/helpers/extensions.dart';
-import 'package:shoppe/src/features/reset_pass/data/models/reset_pass_view_params.dart';
-
-import '../../../../../config/router/app_router.dart';
-import '../../../../../core/providers/form_providers.dart';
-import '../../../../../core/utils/app_strings.dart';
-import '../../../../../core/widgets/adaptive_circular_progress_indicator.dart';
-import '../../../../../core/widgets/primary_button.dart';
-import '../../providers/otp_providers.dart';
+part of '../../../otp.dart';
 
 class ValidateOtpButtonConsumer extends ConsumerWidget {
   const ValidateOtpButtonConsumer({super.key});

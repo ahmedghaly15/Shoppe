@@ -1,13 +1,4 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../../config/router/app_router.dart';
-import '../../../../../config/theming/app_text_styles.dart';
-import '../../../../../core/utils/app_strings.dart';
-import '../../../../../core/widgets/cancel_text_button.dart';
-import 'login_consumer_button.dart';
-import 'login_form_consumer.dart';
+part of '../../../login.dart';
 
 class LoginSection extends StatelessWidget {
   const LoginSection({super.key});

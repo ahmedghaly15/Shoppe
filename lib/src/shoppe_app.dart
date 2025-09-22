@@ -6,8 +6,8 @@ import 'package:shadcn_ui/shadcn_ui.dart';
 
 import '../app_routes_observer.dart';
 import 'config/router/app_router.dart';
-import 'config/theming/theme_manager.dart';
-import 'core/utils/const_strings.dart';
+import 'config/theming/theming.dart' show ThemeManager;
+import 'core/utils/utils.dart' show ConstStrings;
 
 class ShoppeApp extends StatelessWidget {
   const ShoppeApp({super.key});

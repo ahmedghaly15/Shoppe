@@ -1,5 +1,4 @@
-import '../../../config/cache/extensions.dart';
-import '../../../config/cache/cache_helper.dart';
+part of '../utils.dart';
 
 bool isUserLoggedIn = false;
 

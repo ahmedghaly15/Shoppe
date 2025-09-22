@@ -1,12 +1,4 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter/material.dart';
-import 'package:shoppe/src/core/helpers/extensions.dart';
-
-import '../../../../../config/router/app_router.dart';
-import '../../../../../config/theming/app_colors.dart';
-import '../../../../../core/utils/app_strings.dart';
-import '../../providers/otp_providers.dart' show resendOtpProvider;
+part of '../../../otp.dart';
 
 class ResendOtpTextButtonConsumer extends ConsumerWidget {
   const ResendOtpTextButtonConsumer({super.key});

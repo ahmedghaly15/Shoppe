@@ -1,5 +1,4 @@
-import 'package:dio/dio.dart';
-import 'package:logger/logger.dart';
+part of 'api.dart';
 
 class DioInterceptor extends Interceptor {
   final Logger _logger = Logger();

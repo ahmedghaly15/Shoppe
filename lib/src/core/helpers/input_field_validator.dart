@@ -1,6 +1,4 @@
-import 'package:shoppe/src/core/helpers/extensions.dart';
-
-import '../utils/app_regex.dart';
+part of 'helpers.dart';
 
 class InputFieldValidator {
   InputFieldValidator._();

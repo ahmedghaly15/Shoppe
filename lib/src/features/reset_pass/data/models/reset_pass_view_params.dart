@@ -1,3 +1,5 @@
+part of '../../reset_pass.dart';
+
 class ResetPassViewParams {
   final String email, otp;
 

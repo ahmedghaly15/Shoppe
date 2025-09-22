@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:shadcn_ui/shadcn_ui.dart' show ShadBorder, ShadInputFormField;
+part of 'core_widgets.dart';
 
 class CustomInputFormField extends StatelessWidget {
   const CustomInputFormField({

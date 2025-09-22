@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'api_error_message.dart';
+import 'api.dart' show ApiErrorMessage;
 
 part 'api_error_model.g.dart';
 

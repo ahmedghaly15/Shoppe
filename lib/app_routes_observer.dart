@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 
-import 'src/core/utils/colorful_logger.dart';
+import 'src/core/utils/utils.dart';
 
 class AppRoutesObserver extends AutoRouterObserver {
   final _logger = Logger(

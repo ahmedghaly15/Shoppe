@@ -1,7 +1,4 @@
-import 'package:dio/dio.dart';
-
-import 'api_error_message.dart';
-import 'api_error_model.dart';
+part of 'api.dart';
 
 class ApiErrorHandler {
   static ApiErrorModel handle(dynamic error) {

@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../../config/theming/app_text_styles.dart';
-import '../../../../../core/utils/app_strings.dart';
-import '../../../../../core/widgets/cancel_text_button.dart';
-import 'forgot_pass_button_consumer.dart';
-import 'forgot_password_form_consumer.dart';
+part of '../../../forgot_password.dart';
 
 class ForgotPassSection extends StatelessWidget {
   const ForgotPassSection({super.key});

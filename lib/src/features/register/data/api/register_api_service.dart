@@ -2,8 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:retrofit/retrofit.dart';
 
-import '../../../../core/api/dio_factory.dart';
-import '../../../../core/api/end_points.dart';
+import '../../../../core/api/api.dart';
 import '../models/register_request_body.dart';
 
 part 'register_api_service.g.dart';

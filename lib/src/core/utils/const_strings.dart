@@ -1,3 +1,5 @@
+part of 'utils.dart';
+
 class ConstStrings {
   ConstStrings._();
 

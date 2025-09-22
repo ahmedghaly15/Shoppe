@@ -1,11 +1,4 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../../config/theming/app_text_styles.dart';
-import '../../providers/onboarding_providers.dart';
-import 'package:shoppe/src/features/onboarding/data/models/page_view_attributes.dart';
-import 'page_view_next_button_consumer.dart';
+part of '../../../onboarding.dart';
 
 class OnboardingPageViewConsumer extends ConsumerWidget {
   const OnboardingPageViewConsumer({super.key});

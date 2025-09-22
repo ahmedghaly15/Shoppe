@@ -1,3 +1,5 @@
+part of 'api.dart';
+
 class EndPoints {
   EndPoints._();
 

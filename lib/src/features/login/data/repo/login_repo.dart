@@ -1,10 +1,4 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider;
-
-import '../../../../core/api/api_request_result.dart';
-import '../../../../core/utils/functions/execute_and_handle_api_request.dart';
-import '../api/login_api_service.dart';
-import '../models/login_request_body.dart';
-import '../models/login_request_response.dart';
+part of '../../login.dart';
 
 final loginRepoProvider = Provider.autoDispose<LoginRepo>((ref) {
   final apiService = ref.read(loginApiServiceProvider);

@@ -6,7 +6,7 @@ import '../../../../core/api/api_request_result.dart';
 import '../../../../core/models/email_request_body.dart';
 import '../../../../core/providers/form_providers.dart';
 import '../../data/models/otp_request_body.dart';
-import '../../data/repo/otp_repo.dart';
+import '../../otp.dart';
 
 part 'otp_providers.g.dart';
 

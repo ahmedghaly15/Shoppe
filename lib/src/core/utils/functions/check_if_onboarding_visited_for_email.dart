@@ -1,6 +1,4 @@
-import '../../../config/cache/cache_helper.dart';
-import '../../../config/cache/extensions.dart';
-import '../../../config/cache/cache_keys.dart';
+part of '../utils.dart';
 
 bool isOnboardingVisitedForEmail = false;
 

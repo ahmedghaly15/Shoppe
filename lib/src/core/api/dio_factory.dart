@@ -1,7 +1,4 @@
-import 'package:dio/dio.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'dio_interceptor.dart';
+part of 'api.dart';
 
 final dioProvider = Provider.autoDispose<Dio>((ref) => DioFactory.getDio());
 

@@ -1,10 +1,4 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shadcn_ui/shadcn_ui.dart' show SvgPicture;
-
-import '../../../../core/utils/assets.dart';
-import 'widgets/forgot_pass_section.dart';
+part of '../../forgot_password.dart';
 
 @RoutePage()
 class ForgotPasswordView extends StatelessWidget {

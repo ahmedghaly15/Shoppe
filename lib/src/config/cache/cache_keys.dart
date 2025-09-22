@@ -1,3 +1,5 @@
+part of 'cache.dart';
+
 class CacheKeys {
   CacheKeys._();
 

@@ -1,4 +1,4 @@
-import 'package:logger/logger.dart';
+part of 'utils.dart';
 
 enum ColorfulLoggerColor { green, pink, white }
 

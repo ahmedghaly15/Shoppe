@@ -2,8 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider;
 import 'package:retrofit/retrofit.dart';
 
-import '../../../../core/api/dio_factory.dart';
-import '../../../../core/api/end_points.dart';
+import '../../../../core/api/api.dart';
 import '../models/reset_pass_request_body.dart';
 
 part 'reset_pass_api_service.g.dart';

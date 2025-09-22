@@ -1,9 +1,4 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../../config/theming/app_colors.dart';
-import '../../providers/onboarding_providers.dart';
+part of '../../../onboarding.dart';
 
 class CustomDotIndicatorsConsumer extends ConsumerWidget {
   const CustomDotIndicatorsConsumer({super.key});

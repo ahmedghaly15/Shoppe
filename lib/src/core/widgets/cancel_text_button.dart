@@ -1,7 +1,4 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
-
-import '../utils/app_strings.dart';
+part of 'core_widgets.dart';
 
 class CancelTextButton extends StatelessWidget {
   const CancelTextButton({super.key});

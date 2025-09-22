@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import '../../../../core/utils/app_strings.dart';
-import '../../../../core/utils/assets.dart';
-import '../../data/models/page_view_attributes.dart';
+part of '../../onboarding.dart';
 
 final pageViewItemsProvider = Provider.autoDispose<List<PageViewAttributes>>(
   (ref) => const [

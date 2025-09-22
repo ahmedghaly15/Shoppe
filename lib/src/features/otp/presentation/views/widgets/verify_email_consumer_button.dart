@@ -1,13 +1,4 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter/material.dart';
-import 'package:shoppe/src/core/helpers/extensions.dart';
-
-import '../../../../../config/router/app_router.dart';
-import '../../../../../core/utils/app_strings.dart';
-import '../../../../../core/widgets/adaptive_circular_progress_indicator.dart';
-import '../../../../../core/widgets/primary_button.dart';
-import '../../providers/otp_providers.dart';
+part of '../../../otp.dart';
 
 class VerifyEmailConsumerButton extends ConsumerWidget {
   const VerifyEmailConsumerButton({super.key});

@@ -3,20 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider;
 
-import '../../core/utils/functions/check_if_onboarding_visited_for_email.dart'
-    show isOnboardingVisitedForEmail;
-import '../../core/utils/functions/check_if_user_is_logged_in.dart'
-    show isUserLoggedIn;
-import '../../core/widgets/shad_dialog_view.dart';
-import '../../features/forgot_password/presentation/views/forgot_password_view.dart';
+import '../../core/utils/utils.dart';
+import '../../core/widgets/core_widgets.dart' show ShadDialogView;
+import '../../features/forgot_password/forgot_password.dart'
+    show ForgotPasswordView;
 import '../../features/home/presentation/views/home_view.dart';
-import '../../features/login/presentation/views/login_view.dart';
-import '../../features/onboarding/presentation/views/onboarding_view.dart';
-import '../../features/otp/presentation/views/otp_view.dart';
-import '../../features/register/presentation/views/register_view.dart';
-import '../../features/reset_pass/data/models/reset_pass_view_params.dart';
-import '../../features/reset_pass/presentation/views/reset_pass_view.dart';
-import '../../features/start/presentation/views/start_view.dart';
+import '../../features/login/login.dart' show LoginView;
+import '../../features/onboarding/onboarding.dart' show OnboardingView;
+import '../../features/otp/otp.dart' show OtpView;
+import '../../features/register/register.dart' show RegisterView;
+import '../../features/reset_pass/reset_pass.dart'
+    show ResetPassView, ResetPassViewParams;
+import '../../features/start/start.dart' show StartView;
 
 part 'app_router.gr.dart';
 part 'app_routes.dart';

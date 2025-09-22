@@ -1,14 +1,4 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shadcn_ui/shadcn_ui.dart' show SvgPicture;
-
-import '../../../../config/theming/app_text_styles.dart';
-import '../../../../core/utils/app_strings.dart';
-import '../../../../core/utils/assets.dart';
-import 'widgets/didnt_receive_otp.dart';
-import 'widgets/otp_pinput.dart';
-import 'widgets/verify_email_consumer_button.dart';
+part of '../../otp.dart';
 
 @RoutePage()
 class OtpView extends StatelessWidget {

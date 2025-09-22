@@ -3,7 +3,7 @@ import '../../../../core/api/api_request_result.dart';
 
 import '../../../../core/providers/form_providers.dart';
 import '../../data/models/register_request_body.dart';
-import '../../data/repo/register_repo.dart';
+import '../../register.dart' show registerRepoProvider;
 
 part 'register_provider.g.dart';
 

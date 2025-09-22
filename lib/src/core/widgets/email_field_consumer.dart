@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import '../helpers/input_field_validator.dart';
-import '../providers/form_providers.dart';
-import '../utils/app_strings.dart';
-import 'custom_input_form_field.dart';
+part of 'core_widgets.dart';
 
 class EmailFieldConsumer extends ConsumerWidget {
   const EmailFieldConsumer({super.key});

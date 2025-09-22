@@ -3,7 +3,7 @@ import '../../../../core/api/api_request_result.dart';
 
 import '../../../../core/models/email_request_body.dart';
 import '../../../../core/providers/form_providers.dart';
-import '../../data/repo/forgot_pass_repo.dart';
+import '../../forgot_password.dart' show forgotPassRepoProvider;
 
 part 'forgot_pass_provider.g.dart';
 

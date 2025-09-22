@@ -4,7 +4,7 @@ import '../../../../core/api/api_request_result.dart';
 import '../../../../core/providers/form_providers.dart';
 import '../../data/models/login_request_body.dart';
 import '../../data/models/login_request_response.dart';
-import '../../data/repo/login_repo.dart';
+import '../../login.dart' show loginRepoProvider;
 
 part 'login_provider.g.dart';
 
