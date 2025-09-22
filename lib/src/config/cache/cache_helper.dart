@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart' show FutureProvider;
+import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider;
 import 'package:shared_preferences/shared_preferences.dart';
 
-final _sharedPrefProvider = FutureProvider<SharedPreferences>((ref) async {
-  return await SharedPreferences.getInstance();
+import 'cache_keys.dart';
+
+// remove FutureProvider and use Provider
+final sharedPrefProvider = Provider<SharedPreferences>((ref) {
+  throw UnimplementedError(); // will be overridden in main
 });
 
-final cacheHelperProvider = FutureProvider.autoDispose<CacheHelper>((
-  ref,
-) async {
-  final sharedPref = await ref.watch(_sharedPrefProvider.future);
-  return CacheHelper(sharedPref);
+final cacheHelperProvider = Provider<CacheHelper>((ref) {
+  throw UnimplementedError(); // will be overridden in main
 });
 
 class CacheHelper {
@@ -69,5 +69,22 @@ class CacheHelper {
   Future<String?> getString(String key) async {
     debugPrint('SharedPrefHelper : getString with key : $key');
     return _sharedPref.getString(key);
+  }
+
+  /// Sets onboarding as done for a specific user identified by [email].
+  Future<void> setOnboardingDone(String email) async {
+    debugPrint('SharedPrefHelper : onboarding done for email : $email');
+    final key = '${CacheKeys.onboarding}_$email';
+    await Future.wait([
+      setData(CacheKeys.loggedInUserEmail, email),
+      setData(key, true),
+    ]);
+  }
+
+  /// Checks if onboarding is done for a specific user identified by [email].
+  Future<bool> isOnboardingDone(String email) async {
+    debugPrint('SharedPrefHelper : isOnboardingDone for email : $email');
+    final key = '${CacheKeys.onboarding}_$email';
+    return await getBool(key) ?? false;
   }
 }
