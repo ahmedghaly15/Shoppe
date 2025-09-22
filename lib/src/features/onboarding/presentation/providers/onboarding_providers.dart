@@ -10,22 +10,22 @@ final pageViewItemsProvider = Provider.autoDispose<List<PageViewAttributes>>(
     PageViewAttributes(
       title: AppStrings.onboardingTitle1,
       subtitle: AppStrings.onboardingSubtitle1,
-      imagePath: Assets.svgsShopSmartPageView,
+      imagePath: Assets.imagesShopSmartPageView,
     ),
     PageViewAttributes(
       title: AppStrings.onboardingTitle2,
       subtitle: AppStrings.onboardingSubtitle2,
-      imagePath: Assets.svgsOffersPageView,
+      imagePath: Assets.imagesOffersPageView,
     ),
     PageViewAttributes(
       title: AppStrings.onboardingTitle3,
       subtitle: AppStrings.onboardingSubtitle3,
-      imagePath: Assets.svgsProductsPageView,
+      imagePath: Assets.imagesProductsPageView,
     ),
     PageViewAttributes(
       title: AppStrings.onboardingTitle4,
       subtitle: AppStrings.onboardingSubtitle4,
-      imagePath: Assets.svgsEasyCartPageView,
+      imagePath: Assets.imagesEasyCartPageView,
     ),
   ],
 );
@@ -72,4 +72,12 @@ final isLastPageProvider = Provider.autoDispose<bool>((ref) {
   final currentPage = ref.watch(currentIndexProvider);
   final lastPage = ref.watch(pageViewItemsProvider).length - 1;
   return currentPage == lastPage;
+});
+
+final isActivePageProvider = Provider.autoDispose.family<bool, int>((
+  ref,
+  index,
+) {
+  final currentPage = ref.watch(currentIndexProvider);
+  return currentPage == index;
 });

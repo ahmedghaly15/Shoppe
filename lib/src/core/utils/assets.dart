@@ -22,6 +22,22 @@ class Assets {
   /// assets/fonts/Raleway/Raleway-SemiBold.ttf
   static const String fontsRalewayRalewaySemiBold = "assets/fonts/Raleway/Raleway-SemiBold.ttf";
 
+  /// Assets for imagesEasyCartPageView
+  /// assets/images/easy-cart-page-view.png
+  static const String imagesEasyCartPageView = "assets/images/easy-cart-page-view.png";
+
+  /// Assets for imagesOffersPageView
+  /// assets/images/offers-page-view.png
+  static const String imagesOffersPageView = "assets/images/offers-page-view.png";
+
+  /// Assets for imagesProductsPageView
+  /// assets/images/products-page-view.png
+  static const String imagesProductsPageView = "assets/images/products-page-view.png";
+
+  /// Assets for imagesShopSmartPageView
+  /// assets/images/shop-smart-page-view.png
+  static const String imagesShopSmartPageView = "assets/images/shop-smart-page-view.png";
+
   /// Assets for imagesSplash
   /// assets/images/splash.png
   static const String imagesSplash = "assets/images/splash.png";
@@ -38,17 +54,9 @@ class Assets {
   /// assets/svgs/blue_bubble_above_grey.svg
   static const String svgsBlueBubbleAboveGrey = "assets/svgs/blue_bubble_above_grey.svg";
 
-  /// Assets for svgsEasyCartPageView
-  /// assets/svgs/easy-cart-page-view.svg
-  static const String svgsEasyCartPageView = "assets/svgs/easy-cart-page-view.svg";
-
   /// Assets for svgsLargeGreyBubble
   /// assets/svgs/large_grey_bubble.svg
   static const String svgsLargeGreyBubble = "assets/svgs/large_grey_bubble.svg";
-
-  /// Assets for svgsOffersPageView
-  /// assets/svgs/offers-page-view.svg
-  static const String svgsOffersPageView = "assets/svgs/offers-page-view.svg";
 
   /// Assets for svgsOnboardingBlueBubble
   /// assets/svgs/onboarding-blue-bubble.svg
@@ -57,14 +65,6 @@ class Assets {
   /// Assets for svgsOnboardingGreyBubble
   /// assets/svgs/onboarding-grey-bubble.svg
   static const String svgsOnboardingGreyBubble = "assets/svgs/onboarding-grey-bubble.svg";
-
-  /// Assets for svgsProductsPageView
-  /// assets/svgs/products-page-view.svg
-  static const String svgsProductsPageView = "assets/svgs/products-page-view.svg";
-
-  /// Assets for svgsShopSmartPageView
-  /// assets/svgs/shop-smart-page-view.svg
-  static const String svgsShopSmartPageView = "assets/svgs/shop-smart-page-view.svg";
 
   /// Assets for svgsSmallBlueBubble
   /// assets/svgs/small_blue_bubble.svg

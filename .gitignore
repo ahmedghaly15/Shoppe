@@ -52,3 +52,4 @@ web
 .vscode
 google-services.json
 android/build/
+.kotlin
