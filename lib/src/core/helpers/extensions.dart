@@ -1,7 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
+import '../../config/cache/cache_helper.dart' show CacheHelper;
+import '../../config/cache/cache_keys.dart';
+import '../../features/login/data/models/login_request_response.dart';
 import '../widgets/shad_dialog_view.dart';
 
 extension StringExtension on String? {
@@ -62,5 +67,23 @@ extension ShowShadDialog on BuildContext {
         child: child,
       ),
     );
+  }
+}
+
+extension LoginResponseCacheHelper on CacheHelper {
+  Future<void> cacheLoginResponse(LoginRequestResponse response) async {
+    final jsonString = jsonEncode(response.toJson());
+    await setData(CacheKeys.loginResponse, jsonString);
+  }
+
+  Future<LoginRequestResponse?> getCachedLoginResponse() async {
+    final jsonString = await getString(CacheKeys.loginResponse);
+    if (jsonString == null) return null;
+    final Map<String, dynamic> jsonMap = jsonDecode(jsonString);
+    return LoginRequestResponse.fromJson(jsonMap);
+  }
+
+  Future<void> clearLoginCache() async {
+    await removeData(CacheKeys.loginResponse);
   }
 }

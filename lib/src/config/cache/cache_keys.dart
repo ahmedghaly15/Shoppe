@@ -3,4 +3,5 @@ class CacheKeys {
 
   static const String onboarding = 'onboarding';
   static const String loggedInUserEmail = 'logged_in_user_email';
+  static const String loginResponse = 'login_response';
 }
