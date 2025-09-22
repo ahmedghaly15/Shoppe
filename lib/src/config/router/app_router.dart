@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider;
 
+import '../../core/utils/functions/check_if_onboarding_visited_for_email.dart'
+    show isOnboardingVisitedForEmail;
+import '../../core/utils/functions/check_if_user_is_logged_in.dart'
+    show isUserLoggedIn;
 import '../../core/widgets/shad_dialog_view.dart';
 import '../../features/forgot_password/presentation/views/forgot_password_view.dart';
 import '../../features/home/presentation/views/home_view.dart';
