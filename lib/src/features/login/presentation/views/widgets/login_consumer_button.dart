@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shoppe/src/core/helpers/extensions.dart';
 
 import '../../../../../config/router/app_router.dart';
+import '../../../../../core/providers/form_providers.dart';
 import '../../../../../core/utils/app_strings.dart';
 import '../../../../../core/widgets/adaptive_circular_progress_indicator.dart';
 import '../../../../../core/widgets/primary_button.dart';
@@ -31,10 +32,10 @@ class LoginConsumerButton extends ConsumerWidget {
     ref.listen(
       loginProvider,
       (_, current) => current.when(
-        data: (response) {
+        data: (response) async {
           // TODO: handle loginProvider listener
           context.router.pushAndPopUntil(
-            const OnboardingRoute(),
+            OnboardingRoute(email: ref.watch(emailProvider).text.trim()),
             predicate: (route) => false,
           );
         },
