@@ -3,12 +3,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:shoppe/src/core/helpers/extensions.dart';
 
+import '../../../../../config/cache/cache_helper.dart';
 import '../../../../../config/router/app_router.dart';
 import '../../../../../core/providers/form_providers.dart';
 import '../../../../../core/utils/app_strings.dart';
+import '../../../../../core/utils/functions/check_if_onboarding_visited_for_email.dart'
+    show isOnboardingVisitedForEmail;
 import '../../../../../core/widgets/adaptive_circular_progress_indicator.dart';
 import '../../../../../core/widgets/primary_button.dart';
 import '../../provider/login_provider.dart';
+import 'package:shoppe/src/features/login/data/models/login_request_response.dart';
 
 class LoginConsumerButton extends ConsumerWidget {
   const LoginConsumerButton({super.key});
@@ -32,16 +36,31 @@ class LoginConsumerButton extends ConsumerWidget {
     ref.listen(
       loginProvider,
       (_, current) => current.when(
-        data: (response) async {
-          // TODO: handle loginProvider listener
-          context.router.pushAndPopUntil(
-            OnboardingRoute(email: ref.watch(emailProvider).text.trim()),
-            predicate: (route) => false,
-          );
-        },
+        data: (response) async =>
+            await _cacheResponseAndPushNext(ref, response, context),
         error: (error, _) => context.showToast(error.toString()),
         loading: () => context.unfocusKeyboard(),
       ),
     );
+  }
+
+  Future<void> _cacheResponseAndPushNext(
+    WidgetRef ref,
+    LoginRequestResponse response,
+    BuildContext context,
+  ) async {
+    final cacheHelper = ref.read(cacheHelperProvider);
+    await cacheHelper.cacheLoginResponse(response);
+    if (isOnboardingVisitedForEmail) {
+      context.router.pushAndPopUntil(
+        const HomeRoute(),
+        predicate: (route) => false,
+      );
+    } else {
+      context.router.pushAndPopUntil(
+        OnboardingRoute(email: ref.watch(emailProvider).text.trim()),
+        predicate: (route) => false,
+      );
+    }
   }
 }
