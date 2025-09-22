@@ -10,33 +10,34 @@ class CustomDotIndicatorsConsumer extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final currentIndex = ref.watch(currentIndexProvider);
     final pageViews = ref.read(pageViewItemsProvider);
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       spacing: 8.w,
       children: List.generate(
         pageViews.length,
-        (index) => _CustomDotIndicator(isActive: currentIndex == index),
+        (index) => _CustomDotIndicatorConsumer(index: index),
         growable: false,
       ),
     );
   }
 }
 
-class _CustomDotIndicator extends StatelessWidget {
-  const _CustomDotIndicator({required this.isActive});
+class _CustomDotIndicatorConsumer extends ConsumerWidget {
+  const _CustomDotIndicatorConsumer({required this.index});
 
-  final bool isActive;
+  final int index;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isActive = ref.watch(isActivePageProvider(index));
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
-      width: isActive ? 32.w : 8.w,
-      height: 8,
+      width: 20.h,
+      height: 20.h,
       decoration: BoxDecoration(
-        color: isActive ? AppColors.primaryColor : const Color(0xffE7E7E7),
-        borderRadius: BorderRadius.circular(12.r),
+        color: isActive ? AppColors.primaryColor : AppColors.colorC7D6FB,
+        shape: BoxShape.circle,
       ),
     );
   }

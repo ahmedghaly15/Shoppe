@@ -1,7 +1,7 @@
 part of 'app_router.dart';
 
 List<AutoRoute> get appRoutes => [
-  AutoRoute(page: StartRoute.page, initial: true),
+  AutoRoute(page: StartRoute.page),
   _buildCustomRoute(page: RegisterRoute.page),
   _buildCustomRoute(page: LoginRoute.page),
   _buildCustomRoute(page: OtpRoute.page),
@@ -16,7 +16,7 @@ List<AutoRoute> get appRoutes => [
       _buildCustomRoute(page: ResetPassRoute.page),
     ],
   ),
-  _buildCustomRoute(page: OnboardingRoute.page),
+  _buildCustomRoute(page: OnboardingRoute.page, initial: true),
 ];
 
 CustomRoute _buildCustomRoute({
