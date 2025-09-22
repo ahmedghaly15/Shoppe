@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../config/cache/cache_helper.dart';
+import '../../../../../config/cache/extensions.dart';
+import '../../../../../config/cache/cache_keys.dart';
 import '../../../../../config/router/app_router.dart';
 import '../../../../../core/utils/app_strings.dart';
 import '../../../../../core/widgets/primary_button.dart';
@@ -24,11 +26,8 @@ class PageViewNextButtonConsumer extends ConsumerWidget {
 
   void _pushHome(WidgetRef ref, BuildContext context) async {
     final cacheHelper = ref.read(cacheHelperProvider);
-    final email = context.router.routeData
-        .argsAs<OnboardingRoute>()
-        .args!
-        .email;
-    await cacheHelper.setOnboardingDone(email);
+    final email = await cacheHelper.getString(CacheKeys.loggedInUserEmail);
+    await cacheHelper.setOnboardingDone(email!);
     context.replaceRoute(const HomeRoute());
   }
 }

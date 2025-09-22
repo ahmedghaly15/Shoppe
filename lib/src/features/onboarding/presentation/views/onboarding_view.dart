@@ -9,9 +9,7 @@ import 'widget/onboarding_page_view_consumer.dart';
 
 @RoutePage()
 class OnboardingView extends StatelessWidget {
-  const OnboardingView({super.key, required this.email});
-
-  final String email;
+  const OnboardingView({super.key});
 
   @override
   Widget build(BuildContext context) {

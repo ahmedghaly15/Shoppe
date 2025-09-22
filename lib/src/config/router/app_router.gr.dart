@@ -60,49 +60,18 @@ class LoginRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [OnboardingView]
-class OnboardingRoute extends PageRouteInfo<OnboardingRouteArgs> {
-  OnboardingRoute({
-    Key? key,
-    required String email,
-    List<PageRouteInfo>? children,
-  }) : super(
-         OnboardingRoute.name,
-         args: OnboardingRouteArgs(key: key, email: email),
-         initialChildren: children,
-       );
+class OnboardingRoute extends PageRouteInfo<void> {
+  const OnboardingRoute({List<PageRouteInfo>? children})
+    : super(OnboardingRoute.name, initialChildren: children);
 
   static const String name = 'OnboardingRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      final args = data.argsAs<OnboardingRouteArgs>();
-      return OnboardingView(key: args.key, email: args.email);
+      return const OnboardingView();
     },
   );
-}
-
-class OnboardingRouteArgs {
-  const OnboardingRouteArgs({this.key, required this.email});
-
-  final Key? key;
-
-  final String email;
-
-  @override
-  String toString() {
-    return 'OnboardingRouteArgs{key: $key, email: $email}';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (other is! OnboardingRouteArgs) return false;
-    return key == other.key && email == other.email;
-  }
-
-  @override
-  int get hashCode => key.hashCode ^ email.hashCode;
 }
 
 /// generated route for

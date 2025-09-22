@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shoppe/src/core/helpers/extensions.dart';
 
 import '../../../../../config/cache/cache_helper.dart';
+import '../../../../../config/cache/cache_keys.dart';
 import '../../../../../config/cache/extensions.dart';
 import '../../../../../config/router/app_router.dart';
 import '../../../../../core/providers/form_providers.dart';
@@ -51,7 +52,13 @@ class LoginConsumerButton extends ConsumerWidget {
     BuildContext context,
   ) async {
     final cacheHelper = ref.read(cacheHelperProvider);
-    await cacheHelper.cacheLoginResponse(response);
+    await Future.wait([
+      cacheHelper.setData(
+        CacheKeys.loggedInUserEmail,
+        ref.watch(emailProvider).text.trim(),
+      ),
+      cacheHelper.cacheLoginResponse(response),
+    ]);
     if (isOnboardingVisitedForEmail) {
       context.router.pushAndPopUntil(
         const HomeRoute(),
@@ -59,7 +66,7 @@ class LoginConsumerButton extends ConsumerWidget {
       );
     } else {
       context.router.pushAndPopUntil(
-        OnboardingRoute(email: ref.watch(emailProvider).text.trim()),
+        const OnboardingRoute(),
         predicate: (route) => false,
       );
     }
