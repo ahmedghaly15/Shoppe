@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shoppe/src/core/helpers/extensions.dart';
 
 import '../../../../../config/cache/cache_helper.dart';
+import '../../../../../config/cache/extensions.dart';
 import '../../../../../config/router/app_router.dart';
 import '../../../../../core/providers/form_providers.dart';
 import '../../../../../core/utils/app_strings.dart';
@@ -11,8 +12,8 @@ import '../../../../../core/utils/functions/check_if_onboarding_visited_for_emai
     show isOnboardingVisitedForEmail;
 import '../../../../../core/widgets/adaptive_circular_progress_indicator.dart';
 import '../../../../../core/widgets/primary_button.dart';
+import '../../../data/models/login_request_response.dart';
 import '../../provider/login_provider.dart';
-import 'package:shoppe/src/features/login/data/models/login_request_response.dart';
 
 class LoginConsumerButton extends ConsumerWidget {
   const LoginConsumerButton({super.key});

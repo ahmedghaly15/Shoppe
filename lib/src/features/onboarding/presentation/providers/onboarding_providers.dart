@@ -42,25 +42,17 @@ class _CurrentIndexNotifier extends Notifier<int> {
   final Curve _animationCurve = Curves.fastEaseInToSlowEaseOut;
 
   void moveNext() async {
-    final isLastPage = ref.watch(isLastPageProvider);
-    if (isLastPage) return;
+    final pageController = ref.watch(pageViewControllerProvider);
     state++;
-    await ref
-        .read(pageViewControllerProvider)
-        .nextPage(duration: _animationDuration, curve: _animationCurve);
+    await pageController.nextPage(
+      duration: _animationDuration,
+      curve: _animationCurve,
+    );
   }
 
   void onPageChanged(int index) {
     state = index;
   }
-
-  // void moveBack() async {
-  //   if (state == 0) return;
-  //   state--;
-  //   await ref
-  //       .read(pageViewControllerProvider)
-  //       .previousPage(duration: _animationDuration, curve: _animationCurve);
-  // }
 }
 
 final currentIndexProvider =

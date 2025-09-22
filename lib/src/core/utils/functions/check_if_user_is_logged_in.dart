@@ -1,5 +1,4 @@
-import 'package:shoppe/src/core/helpers/extensions.dart';
-
+import '../../../config/cache/extensions.dart';
 import '../../../config/cache/cache_helper.dart';
 
 bool isUserLoggedIn = false;
