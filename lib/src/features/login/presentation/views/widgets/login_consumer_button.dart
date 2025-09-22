@@ -33,7 +33,10 @@ class LoginConsumerButton extends ConsumerWidget {
       (_, current) => current.when(
         data: (response) {
           // TODO: handle loginProvider listener
-          context.pushRoute(const OnboardingRoute());
+          context.router.pushAndPopUntil(
+            const OnboardingRoute(),
+            predicate: (route) => false,
+          );
         },
         error: (error, _) => context.showToast(error.toString()),
         loading: () => context.unfocusKeyboard(),

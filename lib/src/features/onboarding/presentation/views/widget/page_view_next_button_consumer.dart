@@ -1,6 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../config/cache/cache_helper.dart';
+import '../../../../../config/cache/cache_keys.dart';
+import '../../../../../config/router/app_router.dart';
 import '../../../../../core/utils/app_strings.dart';
 import '../../../../../core/widgets/primary_button.dart';
 import '../../providers/onboarding_providers.dart';
@@ -13,11 +17,15 @@ class PageViewNextButtonConsumer extends ConsumerWidget {
     final isLastPage = ref.watch(isLastPageProvider);
     return PrimaryButton(
       onPressed: isLastPage
-          ? () {
-              // TODO: navigate To home and cache onboarding
-            }
+          ? () => _pushHome(ref, context)
           : () => ref.read(currentIndexProvider.notifier).moveNext(),
       text: isLastPage ? AppStrings.letsGetStarted : AppStrings.next,
     );
+  }
+
+  void _pushHome(WidgetRef ref, BuildContext context) async {
+    final cacheHelper = await ref.read(cacheHelperProvider.future);
+    await cacheHelper.setData(CacheKeys.onboarding, true);
+    context.replaceRoute(const HomeRoute());
   }
 }
