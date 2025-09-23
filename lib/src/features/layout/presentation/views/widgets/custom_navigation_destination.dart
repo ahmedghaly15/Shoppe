@@ -13,7 +13,7 @@ class CustomNavigationDestination extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NavigationDestination(
-      icon: Icon(icon, color: AppColors.primaryColor.withAlpha(179)),
+      icon: Icon(icon, color: AppColors.primaryColor.withAlpha(80)),
       selectedIcon: Icon(icon, color: AppColors.primaryColor),
       label: label,
     );

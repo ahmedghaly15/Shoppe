@@ -8,7 +8,7 @@ import '../../core/widgets/core_widgets.dart' show ShadDialogView;
 import '../../features/cart/cart.dart' show CartView;
 import '../../features/forgot_password/forgot_password.dart'
     show ForgotPasswordView;
-import '../../features/home/presentation/views/home_view.dart';
+import '../../features/home/home.dart' show HomeView;
 import '../../features/layout/layout.dart' show LayoutView;
 import '../../features/login/login.dart' show LoginView;
 import '../../features/onboarding/onboarding.dart' show OnboardingView;

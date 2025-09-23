@@ -48,9 +48,12 @@ class ThemeManager {
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(foregroundColor: Colors.black),
         ),
-        navigationBarTheme: const NavigationBarThemeData(
+        navigationBarTheme: NavigationBarThemeData(
           backgroundColor: Colors.white,
-          elevation: 0,
+          elevation: 16.h,
+          labelTextStyle: const WidgetStatePropertyAll(
+            TextStyle(color: Colors.white, fontSize: 0),
+          ),
         ),
       );
 

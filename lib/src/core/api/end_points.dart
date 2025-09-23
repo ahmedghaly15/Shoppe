@@ -12,4 +12,5 @@ class EndPoints {
   static const String resendOtp = '${auth}resend-otp';
   static const String validateOtp = '${auth}validate-otp';
   static const String resetPass = '${auth}reset-password';
+  static const String fetchOffers = '${baseUrl}offers';
 }
