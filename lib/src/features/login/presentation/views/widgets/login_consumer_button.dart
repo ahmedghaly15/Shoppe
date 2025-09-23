@@ -35,17 +35,14 @@ class LoginConsumerButton extends ConsumerWidget {
     LoginRequestResponse response,
     BuildContext context,
   ) async {
-    final cacheHelper = ref.read(cacheHelperProvider);
-    await Future.wait([
-      cacheHelper.setData(
-        CacheKeys.loggedInUserEmail,
-        ref.watch(emailProvider).text.trim(),
-      ),
-      cacheHelper.cacheLoginResponse(response),
-    ]);
+    await _cacheResponse(ref, response);
+    _pushNextRoute(context);
+  }
+
+  void _pushNextRoute(BuildContext context) {
     if (isOnboardingVisitedForEmail) {
       context.router.pushAndPopUntil(
-        const HomeRoute(),
+        const LayoutRoute(),
         predicate: (route) => false,
       );
     } else {
@@ -54,5 +51,19 @@ class LoginConsumerButton extends ConsumerWidget {
         predicate: (route) => false,
       );
     }
+  }
+
+  Future<void> _cacheResponse(
+    WidgetRef ref,
+    LoginRequestResponse response,
+  ) async {
+    final cacheHelper = ref.read(cacheHelperProvider);
+    await Future.wait([
+      cacheHelper.setData(
+        CacheKeys.loggedInUserEmail,
+        ref.watch(emailProvider).text.trim(),
+      ),
+      cacheHelper.cacheLoginResponse(response),
+    ]);
   }
 }

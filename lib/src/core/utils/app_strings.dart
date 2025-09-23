@@ -57,4 +57,8 @@ class AppStrings {
   static const String onboardingTitle4 = 'Easy Cart & Orders';
   static const String onboardingSubtitle4 =
       'Add items in seconds, track your orders in real time, and enjoy a seamless shopping experience.';
+  static const String home = 'Home';
+  static const String wishlist = 'Wishlist';
+  static const String cart = 'Cart';
+  static const String profile = 'Profile';
 }
