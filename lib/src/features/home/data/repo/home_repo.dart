@@ -1,5 +1,10 @@
 part of '../../home.dart';
 
+final homeRepoProvider = Provider.autoDispose<HomeRepo>((ref) {
+  final apiService = ref.read(homeApiServiceProvider);
+  return HomeRepo(apiService);
+});
+
 class HomeRepo {
   final HomeApiService _apiService;
 

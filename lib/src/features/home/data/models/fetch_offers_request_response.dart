@@ -6,10 +6,14 @@ part 'fetch_offers_request_response.g.dart';
 class FetchOffersRequestResponse {
   final OffersResponseBody? offers;
 
-  FetchOffersRequestResponse({this.offers});
+  const FetchOffersRequestResponse({this.offers});
 
   factory FetchOffersRequestResponse.fromJson(Map<String, dynamic> json) =>
       _$FetchOffersRequestResponseFromJson(json);
+
+  factory FetchOffersRequestResponse.empty() =>
+      const FetchOffersRequestResponse();
+
   Map<String, dynamic> toJson() => _$FetchOffersRequestResponseToJson(this);
 }
 

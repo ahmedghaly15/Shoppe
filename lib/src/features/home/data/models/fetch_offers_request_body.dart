@@ -6,7 +6,7 @@ part 'fetch_offers_request_body.g.dart';
 class FetchOffersRequestBody {
   final int page, pageSize;
 
-  FetchOffersRequestBody({this.page = 1, this.pageSize = 6});
+  const FetchOffersRequestBody({this.page = 1, this.pageSize = 6});
 
   factory FetchOffersRequestBody.fromJson(Map<String, dynamic> json) =>
       _$FetchOffersRequestBodyFromJson(json);
