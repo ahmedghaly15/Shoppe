@@ -24,7 +24,7 @@ List<AutoRoute> get appRoutes => [
     initial: isUserLoggedIn && !isOnboardingVisitedForEmail,
   ),
   _buildCustomRoute(
-    page: HomeRoute.page,
+    page: LayoutRoute.page,
     initial: isUserLoggedIn && isOnboardingVisitedForEmail,
   ),
 ];

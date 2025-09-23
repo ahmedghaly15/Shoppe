@@ -18,6 +18,6 @@ class PageViewNextButtonConsumer extends ConsumerWidget {
     final cacheHelper = ref.read(cacheHelperProvider);
     final email = await cacheHelper.getString(CacheKeys.loggedInUserEmail);
     await cacheHelper.setOnboardingDone(email!);
-    context.replaceRoute(const HomeRoute());
+    context.replaceRoute(const LayoutRoute());
   }
 }

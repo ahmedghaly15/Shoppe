@@ -11,6 +11,22 @@
 part of 'app_router.dart';
 
 /// generated route for
+/// [CartView]
+class CartRoute extends PageRouteInfo<void> {
+  const CartRoute({List<PageRouteInfo>? children})
+    : super(CartRoute.name, initialChildren: children);
+
+  static const String name = 'CartRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const CartView();
+    },
+  );
+}
+
+/// generated route for
 /// [ForgotPasswordView]
 class ForgotPasswordRoute extends PageRouteInfo<void> {
   const ForgotPasswordRoute({List<PageRouteInfo>? children})
@@ -38,6 +54,22 @@ class HomeRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const HomeView();
+    },
+  );
+}
+
+/// generated route for
+/// [LayoutView]
+class LayoutRoute extends PageRouteInfo<void> {
+  const LayoutRoute({List<PageRouteInfo>? children})
+    : super(LayoutRoute.name, initialChildren: children);
+
+  static const String name = 'LayoutRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const LayoutView();
     },
   );
 }
@@ -116,6 +148,22 @@ class OtpRouteArgs {
 
   @override
   int get hashCode => key.hashCode ^ email.hashCode;
+}
+
+/// generated route for
+/// [ProfileView]
+class ProfileRoute extends PageRouteInfo<void> {
+  const ProfileRoute({List<PageRouteInfo>? children})
+    : super(ProfileRoute.name, initialChildren: children);
+
+  static const String name = 'ProfileRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const ProfileView();
+    },
+  );
 }
 
 /// generated route for
@@ -308,6 +356,22 @@ class StartRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const StartView();
+    },
+  );
+}
+
+/// generated route for
+/// [WishlistView]
+class WishlistRoute extends PageRouteInfo<void> {
+  const WishlistRoute({List<PageRouteInfo>? children})
+    : super(WishlistRoute.name, initialChildren: children);
+
+  static const String name = 'WishlistRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const WishlistView();
     },
   );
 }

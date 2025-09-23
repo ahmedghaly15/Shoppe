@@ -48,6 +48,10 @@ class ThemeManager {
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(foregroundColor: Colors.black),
         ),
+        navigationBarTheme: const NavigationBarThemeData(
+          backgroundColor: Colors.white,
+          elevation: 0,
+        ),
       );
 
   static EdgeInsets get _inputPadding =>
