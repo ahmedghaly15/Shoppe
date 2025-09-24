@@ -14,24 +14,24 @@ extension ShadThemeAccess on BuildContext {
 }
 
 extension ShowToast on BuildContext {
-  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showToast(
+  void showToast(
     String message, {
     Duration duration = const Duration(seconds: 3),
+    String? titleText,
   }) {
-    return ScaffoldMessenger.of(this).showSnackBar(
-      SnackBar(
+    ShadToaster.of(this).show(
+      ShadToast(
+        alignment: Alignment.bottomCenter,
         duration: duration,
-        content: Text(
+        title: titleText == null ? null : Text(titleText),
+        titleStyle: const TextStyle(color: Colors.white),
+        description: Text(
           message,
-          style: const TextStyle(color: Colors.white),
-          textAlign: TextAlign.center,
+          textAlign: titleText == null ? TextAlign.center : TextAlign.start,
         ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.r),
-        ),
-        behavior: SnackBarBehavior.floating,
+        descriptionStyle: const TextStyle(color: Colors.white),
+        radius: BorderRadius.circular(16.r),
         backgroundColor: Colors.black87,
-        margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       ),
     );
@@ -59,4 +59,8 @@ extension ShowShadDialog on BuildContext {
       ),
     );
   }
+}
+
+extension EmptyOrNullList on List? {
+  bool get isNullOrEmpty => this?.isEmpty ?? true;
 }
