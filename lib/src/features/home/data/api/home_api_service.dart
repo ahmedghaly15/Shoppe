@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider;
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../core/api/api.dart' show EndPoints, dioProvider;
+import '../models/fetch_categories_response.dart';
 import '../models/fetch_offers_request_body.dart';
 import '../models/fetch_offers_request_response.dart';
 
@@ -21,4 +22,7 @@ abstract class HomeApiService {
   Future<FetchOffersRequestResponse> fetchOffers(
     @Body() FetchOffersRequestBody body,
   );
+
+  @GET(EndPoints.fetchCategories)
+  Future<FetchCategoriesResponse> fetchCategories();
 }

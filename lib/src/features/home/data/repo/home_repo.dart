@@ -17,4 +17,10 @@ class HomeRepo {
       () async => await _apiService.fetchOffers(body),
     );
   }
+
+  Future<ApiRequestResult<FetchCategoriesResponse>> fetchCategories() {
+    return executeAndHandleApiRequest<FetchCategoriesResponse>(
+      () async => await _apiService.fetchCategories(),
+    );
+  }
 }

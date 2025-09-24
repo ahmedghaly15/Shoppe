@@ -16,6 +16,7 @@ import '../../core/widgets/core_widgets.dart'
         CustomInputFormField,
         CustomSkeletonizer;
 import 'data/api/home_api_service.dart';
+import 'data/models/fetch_categories_response.dart';
 import 'data/models/fetch_offers_request_body.dart';
 import 'data/models/fetch_offers_request_response.dart';
 
@@ -27,3 +28,4 @@ part 'presentation/views/widgets/skeletonized_offers_list_view_consumer.dart';
 part 'presentation/providers/fetch_offers_providers.dart';
 part 'presentation/views/widgets/home_section_title.dart';
 part 'presentation/views/widgets/offers_dot_indicators_consumer.dart';
+part 'presentation/providers/fetch_categories_provider.dart';
