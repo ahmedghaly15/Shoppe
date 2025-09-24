@@ -24,7 +24,7 @@ class OnboardingView extends StatelessWidget {
             bottom: 40.h,
             end: 0,
             start: 0,
-            child: const SafeArea(child: CustomDotIndicatorsConsumer()),
+            child: const SafeArea(child: OnboardingDotIndicatorsConsumer()),
           ),
           Container(
             margin: EdgeInsets.symmetric(
