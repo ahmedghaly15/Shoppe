@@ -60,11 +60,3 @@ final isLastPageProvider = Provider.autoDispose<bool>((ref) {
   final lastPage = ref.watch(pageViewItemsProvider).length - 1;
   return currentPage == lastPage;
 });
-
-final isActivePageProvider = Provider.autoDispose.family<bool, int>((
-  ref,
-  index,
-) {
-  final currentPage = ref.watch(currentIndexProvider);
-  return currentPage == index;
-});

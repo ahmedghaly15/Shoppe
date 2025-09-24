@@ -17,7 +17,7 @@ final homeApiServiceProvider = Provider.autoDispose<HomeApiService>((ref) {
 abstract class HomeApiService {
   factory HomeApiService(Dio dio, {String baseUrl}) = _HomeApiService;
 
-  @POST(EndPoints.fetchOffers)
+  @GET(EndPoints.fetchOffers)
   Future<FetchOffersRequestResponse> fetchOffers(
     @Body() FetchOffersRequestBody body,
   );

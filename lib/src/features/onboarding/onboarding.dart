@@ -12,7 +12,7 @@ import '../../core/widgets/core_widgets.dart';
 import 'data/models/page_view_attributes.dart';
 
 part 'presentation/views/onboarding_view.dart';
-part 'presentation/views/widget/custom_dot_indicators_consumer.dart';
+part 'presentation/views/widget/onbaording_dot_indicators_consumer.dart';
 part 'presentation/views/widget/onboarding_page_view_consumer.dart';
 part 'presentation/views/widget/page_view_next_button_consumer.dart';
 part 'presentation/providers/onboarding_providers.dart';

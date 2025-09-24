@@ -61,4 +61,7 @@ class AppStrings {
   static const String wishlist = 'Wishlist';
   static const String cart = 'Cart';
   static const String profile = 'Profile';
+  static const String shop = 'Shop';
+  static const String search = 'Search';
+  static const String offers = 'Offers';
 }
