@@ -25,6 +25,12 @@ class HomeView extends StatelessWidget {
                 child: const OffersDotIndicatorsConsumer(),
               ),
             ),
+            const SliverToBoxAdapter(
+              child: HomeSectionTitle(titleText: AppStrings.categories),
+            ),
+            const SliverToBoxAdapter(
+              child: SkeletonizedCategoriesListViewConsumer(),
+            ),
           ],
         ),
       ),

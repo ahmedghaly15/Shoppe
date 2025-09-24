@@ -29,3 +29,4 @@ part 'presentation/providers/fetch_offers_providers.dart';
 part 'presentation/views/widgets/home_section_title.dart';
 part 'presentation/views/widgets/offers_dot_indicators_consumer.dart';
 part 'presentation/providers/fetch_categories_provider.dart';
+part 'presentation/views/widgets/skeletonized_categories_list_view_consumer.dart';

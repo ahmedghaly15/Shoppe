@@ -64,4 +64,5 @@ class AppStrings {
   static const String shop = 'Shop';
   static const String search = 'Search';
   static const String offers = 'Offers';
+  static const String categories = 'Categories';
 }
