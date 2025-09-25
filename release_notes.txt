@@ -1,5 +1,4 @@
 New release notes:
-    - Finished UI for reset-password feature
-    - Finished business logic for reset-password feature
-    - Finished UI logic for reset-password feature
-    - Integrated UI logic with UI for reset-password feature
+    - Added Offers, Categories and Top-Products to Home 
+    - Finished their UI 
+    - Finished their logic 
