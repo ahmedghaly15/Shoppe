@@ -6,6 +6,8 @@ import '../../../../core/api/api.dart' show EndPoints, dioProvider;
 import '../models/fetch_categories_response.dart';
 import '../models/fetch_offers_request_body.dart';
 import '../models/fetch_offers_request_response.dart';
+import '../models/fetch_products_request_body.dart';
+import '../models/fetch_products_request_response.dart';
 
 part 'home_api_service.g.dart';
 
@@ -25,4 +27,9 @@ abstract class HomeApiService {
 
   @GET(EndPoints.fetchCategories)
   Future<FetchCategoriesResponse> fetchCategories();
+
+  @GET(EndPoints.products)
+  Future<FetchProductsRequestResponse> fetchProducts(
+    @Body() FetchProductsRequestBody body,
+  );
 }

@@ -14,4 +14,5 @@ class EndPoints {
   static const String resetPass = '${auth}reset-password';
   static const String fetchOffers = '${baseUrl}offers';
   static const String fetchCategories = '${baseUrl}categories';
+  static const String products = '${baseUrl}products';
 }

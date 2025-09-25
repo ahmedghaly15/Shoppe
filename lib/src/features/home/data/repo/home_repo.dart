@@ -23,4 +23,12 @@ class HomeRepo {
       () async => await _apiService.fetchCategories(),
     );
   }
+
+  Future<ApiRequestResult<FetchProductsRequestResponse>> fetchProducts(
+    FetchProductsRequestBody body,
+  ) {
+    return executeAndHandleApiRequest<FetchProductsRequestResponse>(
+      () async => await _apiService.fetchProducts(body),
+    );
+  }
 }
