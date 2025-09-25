@@ -15,4 +15,5 @@ class EndPoints {
   static const String fetchOffers = '${baseUrl}offers';
   static const String fetchCategories = '${baseUrl}categories';
   static const String products = '${baseUrl}products';
+  static const String reviews = '${baseUrl}reviews';
 }
