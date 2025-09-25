@@ -151,6 +151,53 @@ class OtpRouteArgs {
 }
 
 /// generated route for
+/// [ProductDetailsView]
+class ProductDetailsRoute extends PageRouteInfo<ProductDetailsRouteArgs> {
+  ProductDetailsRoute({
+    Key? key,
+    required Product product,
+    List<PageRouteInfo>? children,
+  }) : super(
+         ProductDetailsRoute.name,
+         args: ProductDetailsRouteArgs(key: key, product: product),
+         initialChildren: children,
+       );
+
+  static const String name = 'ProductDetailsRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<ProductDetailsRouteArgs>();
+      return ProductDetailsView(key: args.key, product: args.product);
+    },
+  );
+}
+
+class ProductDetailsRouteArgs {
+  const ProductDetailsRouteArgs({this.key, required this.product});
+
+  final Key? key;
+
+  final Product product;
+
+  @override
+  String toString() {
+    return 'ProductDetailsRouteArgs{key: $key, product: $product}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! ProductDetailsRouteArgs) return false;
+    return key == other.key && product == other.product;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ product.hashCode;
+}
+
+/// generated route for
 /// [ProfileView]
 class ProfileRoute extends PageRouteInfo<void> {
   const ProfileRoute({List<PageRouteInfo>? children})

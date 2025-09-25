@@ -6,8 +6,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoppe/src/core/helpers/helpers.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
+import '../../config/router/app_router.dart' show ProductDetailsRoute;
 import '../../config/theming/theming.dart' show AppTextStyles;
 import '../../core/api/api_request_result.dart';
+import '../../core/models/product.dart';
 import '../../core/utils/utils.dart';
 import '../../core/widgets/core_widgets.dart'
     show

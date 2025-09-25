@@ -33,6 +33,7 @@ List<AutoRoute> get appRoutes => [
       _buildCustomRoute(page: ProfileRoute.page),
     ],
   ),
+  _buildCustomRoute(page: ProductDetailsRoute.page),
 ];
 
 CustomRoute _buildCustomRoute({
