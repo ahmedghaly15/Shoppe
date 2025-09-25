@@ -1,20 +1,21 @@
 part of 'api.dart';
 
 class AuthInterceptor extends Interceptor {
-  final Ref ref;
+  final Ref _ref;
 
-  AuthInterceptor(this.ref);
+  AuthInterceptor(this._ref);
 
   @override
   void onRequest(
     RequestOptions options,
     RequestInterceptorHandler handler,
   ) async {
-    final storageHelper = ref.read(secureStorageHelperProvider);
-    final token = await storageHelper.getSecuredString('accessToken');
+    final storageHelper = _ref.read(secureStorageHelperProvider);
+    final cachedLoginResponse = await storageHelper.getCachedLoginResponse();
+    final accessToken = cachedLoginResponse?.accessToken;
 
-    if (!token.isNullOrEmpty) {
-      options.headers['Authorization'] = 'Bearer $token';
+    if (!accessToken.isNullOrEmpty) {
+      options.headers['Authorization'] = 'Bearer $accessToken';
     }
 
     return handler.next(options);
