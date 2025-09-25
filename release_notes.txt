@@ -2,3 +2,4 @@ New release notes:
     - Added Offers, Categories and Top-Products to Home 
     - Finished their UI 
     - Finished their logic 
+    - Integrated UI with logic

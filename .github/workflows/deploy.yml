@@ -36,14 +36,25 @@ jobs:
 
       - name: Check if release_notes.txt updated
         run: |
-          if ! git diff --name-only HEAD~1 HEAD | grep -q "release_notes.txt"; then
+          # Get the commit range (if only 1 commit exists, fallback to HEAD)
+          if git rev-parse HEAD~1 >/dev/null 2>&1; then
+            RANGE="HEAD~1..HEAD"
+          else
+            RANGE="HEAD"
+          fi
+
+          # Check if release_notes.txt is in the commit(s)
+          if ! git diff --name-only $RANGE | grep -q "release_notes.txt"; then
             echo "❌ You must update release_notes.txt before deploying!"
             exit 1
           fi
+
+          # Check file not empty
           if [ ! -s release_notes.txt ]; then
             echo "❌ release_notes.txt is empty!"
             exit 1
           fi
+
           echo "✅ release_notes.txt is updated."
 
       - name: Setup Java 17
