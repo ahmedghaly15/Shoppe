@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart' show ProviderScope;
 import 'package:flutter_screenutil/flutter_screenutil.dart' show ScreenUtil;
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'riverpod_observer.dart';
@@ -15,13 +16,16 @@ void main() async {
   final sharedPref = await SharedPreferences.getInstance();
   final cacheHelper = CacheHelper(sharedPref);
 
+  const secureStorage = FlutterSecureStorage();
+  final secureStorageHelper = SecureStorageHelper(secureStorage);
+
   ErrorWidget.builder = (FlutterErrorDetails details) =>
       FlutterErrorDetailsView(details: details);
 
   await Future.wait([
     ScreenUtil.ensureScreenSize(),
     checkIfOnboardingVisitedForEmail(cacheHelper),
-    checkIfUserIsLoggedIn(cacheHelper),
+    checkIfUserIsLoggedIn(secureStorageHelper),
   ]);
 
   runApp(
@@ -29,6 +33,8 @@ void main() async {
       overrides: [
         sharedPrefProvider.overrideWithValue(sharedPref),
         cacheHelperProvider.overrideWithValue(cacheHelper),
+        secureStorageProvider.overrideWithValue(secureStorage),
+        secureStorageHelperProvider.overrideWithValue(secureStorageHelper),
       ],
       observers: [RiverpodObserver()],
       child: const ShoppeApp(),

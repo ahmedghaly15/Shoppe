@@ -57,13 +57,13 @@ class LoginConsumerButton extends ConsumerWidget {
     WidgetRef ref,
     LoginRequestResponse response,
   ) async {
-    final cacheHelper = ref.read(cacheHelperProvider);
+    final secureStorageHelper = ref.read(secureStorageHelperProvider);
     await Future.wait([
-      cacheHelper.setData(
+      secureStorageHelper.setSecuredString(
         CacheKeys.loggedInUserEmail,
         ref.watch(emailProvider).text.trim(),
       ),
-      cacheHelper.cacheLoginResponse(response),
+      secureStorageHelper.cacheLoginResponse(response),
     ]);
   }
 }
