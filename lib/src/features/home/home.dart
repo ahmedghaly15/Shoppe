@@ -19,6 +19,8 @@ import 'data/api/home_api_service.dart';
 import 'data/models/fetch_categories_response.dart';
 import 'data/models/fetch_offers_request_body.dart';
 import 'data/models/fetch_offers_request_response.dart';
+import 'data/models/fetch_products_request_body.dart';
+import 'data/models/fetch_products_request_response.dart';
 
 part 'presentation/views/home_view.dart';
 part 'data/repo/home_repo.dart';
@@ -30,3 +32,4 @@ part 'presentation/views/widgets/home_section_title.dart';
 part 'presentation/views/widgets/offers_dot_indicators_consumer.dart';
 part 'presentation/providers/fetch_categories_provider.dart';
 part 'presentation/views/widgets/skeletonized_categories_list_view_consumer.dart';
+part 'presentation/providers/fetch_products_provider.dart';
