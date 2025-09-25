@@ -43,13 +43,18 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
   );
 
+  static TextStyle font13Bold = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w700,
+  );
+
   static TextStyle font12Regular = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeight.w400,
   );
 
-  static TextStyle font13Bold = TextStyle(
-    fontSize: 13.sp,
-    fontWeight: FontWeight.w700,
+  static TextStyle font10Regular = TextStyle(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w400,
   );
 }

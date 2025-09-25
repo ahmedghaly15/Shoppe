@@ -12,7 +12,15 @@ class HomeView extends StatelessWidget {
         child: CustomScrollView(
           physics: const BouncingScrollPhysics(),
           slivers: [
-            const SliverToBoxAdapter(child: HomeSearchFieldConsumer()),
+            SliverToBoxAdapter(
+              child: Row(
+                spacing: 15.w,
+                children: [
+                  Text(ConstStrings.appName, style: AppTextStyles.font21Bold),
+                  const HomeSearchFieldConsumer(),
+                ],
+              ),
+            ),
             const SliverToBoxAdapter(
               child: HomeSectionTitle(titleText: AppStrings.offers),
             ),
@@ -30,6 +38,9 @@ class HomeView extends StatelessWidget {
             ),
             const SliverToBoxAdapter(
               child: SkeletonizedCategoriesListViewConsumer(),
+            ),
+            const SliverToBoxAdapter(
+              child: HomeSectionTitle(titleText: AppStrings.topProducts),
             ),
           ],
         ),

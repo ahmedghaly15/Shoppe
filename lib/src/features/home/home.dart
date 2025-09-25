@@ -14,7 +14,8 @@ import '../../core/widgets/core_widgets.dart'
         CustomCachedNetworkImage,
         CustomDotIndicator,
         CustomInputFormField,
-        CustomSkeletonizer;
+        CustomSkeletonizer,
+        CustomSkeletonizerType;
 import 'data/api/home_api_service.dart';
 import 'data/models/fetch_categories_response.dart';
 import 'data/models/fetch_offers_request_body.dart';
@@ -33,3 +34,4 @@ part 'presentation/views/widgets/offers_dot_indicators_consumer.dart';
 part 'presentation/providers/fetch_categories_provider.dart';
 part 'presentation/views/widgets/skeletonized_categories_list_view_consumer.dart';
 part 'presentation/providers/fetch_products_provider.dart';
+part 'presentation/views/widgets/skeletonized_products_sliver_grid.dart';
