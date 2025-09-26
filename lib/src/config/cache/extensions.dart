@@ -1,6 +1,6 @@
 part of 'cache.dart';
 
-extension LoginResponseCacheHelper on SecureStorageHelper {
+extension LoginResponseCache on SecureStorageHelper {
   Future<void> cacheLoginResponse(LoginRequestResponse response) async {
     final jsonString = jsonEncode(response.toJson());
     await setSecuredString(CacheKeys.loginResponse, jsonString);
@@ -18,22 +18,24 @@ extension LoginResponseCacheHelper on SecureStorageHelper {
   }
 }
 
-extension OnboardingCacheHelper on CacheHelper {
+extension OnboardingCache on SecureStorageHelper {
   /// Sets onboarding as done for a specific user identified by [email].
   Future<void> setOnboardingDone(String email) async {
-    DebugLogger.log('SharedPrefHelper : onboarding done for email : $email');
+    DebugLogger.log('SecureStorageHelper : onboarding done for email : $email');
     final key = '${CacheKeys.onboarding}_$email';
-    await setData(key, true);
+    await setSecuredString(key, key);
   }
 
   /// Checks if onboarding is done for a specific user identified by [email].
-  Future<bool> isOnboardingDone(String email) async {
-    DebugLogger.log('SharedPrefHelper : isOnboardingDone for email : $email');
+  Future<String?> isOnboardingDone(String email) async {
+    DebugLogger.log(
+      'SecureStorageHelper : isOnboardingDone for email : $email',
+    );
     final key = '${CacheKeys.onboarding}_$email';
-    return await getBool(key) ?? false;
+    return await getSecuredString(key);
   }
 
   Future<void> clearOnboardingCache(String email) async {
-    await removeData('${CacheKeys.onboarding}_$email');
+    await removeSecuredData('${CacheKeys.onboarding}_$email');
   }
 }
