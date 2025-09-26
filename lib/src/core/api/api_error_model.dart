@@ -18,7 +18,9 @@ abstract class ApiErrorModel with _$ApiErrorModel {
 
   factory ApiErrorModel.fromJson(Map<String, dynamic> json) =>
       _$ApiErrorModelFromJson(json);
+}
 
+extension GetAllErrorMsgs on ApiErrorModel {
   String getAllErrorMsgs() {
     if (errors == null || (errors is List && (errors as List).isEmpty)) {
       return message ?? ApiErrorMessage.defaultError;

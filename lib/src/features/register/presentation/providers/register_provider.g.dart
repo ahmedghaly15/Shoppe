@@ -41,7 +41,7 @@ final class RegisterProvider
   }
 }
 
-String _$registerHash() => r'5f7b0f302ee37ebd47d7eec7657586ebeaf0af63';
+String _$registerHash() => r'29a3ed8bbe74d5c7135ca0f66eddf403ad24092c';
 
 abstract class _$Register extends $Notifier<AsyncValue<bool>> {
   AsyncValue<bool> build();

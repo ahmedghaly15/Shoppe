@@ -28,8 +28,7 @@ class VerifyEmail extends _$VerifyEmail {
     final result = await ref.read(otpRepoProvider).verifyEmail(requestBody);
     result.when(
       success: (_) => state = const AsyncValue.data(true),
-      failure: (error) =>
-          state = AsyncValue.error(error.getAllErrorMsgs(), StackTrace.current),
+      failure: (error) => state = AsyncValue.error(error, StackTrace.current),
     );
   }
 }
@@ -45,8 +44,7 @@ class ResendOtp extends _$ResendOtp {
     final result = await ref.read(otpRepoProvider).resendOtp(body);
     result.when(
       success: (_) => state = const AsyncValue.data(true),
-      failure: (error) =>
-          state = AsyncValue.error(error.getAllErrorMsgs(), StackTrace.current),
+      failure: (error) => state = AsyncValue.error(error, StackTrace.current),
     );
   }
 }
@@ -65,8 +63,7 @@ class ValidateOtp extends _$ValidateOtp {
     final result = await ref.read(otpRepoProvider).validateOtp(requestBody);
     result.when(
       success: (_) => state = const AsyncValue.data(true),
-      failure: (error) =>
-          state = AsyncValue.error(error.getAllErrorMsgs(), StackTrace.current),
+      failure: (error) => state = AsyncValue.error(error, StackTrace.current),
     );
   }
 }

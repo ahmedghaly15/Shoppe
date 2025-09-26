@@ -24,6 +24,7 @@ import 'data/models/fetch_offers_request_body.dart';
 import 'data/models/fetch_offers_request_response.dart';
 import 'data/models/fetch_products_request_body.dart';
 import 'data/models/fetch_products_request_response.dart';
+import '../../../src/core/api/api_error_model.dart';
 
 part 'presentation/views/home_view.dart';
 part 'data/repo/home_repo.dart';
