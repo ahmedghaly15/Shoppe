@@ -70,4 +70,11 @@ class AppStrings {
   static const String viewAllReviews = 'View All Reviews';
   static const String addToCart = 'Add to Cart';
   static const String buyNow = 'Buy Now';
+  static const String connectionTimeout = 'Connection Timeout';
+  static const String requestSendTimeout = 'Request Send Timeout';
+  static const String responseReceiveTimeout = 'Response Receive Timeout';
+  static const String requestCancelled = 'Request Cancelled';
+  static const String unknownError = 'Unknown Error';
+  static const String error = 'Error';
+  static const String badCertificationError = 'Bad Certification Error';
 }

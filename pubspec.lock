@@ -250,7 +250,7 @@ packages:
     source: hosted
     version: "4.11.0"
   collection:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: collection
       sha256: "2f5709ae4d3d59dd8f7cd309b4e023046b57d8a6c82130785d2b0e5868084e76"
@@ -625,10 +625,10 @@ packages:
     dependency: "direct dev"
     description:
       name: icons_launcher
-      sha256: e6d806458fac6d3b1126ad757b4208a314ba775b3c8119cd88877091379edc7a
+      sha256: "6317d56a73ee528f1dd570d7cd7be120ce58014e0fe635d141ada3d88782f58d"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.2"
+    version: "3.0.3"
   image:
     dependency: transitive
     description:
@@ -737,10 +737,10 @@ packages:
     dependency: transitive
     description:
       name: lucide_icons_flutter
-      sha256: "68d4082b26ea1a89f4431eb44642a47748a5931cdf88323100064180482a1f51"
+      sha256: b413c4249c816a8dc34f445e57ce04cbfb0760ea8e39d11c688857c023d30c59
       url: "https://pub.dev"
     source: hosted
-    version: "3.1.0"
+    version: "3.1.1"
   matcher:
     dependency: transitive
     description:
@@ -1017,10 +1017,10 @@ packages:
     dependency: "direct main"
     description:
       name: shadcn_ui
-      sha256: "11c33f47634641fb9ab71aeb31402d8f513440c4b61b8e4873f15ace7d3ad559"
+      sha256: "9e4032c8a2deaabb458e3f52e3b0ca0591d1656381f31fe886ab8f4b28416a32"
       url: "https://pub.dev"
     source: hosted
-    version: "0.31.7"
+    version: "0.31.9"
   shared_preferences:
     dependency: "direct main"
     description:
@@ -1033,10 +1033,10 @@ packages:
     dependency: transitive
     description:
       name: shared_preferences_android
-      sha256: a2608114b1ffdcbc9c120eb71a0e207c71da56202852d4aab8a5e30a82269e74
+      sha256: bd14436108211b0d4ee5038689a56d4ae3620fd72fd6036e113bf1345bc74d9e
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.12"
+    version: "2.4.13"
   shared_preferences_foundation:
     dependency: transitive
     description:

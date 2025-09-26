@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider, Ref;
 import 'package:logger/logger.dart';
 import '../../config/cache/cache.dart';
 import 'api_error_model.dart';
-import '../helpers/helpers.dart' show StringExtension;
+import '../helpers/helpers.dart';
 
 part 'api_error_handler.dart';
 part 'dio_factory.dart';

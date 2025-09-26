@@ -35,8 +35,6 @@ dependencies:
   cached_network_image: ^3.4.1
   # Provides a simple way to validate OTP
   pinput: ^5.0.2
-  # Provides utilities functions and classes related to collections
-  collection: ^1.19.1
   # Converts already built widgets into skeleton loaders with no extra effort.
   skeletonizer: ^2.1.0+1
   # Provides a simple way to create a carousel
