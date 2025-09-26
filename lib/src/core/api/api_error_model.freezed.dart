@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ApiErrorModel {
 
-@JsonKey(name: 'status_code') String? get statusCode; String? get message;@JsonKey(includeFromJson: true, includeToJson: false) String? get errorTypeName; dynamic get errors;
+@JsonKey(name: 'status_code') String? get statusCode; String? get message;@JsonKey(includeFromJson: false, includeToJson: false) String? get errorTypeName; dynamic get errors;
 /// Create a copy of ApiErrorModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ApiErrorModelCopyWith<$Res>  {
   factory $ApiErrorModelCopyWith(ApiErrorModel value, $Res Function(ApiErrorModel) _then) = _$ApiErrorModelCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'status_code') String? statusCode, String? message,@JsonKey(includeFromJson: true, includeToJson: false) String? errorTypeName, dynamic errors
+@JsonKey(name: 'status_code') String? statusCode, String? message,@JsonKey(includeFromJson: false, includeToJson: false) String? errorTypeName, dynamic errors
 });
 
 
@@ -156,7 +156,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'status_code')  String? statusCode,  String? message, @JsonKey(includeFromJson: true, includeToJson: false)  String? errorTypeName,  dynamic errors)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'status_code')  String? statusCode,  String? message, @JsonKey(includeFromJson: false, includeToJson: false)  String? errorTypeName,  dynamic errors)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ApiErrorModel() when $default != null:
 return $default(_that.statusCode,_that.message,_that.errorTypeName,_that.errors);case _:
@@ -177,7 +177,7 @@ return $default(_that.statusCode,_that.message,_that.errorTypeName,_that.errors)
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'status_code')  String? statusCode,  String? message, @JsonKey(includeFromJson: true, includeToJson: false)  String? errorTypeName,  dynamic errors)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'status_code')  String? statusCode,  String? message, @JsonKey(includeFromJson: false, includeToJson: false)  String? errorTypeName,  dynamic errors)  $default,) {final _that = this;
 switch (_that) {
 case _ApiErrorModel():
 return $default(_that.statusCode,_that.message,_that.errorTypeName,_that.errors);case _:
@@ -197,7 +197,7 @@ return $default(_that.statusCode,_that.message,_that.errorTypeName,_that.errors)
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'status_code')  String? statusCode,  String? message, @JsonKey(includeFromJson: true, includeToJson: false)  String? errorTypeName,  dynamic errors)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'status_code')  String? statusCode,  String? message, @JsonKey(includeFromJson: false, includeToJson: false)  String? errorTypeName,  dynamic errors)?  $default,) {final _that = this;
 switch (_that) {
 case _ApiErrorModel() when $default != null:
 return $default(_that.statusCode,_that.message,_that.errorTypeName,_that.errors);case _:
@@ -212,12 +212,12 @@ return $default(_that.statusCode,_that.message,_that.errorTypeName,_that.errors)
 
 @JsonSerializable()
 class _ApiErrorModel implements ApiErrorModel {
-  const _ApiErrorModel({@JsonKey(name: 'status_code') this.statusCode, this.message, @JsonKey(includeFromJson: true, includeToJson: false) this.errorTypeName, this.errors});
+  const _ApiErrorModel({@JsonKey(name: 'status_code') this.statusCode, this.message, @JsonKey(includeFromJson: false, includeToJson: false) this.errorTypeName, this.errors});
   factory _ApiErrorModel.fromJson(Map<String, dynamic> json) => _$ApiErrorModelFromJson(json);
 
 @override@JsonKey(name: 'status_code') final  String? statusCode;
 @override final  String? message;
-@override@JsonKey(includeFromJson: true, includeToJson: false) final  String? errorTypeName;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  String? errorTypeName;
 @override final  dynamic errors;
 
 /// Create a copy of ApiErrorModel
@@ -253,7 +253,7 @@ abstract mixin class _$ApiErrorModelCopyWith<$Res> implements $ApiErrorModelCopy
   factory _$ApiErrorModelCopyWith(_ApiErrorModel value, $Res Function(_ApiErrorModel) _then) = __$ApiErrorModelCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'status_code') String? statusCode, String? message,@JsonKey(includeFromJson: true, includeToJson: false) String? errorTypeName, dynamic errors
+@JsonKey(name: 'status_code') String? statusCode, String? message,@JsonKey(includeFromJson: false, includeToJson: false) String? errorTypeName, dynamic errors
 });
 
 

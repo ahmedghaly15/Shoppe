@@ -11,7 +11,8 @@ abstract class ApiErrorModel with _$ApiErrorModel {
   const factory ApiErrorModel({
     @JsonKey(name: 'status_code') String? statusCode,
     String? message,
-    @JsonKey(includeFromJson: true, includeToJson: false) String? errorTypeName,
+    @JsonKey(includeFromJson: false, includeToJson: false)
+    String? errorTypeName,
     dynamic errors,
   }) = _ApiErrorModel;
 
