@@ -28,7 +28,13 @@ class ResetPassButtonConsumer extends ConsumerWidget {
       resetPassProvider,
       (_, current) => current.when(
         loading: () => context.unfocusKeyboard(),
-        error: (error, _) => context.showToast(error.toString()),
+        error: (error, _) {
+          final apiErrorModel = error as ApiErrorModel;
+          context.showDialog(
+            titleText: apiErrorModel.errorTypeName,
+            contentText: apiErrorModel.getAllErrorMsgs(),
+          );
+        },
         data: (success) async {
           if (success) {
             await _showToastAndPushLogin(context);

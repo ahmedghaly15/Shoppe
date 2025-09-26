@@ -7,6 +7,7 @@ import 'package:shadcn_ui/shadcn_ui.dart';
 
 import '../../config/router/app_router.dart';
 import '../../config/theming/theming.dart';
+import '../../core/api/api_error_model.dart';
 import '../../core/api/api_request_result.dart';
 import '../../core/helpers/helpers.dart';
 import '../../core/models/email_request_body.dart';

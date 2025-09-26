@@ -24,7 +24,13 @@ class LoginConsumerButton extends ConsumerWidget {
       (_, current) => current.when(
         data: (response) async =>
             await _cacheResponseAndPushNext(ref, response, context),
-        error: (error, _) => context.showToast(error.toString()),
+        error: (error, _) {
+          final apiErrorModel = error as ApiErrorModel;
+          context.showDialog(
+            titleText: apiErrorModel.errorTypeName,
+            contentText: apiErrorModel.getAllErrorMsgs(),
+          );
+        },
         loading: () => context.unfocusKeyboard(),
       ),
     );

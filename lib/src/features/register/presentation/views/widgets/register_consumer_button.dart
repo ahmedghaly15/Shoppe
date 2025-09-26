@@ -28,7 +28,13 @@ class RegisterConsumerButton extends ConsumerWidget {
             await _showToastAndPushOtpView(context, ref);
           }
         },
-        error: (error, _) => context.showToast(error.toString()),
+        error: (error, _) {
+          final apiErrorModel = error as ApiErrorModel;
+          context.showDialog(
+            titleText: apiErrorModel.errorTypeName,
+            contentText: apiErrorModel.getAllErrorMsgs(),
+          );
+        },
       ),
     );
   }

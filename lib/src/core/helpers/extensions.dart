@@ -38,16 +38,40 @@ extension ShowToast on BuildContext {
   }
 }
 
-extension ShowAdaptiveDialog on BuildContext {
-  void showDialog(
-    Widget child, {
+extension ShowAdaptiveDialog<T> on BuildContext {
+  Future<T?> showDialog({
+    bool barrierDismissible = true,
     Widget? title,
     String? titleText,
-    List<Widget> actions = const [],
+    Widget? content,
+    String? contentText,
+    List<Widget>? actions,
   }) {
-    showAdaptiveDialog(
+    return showAdaptiveDialog(
       context: this,
-      builder: (_) => AlertDialog.adaptive(title: title),
+      barrierDismissible: true,
+      useRootNavigator: true,
+      useSafeArea: true,
+      builder: (_) => AlertDialog.adaptive(
+        alignment: Alignment.center,
+        backgroundColor: Colors.white,
+        elevation: 16.h,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16.r),
+        ),
+        title: title ?? Text(titleText!, style: AppTextStyles.font19Bold),
+        titlePadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+        icon: Icon(LucideIcons.circleAlert, color: Colors.red, size: 40.h),
+        content:
+            content ?? Text(contentText!, style: AppTextStyles.font15Regular),
+        contentPadding: EdgeInsets.symmetric(horizontal: 16.w),
+        actions: actions,
+        actionsOverflowDirection: VerticalDirection.down,
+        actionsPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+        actionsOverflowButtonSpacing: 16.w,
+        actionsOverflowAlignment: OverflowBarAlignment.center,
+        actionsAlignment: MainAxisAlignment.center,
+      ),
     );
   }
 }

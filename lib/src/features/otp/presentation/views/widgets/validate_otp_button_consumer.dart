@@ -22,7 +22,13 @@ class ValidateOtpButtonConsumer extends ConsumerWidget {
     ref.listen(
       validateOtpProvider,
       (_, current) => current.whenOrNull(
-        error: (error, _) => context.showToast(error.toString()),
+        error: (error, _) {
+          final apiErrorModel = error as ApiErrorModel;
+          context.showDialog(
+            titleText: apiErrorModel.errorTypeName,
+            contentText: apiErrorModel.getAllErrorMsgs(),
+          );
+        },
         data: (_) => context.router.popAndPush(
           ResetPassRoute(
             params: ResetPassViewParams(

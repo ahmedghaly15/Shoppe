@@ -22,8 +22,7 @@ class ForgotPassword extends _$ForgotPassword {
         .forgotPass(requestBody);
     result.when(
       success: (_) => state = const AsyncValue.data(true),
-      failure: (error) =>
-          state = AsyncValue.error(error.getAllErrorMsgs(), StackTrace.current),
+      failure: (error) => state = AsyncValue.error(error, StackTrace.current),
     );
   }
 

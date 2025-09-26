@@ -23,7 +23,13 @@ class ResendOtpTextButtonConsumer extends ConsumerWidget {
             context.showToast(AppStrings.otpResentSuccessfully);
           }
         },
-        error: (error, _) => context.showToast(error.toString()),
+        error: (error, _) {
+          final apiErrorModel = error as ApiErrorModel;
+          context.showDialog(
+            titleText: apiErrorModel.errorTypeName,
+            contentText: apiErrorModel.getAllErrorMsgs(),
+          );
+        },
       ),
     );
   }

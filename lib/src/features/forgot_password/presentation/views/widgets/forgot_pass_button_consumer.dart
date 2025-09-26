@@ -28,33 +28,25 @@ class ForgotPassButtonConsumer extends ConsumerWidget {
           if (emailSent) {
             context.showToast(AppStrings.otpValidationDesc);
             await Future.delayed(const Duration(milliseconds: 3500));
-            context.showDialog(
-              const _ValidateOtpDialogContent(),
+            await context.showDialog(
               titleText: AppStrings.otpValidation,
-              descriptionText: AppStrings.resetPassOtpSent,
+              content: const OtpPinput(),
+              actions: [
+                const ValidateOtpButtonConsumer(),
+                const DidntReceiveOtp(),
+              ],
             );
           }
         },
-        error: (error, _) => context.showToast(error.toString()),
+        error: (error, _) {
+          final apiErrorModel = error as ApiErrorModel;
+          context.showDialog(
+            titleText: apiErrorModel.errorTypeName,
+            contentText: apiErrorModel.getAllErrorMsgs(),
+          );
+        },
         loading: () => context.unfocusKeyboard(),
       ),
-    );
-  }
-}
-
-class _ValidateOtpDialogContent extends StatelessWidget {
-  const _ValidateOtpDialogContent();
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 16.h,
-      children: const [
-        OtpPinput(),
-        ValidateOtpButtonConsumer(),
-        DidntReceiveOtp(),
-      ],
     );
   }
 }

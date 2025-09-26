@@ -8,6 +8,7 @@ import 'package:shoppe/src/core/helpers/helpers.dart';
 import '../../config/cache/cache.dart';
 import '../../config/router/app_router.dart';
 import '../../config/theming/theming.dart' show AppTextStyles;
+import '../../core/api/api_error_model.dart';
 import '../../core/api/api_request_result.dart';
 import '../../core/providers/form_providers.dart';
 import '../../core/utils/utils.dart';

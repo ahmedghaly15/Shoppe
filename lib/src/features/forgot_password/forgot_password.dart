@@ -6,6 +6,7 @@ import 'package:shadcn_ui/shadcn_ui.dart' show ShadForm, SvgPicture;
 import 'package:shoppe/src/core/helpers/helpers.dart';
 
 import '../../config/theming/theming.dart' show AppTextStyles;
+import '../../core/api/api_error_model.dart';
 import '../../core/api/api_request_result.dart';
 import '../../core/models/email_request_body.dart';
 import '../../core/providers/form_providers.dart';
