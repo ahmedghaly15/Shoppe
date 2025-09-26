@@ -1,2 +1,4 @@
 New release notes:
-    - Provided internet permission
+    - Finished product-details UI
+    - Secured cached login request response 
+    - Added Bearer auth type to requests using AuthInterceptor
