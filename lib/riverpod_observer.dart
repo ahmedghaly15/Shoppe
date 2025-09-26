@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kReleaseMode;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logger/logger.dart';
 
@@ -14,12 +15,16 @@ final Logger _logger = Logger(
 final class RiverpodObserver extends ProviderObserver {
   @override
   void didAddProvider(ProviderObserverContext context, Object? value) {
-    _logger.i('🎉 Provider Added: ${_getProviderName(context)} → $value');
+    if (!kReleaseMode) {
+      _logger.i('🎉 Provider Added: ${_getProviderName(context)} → $value');
+    }
   }
 
   @override
   void didDisposeProvider(ProviderObserverContext context) {
-    _logger.e('🚫 Provider Removed: ${_getProviderName(context)}');
+    if (!kReleaseMode) {
+      _logger.e('🚫 Provider Removed: ${_getProviderName(context)}');
+    }
   }
 
   @override
@@ -28,7 +33,11 @@ final class RiverpodObserver extends ProviderObserver {
     Object? previousValue,
     Object? newValue,
   ) {
-    _logger.d('🔄 Provider Updated: ${_getProviderName(context)} → $newValue');
+    if (!kReleaseMode) {
+      _logger.d(
+        '🔄 Provider Updated: ${_getProviderName(context)} → $newValue',
+      );
+    }
   }
 
   @override
@@ -37,7 +46,9 @@ final class RiverpodObserver extends ProviderObserver {
     Object error,
     StackTrace? stackTrace,
   ) {
-    _logger.e('❌ Provider Failed: ${_getProviderName(context)} → $error');
+    if (!kReleaseMode) {
+      _logger.e('❌ Provider Failed: ${_getProviderName(context)} → $error');
+    }
   }
 
   /// Gets a human-readable provider name.
