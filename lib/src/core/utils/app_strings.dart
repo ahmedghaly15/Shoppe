@@ -66,4 +66,8 @@ class AppStrings {
   static const String offers = 'Offers';
   static const String categories = 'Categories';
   static const String topProducts = 'Top Products';
+  static const String rating = 'Rating';
+  static const String viewAllReviews = 'View All Reviews';
+  static const String addToCart = 'Add to Cart';
+  static const String buyNow = 'Buy Now';
 }

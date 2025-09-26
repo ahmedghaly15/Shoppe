@@ -10,6 +10,7 @@ class PrimaryButton extends StatelessWidget {
     this.expands = true,
     this.size,
     this.decoration,
+    this.backgroundColor,
   });
 
   final String? text;
@@ -18,11 +19,14 @@ class PrimaryButton extends StatelessWidget {
   final bool? expands;
   final ShadButtonSize? size;
   final ShadDecoration? decoration;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     return ShadButton(
       size: size,
+      backgroundColor: backgroundColor,
+      pressedBackgroundColor: backgroundColor?.withAlpha(102),
       decoration: decoration,
       onPressed: onPressed,
       leading: leading,

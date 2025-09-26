@@ -22,12 +22,12 @@ Product _$ProductFromJson(Map<String, dynamic> json) => Product(
   categories: (json['categories'] as List<dynamic>)
       .map((e) => e as String)
       .toList(),
-  price: (json['price'] as num).toInt(),
-  stock: (json['stock'] as num).toInt(),
-  weight: (json['weight'] as num).toInt(),
-  rating: (json['rating'] as num).toInt(),
-  reviewCount: (json['reviewCount'] as num).toInt(),
-  discountPercentage: (json['discountPercentage'] as num).toInt(),
+  price: (json['price'] as num).toDouble(),
+  stock: (json['stock'] as num).toDouble(),
+  weight: (json['weight'] as num).toDouble(),
+  rating: (json['rating'] as num).toDouble(),
+  reviewCount: (json['reviewCount'] as num).toDouble(),
+  discountPercentage: (json['discountPercentage'] as num).toDouble(),
 );
 
 Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{

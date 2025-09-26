@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_single_quotes
-
 part of 'utils.dart';
 
 class Assets {

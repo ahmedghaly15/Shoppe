@@ -13,6 +13,7 @@ class ThemeManager {
     brightness: Brightness.dark,
     primaryButtonTheme: ShadButtonTheme(
       size: ShadButtonSize.lg,
+      backgroundColor: AppColors.primaryColor,
       pressedBackgroundColor: AppColors.primaryColor.withAlpha(102),
       height: 61.h,
       decoration: ShadDecoration(

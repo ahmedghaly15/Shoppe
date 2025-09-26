@@ -41,6 +41,8 @@ dependencies:
   skeletonizer: ^2.1.0+1
   # Provides a simple way to create a carousel
   carousel_slider: ^5.1.1
+  # Fully customizable rating bar
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:

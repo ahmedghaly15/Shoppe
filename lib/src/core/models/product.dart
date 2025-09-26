@@ -14,7 +14,7 @@ class Product {
       color,
       sellerId;
   final List<String> productPictures, categories;
-  final int price, stock, weight, rating, reviewCount, discountPercentage;
+  final double price, stock, weight, rating, reviewCount, discountPercentage;
 
   Product({
     required this.id,
