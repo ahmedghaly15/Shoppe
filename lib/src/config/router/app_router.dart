@@ -1,11 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider;
 
 import '../../core/models/product.dart';
 import '../../core/utils/utils.dart';
-import '../../core/widgets/core_widgets.dart' show ShadDialogView;
 import '../../features/cart/cart.dart' show CartView;
 import '../../features/forgot_password/forgot_password.dart'
     show ForgotPasswordView;

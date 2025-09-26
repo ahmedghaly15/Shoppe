@@ -21,7 +21,6 @@ part 'flutter_error_details_view.dart';
 part 'name_field_consumer.dart';
 part 'pass_field_consumer.dart';
 part 'primary_button.dart';
-part 'shad_dialog_view.dart';
 part 'custom_cached_network_img.dart';
 part 'custom_skeletonizer.dart';
 part 'custom_dots_indicator.dart';

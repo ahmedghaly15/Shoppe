@@ -18,6 +18,7 @@ void main() async {
 
   const secureStorage = FlutterSecureStorage(
     aOptions: AndroidOptions(encryptedSharedPreferences: true),
+    iOptions: IOSOptions(accessibility: KeychainAccessibility.first_unlock),
   );
   final secureStorageHelper = SecureStorageHelper(secureStorage);
 

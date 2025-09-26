@@ -12,10 +12,6 @@ List<AutoRoute> get appRoutes => [
     page: ResetPassProcessRoute.page,
     children: [
       _buildCustomRoute(page: ForgotPasswordRoute.page, initial: true),
-      _buildCustomRoute(
-        page: ShadDialogRoute.page,
-        transitionsBuilder: TransitionsBuilders.fadeIn,
-      ),
       _buildCustomRoute(page: ResetPassRoute.page),
     ],
   ),

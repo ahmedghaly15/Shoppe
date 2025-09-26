@@ -280,7 +280,7 @@ $Res call({
 });
 
 
-
+$ApiErrorModelCopyWith<$Res> get error;
 
 }
 /// @nodoc
@@ -300,7 +300,16 @@ as ApiErrorModel,
   ));
 }
 
-
+/// Create a copy of ApiRequestResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ApiErrorModelCopyWith<$Res> get error {
+  
+  return $ApiErrorModelCopyWith<$Res>(_self.error, (value) {
+    return _then(_self.copyWith(error: value));
+  });
+}
 }
 
 // dart format on

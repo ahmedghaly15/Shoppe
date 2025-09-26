@@ -38,29 +38,33 @@ extension ShowToast on BuildContext {
   }
 }
 
-extension ShowShadDialog on BuildContext {
+extension ShowAdaptiveDialog on BuildContext {
   void showDialog(
     Widget child, {
     Widget? title,
-    Widget? description,
     String? titleText,
-    String? descriptionText,
     List<Widget> actions = const [],
   }) {
-    showShadDialog(
+    showAdaptiveDialog(
       context: this,
-      builder: (context) => ShadDialogView(
-        title: title,
-        description: description,
-        titleText: titleText,
-        descriptionText: descriptionText,
-        actions: actions,
-        child: child,
-      ),
+      builder: (_) => AlertDialog.adaptive(title: title),
     );
   }
 }
 
 extension EmptyOrNullList on List? {
   bool get isNullOrEmpty => this?.isEmpty ?? true;
+}
+
+extension DioExceptionTypeName on DioException {
+  String get name => switch (type) {
+    DioExceptionType.connectionTimeout => AppStrings.connectionTimeout,
+    DioExceptionType.sendTimeout => AppStrings.requestSendTimeout,
+    DioExceptionType.receiveTimeout => AppStrings.responseReceiveTimeout,
+    DioExceptionType.badResponse => AppStrings.error,
+    DioExceptionType.unknown => AppStrings.unknownError,
+    DioExceptionType.cancel => AppStrings.requestCancelled,
+    DioExceptionType.connectionError => AppStrings.connectionTimeout,
+    DioExceptionType.badCertificate => AppStrings.badCertificationError,
+  };
 }
