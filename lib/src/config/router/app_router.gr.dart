@@ -293,6 +293,22 @@ class ResetPassRouteArgs {
 }
 
 /// generated route for
+/// [ReviewsView]
+class ReviewsRoute extends PageRouteInfo<void> {
+  const ReviewsRoute({List<PageRouteInfo>? children})
+    : super(ReviewsRoute.name, initialChildren: children);
+
+  static const String name = 'ReviewsRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const ReviewsView();
+    },
+  );
+}
+
+/// generated route for
 /// [ShadDialogView]
 class ShadDialogRoute extends PageRouteInfo<ShadDialogRouteArgs> {
   ShadDialogRoute({

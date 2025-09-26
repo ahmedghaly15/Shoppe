@@ -20,6 +20,7 @@ import '../../features/profile/profile.dart' show ProfileView;
 import '../../features/register/register.dart' show RegisterView;
 import '../../features/reset_pass/reset_pass.dart'
     show ResetPassView, ResetPassViewParams;
+import '../../features/reviews/reviews.dart' show ReviewsView;
 import '../../features/start/start.dart' show StartView;
 import '../../features/wishlist/wishlist.dart' show WishlistView;
 
