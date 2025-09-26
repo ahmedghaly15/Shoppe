@@ -61,6 +61,7 @@ class _ProductsSliverGrid extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
+                  height: 245.h,
                   padding: EdgeInsets.all(5.h),
                   decoration: BoxDecoration(
                     color: Colors.white,

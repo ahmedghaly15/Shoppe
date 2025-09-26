@@ -44,7 +44,7 @@ class _CategoriesListView extends StatelessWidget {
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       physics: const BouncingScrollPhysics(),
-      padding: EdgeInsets.only(left: 8.w),
+      padding: EdgeInsets.only(left: 8.w, top: 8.h, bottom: 8.h),
       itemBuilder: (_, index) {
         final category = categories?[index];
         return AspectRatio(
@@ -69,10 +69,12 @@ class _CategoriesListView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 5.h,
                 children: [
-                  ClipRRect(
-                    borderRadius: radius,
-                    child: CustomCachedNetworkImage(
-                      imageUrl: category?.coverPictureUrl ?? '',
+                  Expanded(
+                    child: ClipRRect(
+                      borderRadius: radius,
+                      child: CustomCachedNetworkImage(
+                        imageUrl: category?.coverPictureUrl ?? '',
+                      ),
                     ),
                   ),
                   Text(

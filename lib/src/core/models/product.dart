@@ -14,7 +14,8 @@ class Product {
       color,
       sellerId;
   final List<String> productPictures, categories;
-  final double price, stock, weight, rating, reviewCount, discountPercentage;
+  final double price, weight, rating;
+  final int stock, reviewCount, discountPercentage;
 
   Product({
     required this.id,
@@ -40,4 +41,8 @@ class Product {
       _$ProductFromJson(json);
 
   Map<String, dynamic> toJson() => _$ProductToJson(this);
+}
+
+extension GetFinalPrice on Product {
+  double get finalPrice => price * (1 - (discountPercentage / 100));
 }

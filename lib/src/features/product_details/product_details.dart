@@ -16,3 +16,4 @@ part 'presentation/views/widgets/product_detail_section_title.dart';
 part 'presentation/views/widgets/wish_product_icon_button.dart';
 part 'presentation/views/widgets/add_to_cart_and_buy_now_buttons.dart';
 part 'presentation/views/widgets/product_pictures_list_view.dart';
+part 'presentation/views/widgets/product_final_price_and_discount.dart';

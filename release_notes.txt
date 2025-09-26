@@ -1,4 +1,5 @@
 New release notes:
-    - Finished product-details UI
-    - Secured cached login request response 
-    - Added Bearer auth type to requests using AuthInterceptor
+    - Updated ApiErrorModel 
+    - Showing a dialog in error cases instead of a toast
+    - Added get-final-price functionality to Product 
+    - Fixed bugs in Home screen widgets 

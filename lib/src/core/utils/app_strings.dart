@@ -77,4 +77,5 @@ class AppStrings {
   static const String unknownError = 'Unknown Error';
   static const String error = 'Error';
   static const String badCertificationError = 'Bad Certification Error';
+  static const String off = 'Off';
 }

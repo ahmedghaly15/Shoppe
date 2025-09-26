@@ -25,18 +25,15 @@ class ProductDetailsView extends StatelessWidget {
             child: Container(
               margin: EdgeInsets.only(top: 18.h, bottom: 5.h),
               child: Text(
-                '\$${product.price}',
+                '\$${product.finalPrice}',
                 style: AppTextStyles.font21Bold,
               ),
             ),
           ),
           SliverToBoxAdapter(
-            child: Text(
-              '\$${product.discountPercentage}',
-              style: AppTextStyles.font15Bold.copyWith(
-                decoration: TextDecoration.lineThrough,
-                color: AppColors.colorF1AEAE,
-              ),
+            child: ProductFinalPriceAndDiscount(
+              price: product.price,
+              discountPercentage: product.discountPercentage,
             ),
           ),
           SliverToBoxAdapter(
