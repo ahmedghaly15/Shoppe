@@ -7,7 +7,9 @@ Future<ApiRequestResult<T>> executeAndHandleApiRequest<T>(
     final response = await function();
     return ApiRequestResult<T>.success(response);
   } catch (error) {
-    debugPrint('********* Error in executeAndHandleErrors: $error **********');
+    DebugLogger.log(
+      '********* Error in executeAndHandleErrors: $error **********',
+    );
     return ApiRequestResult.failure(ApiErrorHandler.handle(error));
   }
 }

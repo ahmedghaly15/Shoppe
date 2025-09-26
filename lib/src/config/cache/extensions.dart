@@ -21,14 +21,14 @@ extension LoginResponseCacheHelper on SecureStorageHelper {
 extension OnboardingCacheHelper on CacheHelper {
   /// Sets onboarding as done for a specific user identified by [email].
   Future<void> setOnboardingDone(String email) async {
-    debugPrint('SharedPrefHelper : onboarding done for email : $email');
+    DebugLogger.log('SharedPrefHelper : onboarding done for email : $email');
     final key = '${CacheKeys.onboarding}_$email';
     await setData(key, true);
   }
 
   /// Checks if onboarding is done for a specific user identified by [email].
   Future<bool> isOnboardingDone(String email) async {
-    debugPrint('SharedPrefHelper : isOnboardingDone for email : $email');
+    DebugLogger.log('SharedPrefHelper : isOnboardingDone for email : $email');
     final key = '${CacheKeys.onboarding}_$email';
     return await getBool(key) ?? false;
   }

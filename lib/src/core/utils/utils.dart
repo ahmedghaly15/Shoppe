@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' show debugPrint;
+import 'package:flutter/foundation.dart' show kReleaseMode;
 import 'package:logger/logger.dart';
 
 import '../../config/cache/cache.dart';
@@ -13,3 +13,4 @@ part 'const_strings.dart';
 part 'functions/check_if_onboarding_visited_for_email.dart';
 part 'functions/check_if_user_is_logged_in.dart';
 part 'functions/execute_and_handle_api_request.dart';
+part 'debug_logger.dart';
