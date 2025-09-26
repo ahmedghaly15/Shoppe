@@ -16,7 +16,9 @@ void main() async {
   final sharedPref = await SharedPreferences.getInstance();
   final cacheHelper = CacheHelper(sharedPref);
 
-  const secureStorage = FlutterSecureStorage();
+  const secureStorage = FlutterSecureStorage(
+    aOptions: AndroidOptions(encryptedSharedPreferences: true),
+  );
   final secureStorageHelper = SecureStorageHelper(secureStorage);
 
   ErrorWidget.builder = (FlutterErrorDetails details) =>
@@ -24,7 +26,7 @@ void main() async {
 
   await Future.wait([
     ScreenUtil.ensureScreenSize(),
-    checkIfOnboardingVisitedForEmail(cacheHelper),
+    checkIfOnboardingVisitedForEmail(secureStorageHelper),
     checkIfUserIsLoggedIn(secureStorageHelper),
   ]);
 
