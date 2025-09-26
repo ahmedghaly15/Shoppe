@@ -2,16 +2,18 @@ part of '../utils.dart';
 
 bool isOnboardingVisitedForEmail = false;
 
-Future<void> checkIfOnboardingVisitedForEmail(CacheHelper cacheHelper) async {
-  final cachedLoggedInEmail = await cacheHelper.getString(
+Future<void> checkIfOnboardingVisitedForEmail(
+  SecureStorageHelper secureStorageHelper,
+) async {
+  final cachedLoggedInEmail = await secureStorageHelper.getSecuredString(
     CacheKeys.loggedInUserEmail,
   );
   if (cachedLoggedInEmail == null) {
     isOnboardingVisitedForEmail = false;
     return;
   }
-  final isOnboardingDoneForEmail = await cacheHelper.isOnboardingDone(
+  final isOnboardingDoneForEmail = await secureStorageHelper.isOnboardingDone(
     cachedLoggedInEmail,
   );
-  isOnboardingVisitedForEmail = isOnboardingDoneForEmail;
+  isOnboardingVisitedForEmail = isOnboardingDoneForEmail != null;
 }

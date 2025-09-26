@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart' show kReleaseMode;
 import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider, Ref;
 import 'package:logger/logger.dart';
 import '../../config/cache/cache.dart';

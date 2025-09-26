@@ -1,6 +1,6 @@
 part of 'api.dart';
 
-final dioProvider = Provider.autoDispose<Dio>((ref) => DioFactory.getDio(ref));
+final dioProvider = Provider<Dio>((ref) => DioFactory.getDio(ref));
 
 class DioFactory {
   /// private constructor as I don't want to allow creating an instance of this class
