@@ -17,7 +17,7 @@ class HomeView extends StatelessWidget {
                 spacing: 15.w,
                 children: [
                   Text(ConstStrings.appName, style: AppTextStyles.font21Bold),
-                  const HomeSearchFieldConsumer(),
+                  const Expanded(child: HomeSearchFieldConsumer()),
                 ],
               ),
             ),

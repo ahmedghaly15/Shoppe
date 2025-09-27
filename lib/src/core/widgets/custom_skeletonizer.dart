@@ -35,7 +35,7 @@ class CustomSkeletonizer extends StatelessWidget {
           textBoneBorderRadius: textBoneBorderRadius,
           child: child,
         );
-      default:
+      case CustomSkeletonizerType.normal:
         return Skeletonizer(
           enabled: enabled,
           effect: ShimmerEffect(
