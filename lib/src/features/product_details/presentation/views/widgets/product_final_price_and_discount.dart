@@ -4,29 +4,35 @@ class ProductFinalPriceAndDiscount extends StatelessWidget {
   const ProductFinalPriceAndDiscount({
     super.key,
     required this.price,
-    required this.discountPercentage,
+    this.discountPercentage,
   });
 
   final double price;
-  final int discountPercentage;
+  final int? discountPercentage;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          '\$$price',
-          style: AppTextStyles.font15Bold.copyWith(
-            decoration: TextDecoration.lineThrough,
-            color: AppColors.colorF1AEAE,
-          ),
-        ),
-        Text(
-          '$discountPercentage% ${AppStrings.off}',
-          style: AppTextStyles.font15Regular,
-        ),
-      ],
+    return discountPercentage == null
+        ? _priceText()
+        : Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              _priceText(),
+              Text(
+                '$discountPercentage% ${AppStrings.off}',
+                style: AppTextStyles.font15Regular,
+              ),
+            ],
+          );
+  }
+
+  Text _priceText() {
+    return Text(
+      '\$$price',
+      style: AppTextStyles.font15Bold.copyWith(
+        decoration: TextDecoration.lineThrough,
+        color: AppColors.colorF1AEAE,
+      ),
     );
   }
 }

@@ -78,7 +78,14 @@ class ProductHeaderDelegate extends SliverPersistentHeaderDelegate {
           height: kToolbarHeight,
           child: Opacity(
             opacity: shrinkRatio,
-            child: Center(child: Text(name, style: AppTextStyles.font19Bold)),
+            child: Center(
+              child: Text(
+                name,
+                style: AppTextStyles.font19Bold,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
           ),
         ),
       ],
