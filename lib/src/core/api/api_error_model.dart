@@ -7,7 +7,6 @@ part 'api_error_model.freezed.dart';
 
 @freezed
 abstract class ApiErrorModel with _$ApiErrorModel {
-  @JsonSerializable()
   const factory ApiErrorModel({
     @JsonKey(name: 'status_code') String? statusCode,
     String? message,

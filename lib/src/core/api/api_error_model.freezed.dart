@@ -209,8 +209,8 @@ return $default(_that.statusCode,_that.message,_that.errorTypeName,_that.errors)
 }
 
 /// @nodoc
-
 @JsonSerializable()
+
 class _ApiErrorModel implements ApiErrorModel {
   const _ApiErrorModel({@JsonKey(name: 'status_code') this.statusCode, this.message, @JsonKey(includeFromJson: false, includeToJson: false) this.errorTypeName, this.errors});
   factory _ApiErrorModel.fromJson(Map<String, dynamic> json) => _$ApiErrorModelFromJson(json);

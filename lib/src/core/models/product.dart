@@ -4,7 +4,7 @@ part 'product.g.dart';
 
 @JsonSerializable()
 class Product {
-  final String id,
+  final String? id,
       productCode,
       name,
       description,
@@ -13,28 +13,28 @@ class Product {
       coverPictureUrl,
       color,
       sellerId;
-  final List<String> productPictures, categories;
-  final double price, weight, rating;
-  final int stock, reviewCount, discountPercentage;
+  final List<String>? productPictures, categories;
+  final double? price, weight, rating;
+  final int? stock, reviewCount, discountPercentage;
 
   Product({
-    required this.id,
-    required this.productCode,
-    required this.name,
-    required this.description,
-    required this.arabicName,
-    required this.arabicDescription,
-    required this.coverPictureUrl,
-    required this.color,
-    required this.sellerId,
-    required this.productPictures,
-    required this.categories,
-    required this.price,
-    required this.stock,
-    required this.weight,
-    required this.rating,
-    required this.reviewCount,
-    required this.discountPercentage,
+    this.id,
+    this.productCode,
+    this.name,
+    this.description,
+    this.arabicName,
+    this.arabicDescription,
+    this.coverPictureUrl,
+    this.color,
+    this.sellerId,
+    this.productPictures,
+    this.categories,
+    this.price,
+    this.stock,
+    this.weight,
+    this.rating,
+    this.reviewCount,
+    this.discountPercentage,
   });
 
   factory Product.fromJson(Map<String, dynamic> json) =>
@@ -44,5 +44,9 @@ class Product {
 }
 
 extension GetFinalPrice on Product {
-  double get finalPrice => price * (1 - (discountPercentage / 100));
+  double get finalPrice {
+    final basePrice = price ?? 0.0;
+    final discount = discountPercentage ?? 0;
+    return basePrice * (1 - (discount / 100));
+  }
 }

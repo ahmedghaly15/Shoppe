@@ -7,27 +7,27 @@ part of 'product.dart';
 // **************************************************************************
 
 Product _$ProductFromJson(Map<String, dynamic> json) => Product(
-  id: json['id'] as String,
-  productCode: json['productCode'] as String,
-  name: json['name'] as String,
-  description: json['description'] as String,
-  arabicName: json['arabicName'] as String,
-  arabicDescription: json['arabicDescription'] as String,
-  coverPictureUrl: json['coverPictureUrl'] as String,
-  color: json['color'] as String,
-  sellerId: json['sellerId'] as String,
-  productPictures: (json['productPictures'] as List<dynamic>)
-      .map((e) => e as String)
+  id: json['id'] as String?,
+  productCode: json['productCode'] as String?,
+  name: json['name'] as String?,
+  description: json['description'] as String?,
+  arabicName: json['arabicName'] as String?,
+  arabicDescription: json['arabicDescription'] as String?,
+  coverPictureUrl: json['coverPictureUrl'] as String?,
+  color: json['color'] as String?,
+  sellerId: json['sellerId'] as String?,
+  productPictures: (json['productPictures'] as List<dynamic>?)
+      ?.map((e) => e as String)
       .toList(),
-  categories: (json['categories'] as List<dynamic>)
-      .map((e) => e as String)
+  categories: (json['categories'] as List<dynamic>?)
+      ?.map((e) => e as String)
       .toList(),
-  price: (json['price'] as num).toDouble(),
-  stock: (json['stock'] as num).toInt(),
-  weight: (json['weight'] as num).toDouble(),
-  rating: (json['rating'] as num).toDouble(),
-  reviewCount: (json['reviewCount'] as num).toInt(),
-  discountPercentage: (json['discountPercentage'] as num).toInt(),
+  price: (json['price'] as num?)?.toDouble(),
+  stock: (json['stock'] as num?)?.toInt(),
+  weight: (json['weight'] as num?)?.toDouble(),
+  rating: (json['rating'] as num?)?.toDouble(),
+  reviewCount: (json['reviewCount'] as num?)?.toInt(),
+  discountPercentage: (json['discountPercentage'] as num?)?.toInt(),
 );
 
 Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{

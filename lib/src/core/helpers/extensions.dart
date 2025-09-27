@@ -92,3 +92,7 @@ extension DioExceptionTypeName on DioException {
     DioExceptionType.badCertificate => AppStrings.badCertificationError,
   };
 }
+
+extension Capitalize on String {
+  String capitalize() => '${this[0].toUpperCase()}${substring(1)}';
+}
