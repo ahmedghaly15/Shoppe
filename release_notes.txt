@@ -1,5 +1,4 @@
 New release notes:
-    - Updated ApiErrorModel 
-    - Showing a dialog in error cases instead of a toast
-    - Added get-final-price functionality to Product 
-    - Fixed bugs in Home screen widgets 
+    - Fixed bugs in home screen UI
+    - Updated product-details screen UI
+    - Fixed bugs in logic of fetching categories and products
