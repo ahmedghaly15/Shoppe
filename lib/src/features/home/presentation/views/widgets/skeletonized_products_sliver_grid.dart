@@ -10,7 +10,7 @@ class SkeletonizedProductsSliverGrid extends ConsumerWidget {
     return asyncProducts.when(
       loading: () => const CustomSkeletonizer(
         type: CustomSkeletonizerType.sliver,
-        child: _ProductsSliverGrid(),
+        child: _ProductsSliverGrid(isLoading: true),
       ),
       data: (response) {
         final products = response.products;
@@ -34,12 +34,14 @@ class SkeletonizedProductsSliverGrid extends ConsumerWidget {
 }
 
 class _ProductsSliverGrid extends StatelessWidget {
-  const _ProductsSliverGrid({this.products});
+  const _ProductsSliverGrid({this.products, this.isLoading = false});
 
   final List<Product>? products;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
+    final radius = BorderRadius.all(Radius.circular(9.r));
     return SliverGrid.builder(
       itemCount: products?.length ?? 10,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -50,48 +52,47 @@ class _ProductsSliverGrid extends StatelessWidget {
       ),
       itemBuilder: (_, index) {
         final product = products?[index];
-        return Skeleton.leaf(
-          child: MaterialButton(
-            onPressed: product != null
-                ? () => context.pushRoute(ProductDetailsRoute(product: product))
-                : null,
-            padding: EdgeInsets.zero,
-            child: Column(
-              spacing: 6.h,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  height: 245.h,
-                  padding: EdgeInsets.all(5.h),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(9.r)),
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0, 5.h),
-                        blurRadius: 10.r,
-                        spreadRadius: 0,
-                        color: Colors.black.withAlpha(26),
-                      ),
-                    ],
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(9.r)),
-                    child: CustomCachedNetworkImage(
-                      imageUrl: product?.coverPictureUrl ?? '',
-                    ),
-                  ),
+        return MaterialButton(
+          onPressed: product != null
+              ? () => context.pushRoute(ProductDetailsRoute(product: product))
+              : null,
+          padding: EdgeInsets.zero,
+          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          child: Column(
+            spacing: 6.h,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: HomeShadowContainer(
+                  child: isLoading
+                      ? Skeleton.leaf(
+                          child: Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              borderRadius: radius,
+                              color: Colors.white,
+                            ),
+                          ),
+                        )
+                      : ClipRRect(
+                          borderRadius: radius,
+                          child: CustomCachedNetworkImage(
+                            imageUrl: product?.coverPictureUrl ?? '',
+                          ),
+                        ),
                 ),
-                Text(
-                  product?.name ?? 'Default name',
-                  style: AppTextStyles.font10Regular,
-                ),
-                Text(
-                  '\$${product?.price ?? 'Default price'}',
-                  style: AppTextStyles.font15Bold,
-                ),
-              ],
-            ),
+              ),
+              Text(
+                product?.name ?? 'Default name',
+                style: AppTextStyles.font10Regular,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              Text(
+                '\$${product?.finalPrice ?? 'Default price'}',
+                style: AppTextStyles.font15Bold,
+              ),
+            ],
           ),
         );
       },

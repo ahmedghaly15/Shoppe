@@ -21,10 +21,10 @@ Map<String, dynamic> _$FetchCategoriesResponseToJson(
 };
 
 Category _$CategoryFromJson(Map<String, dynamic> json) => Category(
-  id: json['id'] as String,
-  name: json['name'] as String,
-  description: json['description'] as String,
-  coverPictureUrl: json['coverPictureUrl'] as String,
+  id: json['id'] as String?,
+  name: json['name'] as String?,
+  description: json['description'] as String?,
+  coverPictureUrl: json['coverPictureUrl'] as String?,
 );
 
 Map<String, dynamic> _$CategoryToJson(Category instance) => <String, dynamic>{

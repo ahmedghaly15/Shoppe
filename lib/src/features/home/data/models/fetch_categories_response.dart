@@ -15,14 +15,9 @@ class FetchCategoriesResponse {
 
 @JsonSerializable()
 class Category {
-  final String id, name, description, coverPictureUrl;
+  final String? id, name, description, coverPictureUrl;
 
-  Category({
-    required this.id,
-    required this.name,
-    required this.description,
-    required this.coverPictureUrl,
-  });
+  Category({this.id, this.name, this.description, this.coverPictureUrl});
 
   factory Category.fromJson(Map<String, dynamic> json) =>
       _$CategoryFromJson(json);

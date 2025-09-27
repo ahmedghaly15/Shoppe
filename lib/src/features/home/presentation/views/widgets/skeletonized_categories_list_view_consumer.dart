@@ -7,16 +7,18 @@ class SkeletonizedCategoriesListViewConsumer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final asyncCategories = ref.watch(fetchCategoriesProvider);
     _fetchCategoriesProviderListener(ref, context);
-    return asyncCategories.when(
-      loading: () => const CustomSkeletonizer(child: _CategoriesListView()),
-      data: (data) {
-        final categories = data.categories;
-        return SizedBox(
-          height: 192.h,
-          child: _CategoriesListView(categories: categories),
-        );
-      },
-      error: (error, _) => const SizedBox.shrink(),
+    return SizedBox(
+      height: 192.h,
+      child: asyncCategories.when(
+        loading: () => const CustomSkeletonizer(
+          child: _CategoriesListView(isLoading: true),
+        ),
+        data: (data) {
+          final categories = data.categories;
+          return _CategoriesListView(categories: categories);
+        },
+        error: (error, _) => const SizedBox.shrink(),
+      ),
     );
   }
 
@@ -34,9 +36,10 @@ class SkeletonizedCategoriesListViewConsumer extends ConsumerWidget {
 }
 
 class _CategoriesListView extends StatelessWidget {
-  const _CategoriesListView({this.categories});
+  const _CategoriesListView({this.categories, this.isLoading = false});
 
   final List<Category>? categories;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -49,40 +52,37 @@ class _CategoriesListView extends StatelessWidget {
         final category = categories?[index];
         return AspectRatio(
           aspectRatio: 0.86,
-          child: Skeleton.leaf(
-            child: Container(
-              padding: EdgeInsets.all(5.h),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: radius,
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(0, 5.h),
-                    blurRadius: 10.r,
-                    spreadRadius: 0,
-                    color: Colors.black.withAlpha(25),
-                  ),
-                ],
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 5.h,
-                children: [
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: radius,
-                      child: CustomCachedNetworkImage(
-                        imageUrl: category?.coverPictureUrl ?? '',
-                      ),
-                    ),
-                  ),
-                  Text(
-                    category?.name ?? 'Default Name',
-                    style: AppTextStyles.font13Bold,
-                  ),
-                ],
-              ),
+          child: HomeShadowContainer(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 5.h,
+              children: [
+                Expanded(
+                  child: isLoading
+                      ? Skeleton.leaf(
+                          child: Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              borderRadius: radius,
+                              color: Colors.white,
+                            ),
+                          ),
+                        )
+                      : ClipRRect(
+                          borderRadius: radius,
+                          child: CustomCachedNetworkImage(
+                            imageUrl: category?.coverPictureUrl ?? '',
+                          ),
+                        ),
+                ),
+                Text(
+                  category?.name?.capitalize() ?? 'Default Name',
+                  style: AppTextStyles.font13Bold,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
             ),
           ),
         );
