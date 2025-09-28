@@ -13,7 +13,7 @@ final loginApiServiceProvider = Provider.autoDispose<LoginApiService>((ref) {
   return LoginApiService(dio);
 });
 
-@RestApi(baseUrl: EndPoints.baseUrl)
+@RestApi()
 abstract class LoginApiService {
   factory LoginApiService(Dio dio, {String baseUrl}) = _LoginApiService;
 

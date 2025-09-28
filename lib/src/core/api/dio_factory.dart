@@ -13,6 +13,7 @@ class DioFactory {
     if (_dio == null) {
       _dio = Dio();
       _dio!
+        ..options.baseUrl = EndPoints.baseUrl
         ..options.connectTimeout = timeOut
         ..options.receiveTimeout = timeOut
         ..options.headers = {'Content-Type': 'application/json'};

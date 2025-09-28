@@ -14,7 +14,7 @@ final forgotPassApiServiceProvider = Provider.autoDispose<ForgotPassApiService>(
   },
 );
 
-@RestApi(baseUrl: EndPoints.baseUrl)
+@RestApi()
 abstract class ForgotPassApiService {
   factory ForgotPassApiService(Dio dio, {String baseUrl}) =
       _ForgotPassApiService;

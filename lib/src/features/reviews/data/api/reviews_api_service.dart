@@ -15,7 +15,7 @@ final reviewsApiServiceProvider = Provider.autoDispose<ReviewsApiService>((
   return ReviewsApiService(dio);
 });
 
-@RestApi(baseUrl: EndPoints.baseUrl)
+@RestApi()
 abstract class ReviewsApiService {
   factory ReviewsApiService(Dio dio, {String baseUrl}) = _ReviewsApiService;
 

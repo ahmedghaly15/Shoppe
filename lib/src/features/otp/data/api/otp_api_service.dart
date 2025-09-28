@@ -13,7 +13,7 @@ final otpApiServiceProvider = Provider.autoDispose<OtpApiService>((ref) {
   return OtpApiService(dio);
 });
 
-@RestApi(baseUrl: EndPoints.baseUrl)
+@RestApi()
 abstract class OtpApiService {
   factory OtpApiService(Dio dio, {String baseUrl}) = _OtpApiService;
 

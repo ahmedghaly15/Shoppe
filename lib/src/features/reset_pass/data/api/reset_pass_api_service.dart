@@ -14,7 +14,7 @@ final resetPassApiServiceProvider = Provider.autoDispose<ResetPassApiService>((
   return ResetPassApiService(dio);
 });
 
-@RestApi(baseUrl: EndPoints.baseUrl)
+@RestApi()
 abstract class ResetPassApiService {
   factory ResetPassApiService(Dio dio, {String baseUrl}) = _ResetPassApiService;
 

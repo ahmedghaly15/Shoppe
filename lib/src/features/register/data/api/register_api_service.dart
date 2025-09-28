@@ -14,7 +14,7 @@ final registerApiServiceProvider = Provider.autoDispose<RegisterApiService>((
   return RegisterApiService(dio);
 });
 
-@RestApi(baseUrl: EndPoints.baseUrl)
+@RestApi()
 abstract class RegisterApiService {
   factory RegisterApiService(Dio dio, {String baseUrl}) = _RegisterApiService;
 

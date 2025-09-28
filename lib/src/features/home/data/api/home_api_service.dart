@@ -16,7 +16,7 @@ final homeApiServiceProvider = Provider.autoDispose<HomeApiService>((ref) {
   return HomeApiService(dio);
 });
 
-@RestApi(baseUrl: EndPoints.baseUrl)
+@RestApi()
 abstract class HomeApiService {
   factory HomeApiService(Dio dio, {String baseUrl}) = _HomeApiService;
 
