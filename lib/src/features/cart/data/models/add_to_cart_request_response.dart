@@ -7,7 +7,7 @@ class AddToCartRequestResponse {
   final String message, id, productId;
   final int quantity;
 
-  AddToCartRequestResponse({
+  const AddToCartRequestResponse({
     required this.message,
     required this.id,
     required this.productId,
@@ -17,4 +17,11 @@ class AddToCartRequestResponse {
   factory AddToCartRequestResponse.fromJson(Map<String, dynamic> json) =>
       _$AddToCartRequestResponseFromJson(json);
   Map<String, dynamic> toJson() => _$AddToCartRequestResponseToJson(this);
+
+  factory AddToCartRequestResponse.initial() => const AddToCartRequestResponse(
+    message: '',
+    id: '',
+    productId: '',
+    quantity: 0,
+  );
 }
