@@ -52,47 +52,49 @@ class _ProductsSliverGrid extends StatelessWidget {
       ),
       itemBuilder: (_, index) {
         final product = products?[index];
-        return MaterialButton(
-          onPressed: product != null
-              ? () => context.pushRoute(ProductDetailsRoute(product: product))
-              : null,
-          padding: EdgeInsets.zero,
-          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          child: Column(
-            spacing: 6.h,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: HomeShadowContainer(
-                  child: isLoading
-                      ? Skeleton.leaf(
-                          child: Container(
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              borderRadius: radius,
-                              color: Colors.white,
+        return HomeShadowContainer(
+          child: MaterialButton(
+            onPressed: product != null
+                ? () => context.pushRoute(ProductDetailsRoute(product: product))
+                : null,
+            padding: EdgeInsets.zero,
+            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            child: Column(
+              spacing: 6.h,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: HomeShadowContainer(
+                    child: isLoading
+                        ? Skeleton.leaf(
+                            child: Container(
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                borderRadius: radius,
+                                color: Colors.white,
+                              ),
+                            ),
+                          )
+                        : ClipRRect(
+                            borderRadius: radius,
+                            child: CustomCachedNetworkImage(
+                              imageUrl: product?.coverPictureUrl ?? '',
                             ),
                           ),
-                        )
-                      : ClipRRect(
-                          borderRadius: radius,
-                          child: CustomCachedNetworkImage(
-                            imageUrl: product?.coverPictureUrl ?? '',
-                          ),
-                        ),
+                  ),
                 ),
-              ),
-              Text(
-                product?.name ?? 'Default name',
-                style: AppTextStyles.font10Regular,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
-              Text(
-                '\$${product?.finalPrice ?? 'Default price'}',
-                style: AppTextStyles.font15Bold,
-              ),
-            ],
+                Text(
+                  product?.name ?? 'Default name',
+                  style: AppTextStyles.font10Regular,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(
+                  '\$${product?.finalPrice ?? 'Default price'}',
+                  style: AppTextStyles.font15Bold,
+                ),
+              ],
+            ),
           ),
         );
       },
