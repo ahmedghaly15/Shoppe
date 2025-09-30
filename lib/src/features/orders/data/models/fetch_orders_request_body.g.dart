@@ -8,7 +8,7 @@ part of 'fetch_orders_request_body.dart';
 
 FetchOrdersRequestBody _$FetchOrdersRequestBodyFromJson(
   Map<String, dynamic> json,
-) => FetchOrdersRequestBody(limit: (json['limit'] as num).toInt());
+) => FetchOrdersRequestBody(limit: (json['limit'] as num?)?.toInt() ?? 1);
 
 Map<String, dynamic> _$FetchOrdersRequestBodyToJson(
   FetchOrdersRequestBody instance,

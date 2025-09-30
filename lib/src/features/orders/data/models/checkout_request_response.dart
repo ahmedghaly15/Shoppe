@@ -15,4 +15,16 @@ class CheckoutRequestResponse {
   factory CheckoutRequestResponse.fromJson(Map<String, dynamic> json) =>
       _$CheckoutRequestResponseFromJson(json);
   Map<String, dynamic> toJson() => _$CheckoutRequestResponseToJson(this);
+  factory CheckoutRequestResponse.initial() => CheckoutRequestResponse(
+    message: '',
+    unifiedCheckoutUrl: '',
+    paymentClientSecret: '',
+  );
+}
+
+extension NotEmptyCheckoutResponse on CheckoutRequestResponse {
+  bool get isNotEmpty =>
+      message.isNotEmpty &&
+      unifiedCheckoutUrl.isNotEmpty &&
+      paymentClientSecret.isNotEmpty;
 }

@@ -6,7 +6,7 @@ part 'fetch_orders_request_body.g.dart';
 class FetchOrdersRequestBody {
   final int limit;
 
-  FetchOrdersRequestBody({required this.limit});
+  const FetchOrdersRequestBody({this.limit = 1});
 
   factory FetchOrdersRequestBody.fromJson(Map<String, dynamic> json) =>
       _$FetchOrdersRequestBodyFromJson(json);
