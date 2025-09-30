@@ -107,6 +107,22 @@ class OnboardingRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [OrdersView]
+class OrdersRoute extends PageRouteInfo<void> {
+  const OrdersRoute({List<PageRouteInfo>? children})
+    : super(OrdersRoute.name, initialChildren: children);
+
+  static const String name = 'OrdersRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const OrdersView();
+    },
+  );
+}
+
+/// generated route for
 /// [OtpView]
 class OtpRoute extends PageRouteInfo<OtpRouteArgs> {
   OtpRoute({Key? key, required String email, List<PageRouteInfo>? children})

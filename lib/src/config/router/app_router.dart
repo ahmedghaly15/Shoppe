@@ -11,6 +11,7 @@ import '../../features/home/home.dart' show HomeView;
 import '../../features/layout/layout.dart' show LayoutView;
 import '../../features/login/login.dart' show LoginView;
 import '../../features/onboarding/onboarding.dart' show OnboardingView;
+import '../../features/orders/orders.dart' show OrdersView;
 import '../../features/otp/otp.dart' show OtpView;
 import '../../features/product_details/product_details.dart'
     show ProductDetailsView;
