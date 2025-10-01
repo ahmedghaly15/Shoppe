@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart' show immutable;
 import 'package:json_annotation/json_annotation.dart';
 
 part 'add_to_cart_request_response.g.dart';
 
+@immutable
 @JsonSerializable()
 class AddToCartRequestResponse {
   final String message, id, productId;

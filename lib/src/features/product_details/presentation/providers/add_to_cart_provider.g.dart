@@ -42,7 +42,7 @@ final class AddToCartProvider
   }
 }
 
-String _$addToCartHash() => r'87258578bfd298569e393e93d41b65195b973304';
+String _$addToCartHash() => r'7f6915e8f3970a99209fc3515eee96b14abe8eeb';
 
 abstract class _$AddToCart
     extends $Notifier<AsyncValue<AddToCartRequestResponse>> {
