@@ -8,7 +8,6 @@ class AddToCartAndBuyNowButtons extends StatelessWidget {
     return Row(
       spacing: 16.w,
       children: [
-        const WishProductIconButton(),
         Expanded(
           child: PrimaryButton(
             onPressed: () {},

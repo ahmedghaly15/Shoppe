@@ -25,9 +25,15 @@ class ProductDetailsView extends StatelessWidget {
           SliverToBoxAdapter(
             child: Container(
               margin: EdgeInsets.only(top: 18.h, bottom: 5.h),
-              child: Text(
-                '\$${product.finalPrice}',
-                style: AppTextStyles.font21Bold,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '\$${product.finalPrice}',
+                    style: AppTextStyles.font21Bold,
+                  ),
+                  const ProductQuantityIconButtonsConsumer(),
+                ],
               ),
             ),
           ),
