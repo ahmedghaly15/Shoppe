@@ -1,5 +1,6 @@
 part of '../../reset_pass.dart';
 
+@immutable
 class ResetPassViewParams {
   final String email, otp;
 

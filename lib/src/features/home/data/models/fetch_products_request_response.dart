@@ -4,6 +4,7 @@ import '../../../../core/models/product.dart';
 
 part 'fetch_products_request_response.g.dart';
 
+@immutable
 @JsonSerializable(explicitToJson: true)
 class FetchProductsRequestResponse {
   @JsonKey(name: 'item')
@@ -11,7 +12,7 @@ class FetchProductsRequestResponse {
   final int page, pageSize, totalCount;
   final bool hasNextPage, hasPreviousPage;
 
-  FetchProductsRequestResponse({
+  const FetchProductsRequestResponse({
     required this.products,
     required this.page,
     required this.pageSize,

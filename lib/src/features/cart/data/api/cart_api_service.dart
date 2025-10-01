@@ -3,8 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider;
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../core/api/api.dart' show EndPoints, dioProvider;
-import '../models/add_to_cart_request_body.dart';
-import '../models/add_to_cart_request_response.dart';
 import '../models/fetch_cart_request_response.dart';
 
 part 'cart_api_service.g.dart';
@@ -17,9 +15,6 @@ final cartApiServiceProvider = Provider.autoDispose<CartApiService>((ref) {
 @RestApi()
 abstract class CartApiService {
   factory CartApiService(Dio dio, {String baseUrl}) = _CartApiService;
-
-  @POST(EndPoints.addToCart)
-  Future<AddToCartRequestResponse> addToCart(@Body() AddToCartRequestBody body);
 
   @GET(EndPoints.cart)
   Future<FetchCartRequestResponse> fetchCart();

@@ -6,7 +6,7 @@ part 'email_request_body.g.dart';
 class EmailRequestBody {
   final String email;
 
-  EmailRequestBody({required this.email});
+  const EmailRequestBody({required this.email});
 
   factory EmailRequestBody.fromJson(Map<String, dynamic> json) =>
       _$EmailRequestBodyFromJson(json);

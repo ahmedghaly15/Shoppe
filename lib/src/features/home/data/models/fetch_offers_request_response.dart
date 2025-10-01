@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart' show immutable;
 import 'package:json_annotation/json_annotation.dart';
 
 part 'fetch_offers_request_response.g.dart';
 
+@immutable
 @JsonSerializable(explicitToJson: true)
 class FetchOffersRequestResponse {
   final OffersResponseBody? offers;
@@ -17,13 +19,14 @@ class FetchOffersRequestResponse {
   Map<String, dynamic> toJson() => _$FetchOffersRequestResponseToJson(this);
 }
 
+@immutable
 @JsonSerializable(explicitToJson: true)
 class OffersResponseBody {
   final List<Offer>? items;
   final int? page, pageSize, totalCount;
   final bool? hasNextPage, hasPreviousPage;
 
-  OffersResponseBody({
+  const OffersResponseBody({
     this.items,
     this.page,
     this.pageSize,
@@ -37,11 +40,18 @@ class OffersResponseBody {
   Map<String, dynamic> toJson() => _$OffersResponseBodyToJson(this);
 }
 
+@immutable
 @JsonSerializable()
 class Offer {
   final String? id, name, description, coverUrl, createdAt;
 
-  Offer({this.id, this.name, this.description, this.coverUrl, this.createdAt});
+  const Offer({
+    this.id,
+    this.name,
+    this.description,
+    this.coverUrl,
+    this.createdAt,
+  });
 
   factory Offer.fromJson(Map<String, dynamic> json) => _$OfferFromJson(json);
   Map<String, dynamic> toJson() => _$OfferToJson(this);

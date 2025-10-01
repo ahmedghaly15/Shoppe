@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart' show immutable;
 import 'package:json_annotation/json_annotation.dart';
 
 part 'fetch_product_reviews_request_response.g.dart';
 
+@immutable
 @JsonSerializable(explicitToJson: true)
 class FetchProductReviewsRequestResponse {
   final String? message;
@@ -9,7 +11,7 @@ class FetchProductReviewsRequestResponse {
   final int? reviewsCount;
   final ReviewsResponse? reviews;
 
-  FetchProductReviewsRequestResponse({
+  const FetchProductReviewsRequestResponse({
     this.message,
     this.averageRating,
     this.reviewsCount,
@@ -23,6 +25,7 @@ class FetchProductReviewsRequestResponse {
       _$FetchProductReviewsRequestResponseToJson(this);
 }
 
+@immutable
 @JsonSerializable(explicitToJson: true)
 class ReviewsResponse {
   @JsonKey(name: 'items')
@@ -30,7 +33,7 @@ class ReviewsResponse {
   final int page, pageSize, totalCount;
   final bool hasNextPage, hasPreviousPage;
 
-  ReviewsResponse({
+  const ReviewsResponse({
     required this.reviews,
     required this.page,
     required this.pageSize,
@@ -44,13 +47,14 @@ class ReviewsResponse {
   Map<String, dynamic> toJson() => _$ReviewsResponseToJson(this);
 }
 
+@immutable
 @JsonSerializable()
 class Review {
   final String comment, createdAt, userName;
   final String? userPicture;
   final double rating;
 
-  Review({
+  const Review({
     required this.comment,
     required this.createdAt,
     required this.rating,

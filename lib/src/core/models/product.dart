@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart' show immutable;
 import 'package:json_annotation/json_annotation.dart';
 
 part 'product.g.dart';
 
+@immutable
 @JsonSerializable()
 class Product {
   final String? id,
@@ -17,7 +19,7 @@ class Product {
   final double? price, weight, rating;
   final int? stock, reviewCount, discountPercentage;
 
-  Product({
+  const Product({
     this.id,
     this.productCode,
     this.name,

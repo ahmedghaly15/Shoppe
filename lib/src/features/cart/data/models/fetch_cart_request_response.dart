@@ -1,13 +1,18 @@
+import 'package:flutter/material.dart' show immutable;
 import 'package:json_annotation/json_annotation.dart';
 
 part 'fetch_cart_request_response.g.dart';
 
+@immutable
 @JsonSerializable(explicitToJson: true)
 class FetchCartRequestResponse {
   final String cartId;
   final List<CartItem> cartItems;
 
-  FetchCartRequestResponse({required this.cartId, required this.cartItems});
+  const FetchCartRequestResponse({
+    required this.cartId,
+    required this.cartItems,
+  });
 
   factory FetchCartRequestResponse.fromJson(Map<String, dynamic> json) =>
       _$FetchCartRequestResponseFromJson(json);
@@ -20,7 +25,7 @@ class CartItem {
   final int productStock, quantity, discountPercentage;
   final double weightInGrams, basePricePerUnit, finalPricePerUnit, totalPrice;
 
-  CartItem({
+  const CartItem({
     required this.itemId,
     required this.productId,
     required this.productName,
