@@ -25,3 +25,8 @@ class AddToCartRequestResponse {
     quantity: 0,
   );
 }
+
+extension NotEmptyCartRequestResponse on AddToCartRequestResponse {
+  bool get isNotEmpty =>
+      message.isNotEmpty && id.isNotEmpty && productId.isNotEmpty;
+}
