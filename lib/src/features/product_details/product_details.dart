@@ -12,10 +12,14 @@ import '../../core/models/product.dart';
 import '../../core/utils/utils.dart'
     show AppStrings, executeAndHandleApiRequest;
 import '../../core/widgets/core_widgets.dart'
-    show CustomCachedNetworkImage, PrimaryButton;
+    show
+        AdaptiveCircularProgressIndicator,
+        CustomCachedNetworkImage,
+        PrimaryButton;
 import 'data/api/product_details_api_service.dart';
 import 'data/models/add_to_cart_request_body.dart';
 import 'data/models/add_to_cart_request_response.dart';
+import 'presentation/providers/add_to_cart_provider.dart';
 
 part 'presentation/views/product_details_view.dart';
 part 'presentation/views/widgets/product_header_delegate.dart';
@@ -26,3 +30,4 @@ part 'presentation/views/widgets/product_final_price_and_discount.dart';
 part 'presentation/providers/product_quantity_provider.dart';
 part 'presentation/views/widgets/product_quantity_icon_buttons.dart';
 part 'data/repo/product_details_repo.dart';
+part 'presentation/views/widgets/add_to_cart_consumer_button.dart';

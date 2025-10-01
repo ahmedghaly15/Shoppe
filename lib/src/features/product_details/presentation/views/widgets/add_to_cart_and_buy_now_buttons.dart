@@ -8,13 +8,7 @@ class AddToCartAndBuyNowButtons extends StatelessWidget {
     return Row(
       spacing: 16.w,
       children: [
-        Expanded(
-          child: PrimaryButton(
-            onPressed: () {},
-            text: AppStrings.addToCart,
-            backgroundColor: AppColors.color202020,
-          ),
-        ),
+        const AddToCartConsumerButton(),
         Expanded(
           child: PrimaryButton(onPressed: () {}, text: AppStrings.buyNow),
         ),
