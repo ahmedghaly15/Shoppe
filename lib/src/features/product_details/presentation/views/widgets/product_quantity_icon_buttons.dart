@@ -8,22 +8,20 @@ class ProductQuantityIconButtonsConsumer extends ConsumerWidget {
     return Row(
       spacing: 6.w,
       children: [
-        IconButton(
+        IconButton.outlined(
+          color: AppColors.primaryColor,
+          style: IconButton.styleFrom(foregroundColor: AppColors.primaryColor),
           onPressed: () =>
               ref.read(productQuantityProvider.notifier).decrement(),
-          icon: CircleAvatar(
-            radius: 16.r,
-            child: const Icon(LucideIcons.minus, color: Colors.white),
-          ),
+          icon: const Icon(LucideIcons.minus),
         ),
         const _QuantityTextConsumer(),
-        IconButton(
+        IconButton.outlined(
+          color: AppColors.primaryColor,
+          style: IconButton.styleFrom(foregroundColor: AppColors.primaryColor),
           onPressed: () =>
               ref.read(productQuantityProvider.notifier).increment(),
-          icon: CircleAvatar(
-            radius: 16.r,
-            child: const Icon(LucideIcons.plus, color: Colors.white),
-          ),
+          icon: const Icon(LucideIcons.plus),
         ),
       ],
     );
@@ -36,6 +34,13 @@ class _QuantityTextConsumer extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final quantity = ref.watch(productQuantityProvider);
-    return Text('$quantity', style: AppTextStyles.font15Regular);
+    return Container(
+      padding: EdgeInsets.all(6.h),
+      decoration: BoxDecoration(
+        color: AppColors.colorE5EBFC,
+        borderRadius: BorderRadius.circular(6.r),
+      ),
+      child: Text('$quantity', style: AppTextStyles.font15Bold),
+    );
   }
 }
