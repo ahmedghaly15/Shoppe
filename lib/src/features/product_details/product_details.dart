@@ -4,9 +4,11 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shadcn_ui/shadcn_ui.dart' show LucideIcons;
+import 'package:shoppe/src/core/helpers/helpers.dart';
 
 import '../../config/router/app_router.dart';
 import '../../config/theming/theming.dart' show AppColors, AppTextStyles;
+import '../../core/api/api_error_model.dart';
 import '../../core/api/api_request_result.dart';
 import '../../core/models/product.dart';
 import '../../core/utils/utils.dart'

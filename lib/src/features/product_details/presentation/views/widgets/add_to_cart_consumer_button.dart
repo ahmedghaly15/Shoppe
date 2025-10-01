@@ -10,6 +10,7 @@ class AddToCartConsumerButton extends ConsumerWidget {
         .product
         .id;
     final asyncAddToCart = ref.watch(addToCartProvider);
+    _addToCartProviderListener(ref, context);
     return PrimaryButton(
       onPressed: asyncAddToCart.isLoading
           ? () {
@@ -21,6 +22,21 @@ class AddToCartConsumerButton extends ConsumerWidget {
       child: asyncAddToCart.isLoading
           ? const AdaptiveCircularProgressIndicator()
           : null,
+    );
+  }
+
+  void _addToCartProviderListener(WidgetRef ref, BuildContext context) {
+    ref.listen(
+      addToCartProvider,
+      (_, current) => current.whenOrNull(
+        data: (data) => context.showDialog(
+          contentText: AppStrings.productAddedToCartSuccessfully,
+        ),
+        error: (error, _) {
+          final apiErrorModel = error as ApiErrorModel;
+          context.showToast(apiErrorModel.getAllErrorMsgs());
+        },
+      ),
     );
   }
 }
