@@ -52,7 +52,7 @@ class _ProductsSliverGrid extends StatelessWidget {
       ),
       itemBuilder: (_, index) {
         final product = products?[index];
-        return HomeShadowContainer(
+        return ShadowContainer(
           child: MaterialButton(
             onPressed: product != null
                 ? () => context.pushRoute(ProductDetailsRoute(product: product))
@@ -64,7 +64,7 @@ class _ProductsSliverGrid extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
-                  child: HomeShadowContainer(
+                  child: ShadowContainer(
                     child: isLoading
                         ? Skeleton.leaf(
                             child: Container(

@@ -52,7 +52,7 @@ class _CategoriesListView extends StatelessWidget {
         final category = categories?[index];
         return AspectRatio(
           aspectRatio: 0.86,
-          child: HomeShadowContainer(
+          child: ShadowContainer(
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,

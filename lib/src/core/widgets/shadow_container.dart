@@ -1,7 +1,7 @@
-part of '../../../home.dart';
+part of 'core_widgets.dart';
 
-class HomeShadowContainer extends StatelessWidget {
-  const HomeShadowContainer({super.key, required this.child});
+class ShadowContainer extends StatelessWidget {
+  const ShadowContainer({super.key, required this.child});
 
   final Widget child;
 

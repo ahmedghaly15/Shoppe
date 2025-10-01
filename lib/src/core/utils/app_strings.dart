@@ -80,4 +80,5 @@ class AppStrings {
   static const String off = 'Off';
   static const String productAddedToCartSuccessfully =
       'Product added to cart successfully!';
+  static const String shippingAddress = 'Shipping Address';
 }

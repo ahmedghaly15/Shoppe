@@ -24,3 +24,5 @@ part 'primary_button.dart';
 part 'custom_cached_network_img.dart';
 part 'custom_skeletonizer.dart';
 part 'custom_dots_indicator.dart';
+part 'custom_sliver_app_bar.dart';
+part 'shadow_container.dart';
