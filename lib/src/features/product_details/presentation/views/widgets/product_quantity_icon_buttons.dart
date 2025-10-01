@@ -8,22 +8,25 @@ class ProductQuantityIconButtonsConsumer extends ConsumerWidget {
     return Row(
       spacing: 6.w,
       children: [
-        IconButton.outlined(
-          color: AppColors.primaryColor,
-          style: IconButton.styleFrom(foregroundColor: AppColors.primaryColor),
-          onPressed: () =>
-              ref.read(productQuantityProvider.notifier).decrement(),
-          icon: const Icon(LucideIcons.minus),
+        _outlinedIconButton(
+          () => ref.read(productQuantityProvider.notifier).decrement(),
+          LucideIcons.minus,
         ),
         const _QuantityTextConsumer(),
-        IconButton.outlined(
-          color: AppColors.primaryColor,
-          style: IconButton.styleFrom(foregroundColor: AppColors.primaryColor),
-          onPressed: () =>
-              ref.read(productQuantityProvider.notifier).increment(),
-          icon: const Icon(LucideIcons.plus),
+        _outlinedIconButton(
+          () => ref.read(productQuantityProvider.notifier).increment(),
+          LucideIcons.plus,
         ),
       ],
+    );
+  }
+
+  IconButton _outlinedIconButton(void Function()? onPressed, IconData icon) {
+    return IconButton.outlined(
+      color: AppColors.primaryColor,
+      style: IconButton.styleFrom(foregroundColor: AppColors.primaryColor),
+      onPressed: onPressed,
+      icon: Icon(icon),
     );
   }
 }
