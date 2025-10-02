@@ -8,10 +8,8 @@ class CartItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Skeleton.leaf(
-      child: Container(
-        width: double.infinity,
-        height: cartItem != null ? null : 109.h,
-        margin: EdgeInsets.only(bottom: 14.h),
+      child: Card(
+        elevation: 0,
         child: Row(
           spacing: 10.w,
           crossAxisAlignment: CrossAxisAlignment.start,

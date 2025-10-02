@@ -84,4 +84,6 @@ class AppStrings {
   static const String emptyCart =
       'Your cart is empty. Add some items to it now.';
   static const String checkout = 'Checkout';
+  static const String reviews = 'Reviews';
+  static const String emptyReviews = 'No reviews found for this product.';
 }

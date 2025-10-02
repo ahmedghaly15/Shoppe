@@ -99,7 +99,8 @@ class ProductDetailsView extends StatelessWidget {
             child: Container(
               margin: EdgeInsets.symmetric(vertical: 20.h),
               child: PrimaryButton(
-                onPressed: () => context.pushRoute(const ReviewsRoute()),
+                onPressed: () =>
+                    context.pushRoute(ReviewsRoute(productId: product.id!)),
                 text: AppStrings.viewAllReviews,
               ),
             ),

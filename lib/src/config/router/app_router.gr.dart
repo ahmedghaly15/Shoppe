@@ -310,18 +310,49 @@ class ResetPassRouteArgs {
 
 /// generated route for
 /// [ReviewsView]
-class ReviewsRoute extends PageRouteInfo<void> {
-  const ReviewsRoute({List<PageRouteInfo>? children})
-    : super(ReviewsRoute.name, initialChildren: children);
+class ReviewsRoute extends PageRouteInfo<ReviewsRouteArgs> {
+  ReviewsRoute({
+    Key? key,
+    required String productId,
+    List<PageRouteInfo>? children,
+  }) : super(
+         ReviewsRoute.name,
+         args: ReviewsRouteArgs(key: key, productId: productId),
+         initialChildren: children,
+       );
 
   static const String name = 'ReviewsRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const ReviewsView();
+      final args = data.argsAs<ReviewsRouteArgs>();
+      return ReviewsView(key: args.key, productId: args.productId);
     },
   );
+}
+
+class ReviewsRouteArgs {
+  const ReviewsRouteArgs({this.key, required this.productId});
+
+  final Key? key;
+
+  final String productId;
+
+  @override
+  String toString() {
+    return 'ReviewsRouteArgs{key: $key, productId: $productId}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! ReviewsRouteArgs) return false;
+    return key == other.key && productId == other.productId;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ productId.hashCode;
 }
 
 /// generated route for

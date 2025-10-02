@@ -7,26 +7,25 @@ class CartSliverListConsumer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final cart = ref.watch(fetchCartProvider);
     return cart.when(
-      loading: () => SliverList.builder(
+      loading: () => SliverList.separated(
         itemCount: 10,
         itemBuilder: (_, index) => const CartItemWidget(),
+        separatorBuilder: (_, _) => 16.verticalSpace,
       ),
       data: (cart) {
         final cartItems = cart.cartItems;
         return cartItems.isNotEmpty
             ? const SliverFillRemaining(
                 hasScrollBody: false,
-                child: EmptyView(
-                  imgPath: Assets.imagesEmptyCart,
-                  description: AppStrings.emptyCart,
-                ),
+                child: EmptyView(description: AppStrings.emptyCart),
               )
-            : SliverList.builder(
+            : SliverList.separated(
                 itemCount: cartItems.length,
                 itemBuilder: (_, index) {
                   final cartItem = cartItems[index];
                   return CartItemWidget(cartItem: cartItem);
                 },
+                separatorBuilder: (_, _) => 16.verticalSpace,
               );
       },
       error: (error, _) => SliverFillRemaining(

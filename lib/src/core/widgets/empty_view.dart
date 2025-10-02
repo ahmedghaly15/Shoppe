@@ -5,7 +5,7 @@ enum EmptyViewImgType { regular, svg }
 class EmptyView extends StatelessWidget {
   const EmptyView({
     super.key,
-    required this.imgPath,
+    this.imgPath = Assets.imagesEmptyCart,
     required this.description,
     this.imgType = EmptyViewImgType.regular,
   });
