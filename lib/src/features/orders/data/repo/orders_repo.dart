@@ -10,12 +10,6 @@ class OrdersRepo {
 
   OrdersRepo(this._apiService);
 
-  Future<ApiRequestResult<CheckoutRequestResponse>> checkout(
-    CheckoutRequestBody body,
-  ) => executeAndHandleApiRequest<CheckoutRequestResponse>(
-    () async => await _apiService.checkout(body),
-  );
-
   Future<ApiRequestResult<FetchOrdersRequestResponse>> fetchOrders(
     FetchOrdersRequestBody body,
   ) => executeAndHandleApiRequest<FetchOrdersRequestResponse>(

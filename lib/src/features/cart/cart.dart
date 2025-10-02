@@ -11,12 +11,13 @@ import '../../core/api/api_request_result.dart';
 import '../../core/utils/utils.dart';
 import '../../core/api/api_error_model.dart';
 import '../../core/widgets/core_widgets.dart';
-import '../orders/data/models/checkout_request_body.dart';
-import '../orders/presentation/providers/checkout_provider.dart';
+import 'data/models/checkout_request_body.dart';
+import 'presentation/providers/checkout_provider.dart';
 import '../product_details/product_details.dart'
     show ProductQuantityIconButtonsConsumer;
 import 'data/api/cart_api_service.dart';
 
+import 'data/models/checkout_request_response.dart';
 import 'data/models/fetch_cart_request_response.dart';
 
 part 'presentation/views/cart_view.dart';

@@ -14,4 +14,10 @@ class CartRepo {
       executeAndHandleApiRequest<FetchCartRequestResponse>(
         () async => await _apiService.fetchCart(),
       );
+
+  Future<ApiRequestResult<CheckoutRequestResponse>> checkout(
+    CheckoutRequestBody body,
+  ) => executeAndHandleApiRequest<CheckoutRequestResponse>(
+    () async => await _apiService.checkout(body),
+  );
 }

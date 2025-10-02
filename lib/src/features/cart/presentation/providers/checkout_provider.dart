@@ -1,9 +1,9 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../core/api/api_request_result.dart';
+import '../../cart.dart' show cartRepoProvider;
 import '../../data/models/checkout_request_body.dart';
 import '../../data/models/checkout_request_response.dart';
-import '../../orders.dart' show ordersRepoProvider;
 
 part 'checkout_provider.g.dart';
 
@@ -15,7 +15,7 @@ class Checkout extends _$Checkout {
 
   void checkout(CheckoutRequestBody body) async {
     state = const AsyncLoading();
-    final result = await ref.read(ordersRepoProvider).checkout(body);
+    final result = await ref.read(cartRepoProvider).checkout(body);
     result.when(
       success: (data) => state = AsyncValue.data(data),
       failure: (error) => state = AsyncValue.error(error, StackTrace.current),

@@ -6,8 +6,6 @@ import '../../core/api/api_error_model.dart';
 import '../../core/api/api_request_result.dart';
 import '../../core/utils/utils.dart';
 import 'data/api/orders_api_service.dart';
-import 'data/models/checkout_request_body.dart';
-import 'data/models/checkout_request_response.dart';
 import 'data/models/fetch_orders_request_body.dart';
 import 'data/models/fetch_orders_request_response.dart';
 

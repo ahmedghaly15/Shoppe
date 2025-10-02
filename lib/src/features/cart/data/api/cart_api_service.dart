@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider;
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../core/api/api.dart' show EndPoints, dioProvider;
+import '../models/checkout_request_body.dart';
+import '../models/checkout_request_response.dart';
 import '../models/fetch_cart_request_response.dart';
 
 part 'cart_api_service.g.dart';
@@ -18,4 +20,7 @@ abstract class CartApiService {
 
   @GET(EndPoints.cart)
   Future<FetchCartRequestResponse> fetchCart();
+
+  @POST(EndPoints.checkout)
+  Future<CheckoutRequestResponse> checkout(@Body() CheckoutRequestBody body);
 }
