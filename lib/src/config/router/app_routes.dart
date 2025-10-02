@@ -24,7 +24,6 @@ List<AutoRoute> get appRoutes => [
     initial: isUserLoggedIn && isOnboardingVisitedForEmail,
     children: [
       _buildCustomRoute(page: HomeRoute.page, initial: true),
-      _buildCustomRoute(page: WishlistRoute.page),
       _buildCustomRoute(page: CartRoute.page),
       _buildCustomRoute(page: ProfileRoute.page),
     ],

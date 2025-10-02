@@ -2,14 +2,21 @@ part of '../../orders.dart';
 
 final ordersRepoProvider = Provider.autoDispose<OrdersRepo>((ref) {
   final apiService = ref.read(ordersApiServiceProvider);
-  return OrdersRepo(apiService);
+  return OrdersRepoImpl(apiService);
 });
 
-class OrdersRepo {
+abstract class OrdersRepo {
+  Future<ApiRequestResult<FetchOrdersRequestResponse>> fetchOrders(
+    FetchOrdersRequestBody body,
+  );
+}
+
+class OrdersRepoImpl extends OrdersRepo {
   final OrdersApiService _apiService;
 
-  OrdersRepo(this._apiService);
+  OrdersRepoImpl(this._apiService);
 
+  @override
   Future<ApiRequestResult<FetchOrdersRequestResponse>> fetchOrders(
     FetchOrdersRequestBody body,
   ) => executeAndHandleApiRequest<FetchOrdersRequestResponse>(

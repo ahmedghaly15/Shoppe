@@ -370,19 +370,3 @@ class StartRoute extends PageRouteInfo<void> {
     },
   );
 }
-
-/// generated route for
-/// [WishlistView]
-class WishlistRoute extends PageRouteInfo<void> {
-  const WishlistRoute({List<PageRouteInfo>? children})
-    : super(WishlistRoute.name, initialChildren: children);
-
-  static const String name = 'WishlistRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const WishlistView();
-    },
-  );
-}

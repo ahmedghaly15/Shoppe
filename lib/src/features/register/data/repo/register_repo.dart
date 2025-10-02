@@ -2,14 +2,19 @@ part of '../../register.dart';
 
 final registerRepoProvider = Provider.autoDispose<RegisterRepo>((ref) {
   final apiService = ref.read(registerApiServiceProvider);
-  return RegisterRepo(apiService);
+  return RegisterRepoImpl(apiService);
 });
 
-class RegisterRepo {
+abstract class RegisterRepo {
+  Future<ApiRequestResult<void>> register(RegisterRequestBody requestBody);
+}
+
+class RegisterRepoImpl extends RegisterRepo {
   final RegisterApiService _apiService;
 
-  RegisterRepo(this._apiService);
+  RegisterRepoImpl(this._apiService);
 
+  @override
   Future<ApiRequestResult<void>> register(RegisterRequestBody requestBody) {
     return executeAndHandleApiRequest<void>(
       () async => await _apiService.register(requestBody),

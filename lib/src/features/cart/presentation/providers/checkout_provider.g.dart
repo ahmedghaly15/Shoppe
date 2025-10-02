@@ -43,7 +43,7 @@ final class CheckoutProvider
   }
 }
 
-String _$checkoutHash() => r'6ea0300dc86ada7cef2003f92768672a2f4bc478';
+String _$checkoutHash() => r'a36d0b9314c1c009d2b4a7769d82baac30df1ae8';
 
 abstract class _$Checkout
     extends $Notifier<AsyncValue<CheckoutRequestResponse>> {

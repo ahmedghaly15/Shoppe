@@ -2,14 +2,20 @@ part of '../../reviews.dart';
 
 final reviewsRepoProvider = Provider.autoDispose<ReviewsRepo>((ref) {
   final apiService = ref.read(reviewsApiServiceProvider);
-  return ReviewsRepo(apiService);
+  return ReviewsRepoImpl(apiService);
 });
 
-class ReviewsRepo {
+abstract class ReviewsRepo {
+  Future<ApiRequestResult<FetchProductReviewsRequestResponse>>
+  fetchProductReviews(FetchProductReviewsRequestBody body);
+}
+
+class ReviewsRepoImpl extends ReviewsRepo {
   final ReviewsApiService _apiService;
 
-  ReviewsRepo(this._apiService);
+  ReviewsRepoImpl(this._apiService);
 
+  @override
   Future<ApiRequestResult<FetchProductReviewsRequestResponse>>
   fetchProductReviews(FetchProductReviewsRequestBody body) {
     return executeAndHandleApiRequest<FetchProductReviewsRequestResponse>(

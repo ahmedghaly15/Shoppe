@@ -2,14 +2,21 @@ part of '../../login.dart';
 
 final loginRepoProvider = Provider.autoDispose<LoginRepo>((ref) {
   final apiService = ref.read(loginApiServiceProvider);
-  return LoginRepo(apiService);
+  return LoginRepoImpl(apiService);
 });
 
-class LoginRepo {
+abstract class LoginRepo {
+  Future<ApiRequestResult<LoginRequestResponse>> login(
+    LoginRequestBody requestBody,
+  );
+}
+
+class LoginRepoImpl extends LoginRepo {
   final LoginApiService _apiService;
 
-  LoginRepo(this._apiService);
+  LoginRepoImpl(this._apiService);
 
+  @override
   Future<ApiRequestResult<LoginRequestResponse>> login(
     LoginRequestBody requestBody,
   ) {
