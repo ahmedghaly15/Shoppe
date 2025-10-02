@@ -18,3 +18,4 @@ part 'data/repo/cart_repo.dart';
 part 'presentation/providers/fetch_cart_provider.dart';
 part 'presentation/views/widgets/cart_length_consumer.dart';
 part 'presentation/views/widgets/shipping_address_list_tile.dart';
+part 'presentation/views/widgets/cart_sliver_list_consumer.dart';

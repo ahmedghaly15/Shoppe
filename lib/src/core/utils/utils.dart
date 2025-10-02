@@ -1,4 +1,6 @@
 import 'package:flutter/foundation.dart' show kReleaseMode;
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:logger/logger.dart';
 
 import '../../config/cache/cache.dart';
@@ -14,3 +16,4 @@ part 'functions/check_if_onboarding_visited_for_email.dart';
 part 'functions/check_if_user_is_logged_in.dart';
 part 'functions/execute_and_handle_api_request.dart';
 part 'debug_logger.dart';
+part 'constants.dart';

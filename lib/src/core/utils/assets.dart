@@ -1,5 +1,6 @@
 part of 'utils.dart';
 
+// ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
 
@@ -31,6 +32,10 @@ class Assets {
   /// assets/images/easy-cart-page-view.png
   static const String imagesEasyCartPageView =
       "assets/images/easy-cart-page-view.png";
+
+  /// Assets for imagesEmptyCart
+  /// assets/images/empty-cart.png
+  static const String imagesEmptyCart = "assets/images/empty-cart.png";
 
   /// Assets for imagesOffersPageView
   /// assets/images/offers-page-view.png
