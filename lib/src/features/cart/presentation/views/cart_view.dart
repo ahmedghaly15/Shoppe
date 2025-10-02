@@ -29,6 +29,7 @@ class CartView extends StatelessWidget {
                   child: const ShippingAddressListTile(),
                 ),
               ),
+              const CartSliverListConsumer(),
             ],
           ),
         ),
