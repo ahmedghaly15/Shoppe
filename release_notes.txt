@@ -1,3 +1,4 @@
 New release notes:
-    - Finished reviews feature logic
-    - Finished reviews feature UI
+    - Handled profile feature caching
+    - Finished profile feature logic
+    - Finished profile feature UI
