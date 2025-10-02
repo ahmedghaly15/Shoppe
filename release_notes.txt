@@ -1,4 +1,5 @@
 New release notes:
-    - Fixed bugs in home screen UI
-    - Updated product-details screen UI
-    - Fixed bugs in logic of fetching categories and products
+    - Finished add-to-cart logic & UI
+    - Updated product-details UI
+    - Finished fetch-cart logic
+    - Finished cart UI
