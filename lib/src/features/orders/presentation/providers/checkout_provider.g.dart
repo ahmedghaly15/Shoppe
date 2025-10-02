@@ -9,32 +9,28 @@ part of 'checkout_provider.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(CheckoutProvider)
-const checkoutProviderProvider = CheckoutProviderProvider._();
+@ProviderFor(Checkout)
+const checkoutProvider = CheckoutProvider._();
 
-final class CheckoutProviderProvider
-    extends
-        $NotifierProvider<
-          CheckoutProvider,
-          AsyncValue<CheckoutRequestResponse>
-        > {
-  const CheckoutProviderProvider._()
+final class CheckoutProvider
+    extends $NotifierProvider<Checkout, AsyncValue<CheckoutRequestResponse>> {
+  const CheckoutProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'checkoutProviderProvider',
+        name: r'checkoutProvider',
         isAutoDispose: true,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$checkoutProviderHash();
+  String debugGetCreateSourceHash() => _$checkoutHash();
 
   @$internal
   @override
-  CheckoutProvider create() => CheckoutProvider();
+  Checkout create() => Checkout();
 
   /// {@macro riverpod.override_with_value}
   Override overrideWithValue(AsyncValue<CheckoutRequestResponse> value) {
@@ -47,9 +43,9 @@ final class CheckoutProviderProvider
   }
 }
 
-String _$checkoutProviderHash() => r'4ffa2d9a69aa8fd4870d20179a74767a11071bde';
+String _$checkoutHash() => r'6ea0300dc86ada7cef2003f92768672a2f4bc478';
 
-abstract class _$CheckoutProvider
+abstract class _$Checkout
     extends $Notifier<AsyncValue<CheckoutRequestResponse>> {
   AsyncValue<CheckoutRequestResponse> build();
   @$mustCallSuper

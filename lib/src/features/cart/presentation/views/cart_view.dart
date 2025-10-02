@@ -34,6 +34,7 @@ class CartView extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: const CheckoutButtonConsumer(),
     );
   }
 }

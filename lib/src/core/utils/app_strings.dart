@@ -83,4 +83,5 @@ class AppStrings {
   static const String shippingAddress = 'Shipping Address';
   static const String emptyCart =
       'Your cart is empty. Add some items to it now.';
+  static const String checkout = 'Checkout';
 }

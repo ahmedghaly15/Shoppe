@@ -8,7 +8,7 @@ import '../../orders.dart' show ordersRepoProvider;
 part 'checkout_provider.g.dart';
 
 @riverpod
-class CheckoutProvider extends _$CheckoutProvider {
+class Checkout extends _$Checkout {
   @override
   AsyncValue<CheckoutRequestResponse> build() =>
       AsyncValue.data(CheckoutRequestResponse.initial());
