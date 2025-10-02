@@ -20,10 +20,15 @@ class EmptyView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       spacing: 16.h,
       children: [
-        switch (imgType) {
-          EmptyViewImgType.regular => Image.asset(imgPath, fit: BoxFit.cover),
-          EmptyViewImgType.svg => SvgPicture.asset(imgPath, fit: BoxFit.cover),
-        },
+        Expanded(
+          child: switch (imgType) {
+            EmptyViewImgType.regular => Image.asset(imgPath, fit: BoxFit.cover),
+            EmptyViewImgType.svg => SvgPicture.asset(
+              imgPath,
+              fit: BoxFit.cover,
+            ),
+          },
+        ),
         Text(
           description,
           style: AppTextStyles.font19Regular,

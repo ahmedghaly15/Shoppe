@@ -37,6 +37,10 @@ class Assets {
   /// assets/images/empty-cart.png
   static const String imagesEmptyCart = "assets/images/empty-cart.png";
 
+  /// Assets for imagesError
+  /// assets/images/error.png
+  static const String imagesError = "assets/images/error.png";
+
   /// Assets for imagesOffersPageView
   /// assets/images/offers-page-view.png
   static const String imagesOffersPageView =

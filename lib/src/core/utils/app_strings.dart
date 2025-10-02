@@ -81,4 +81,6 @@ class AppStrings {
   static const String productAddedToCartSuccessfully =
       'Product added to cart successfully!';
   static const String shippingAddress = 'Shipping Address';
+  static const String emptyCart =
+      'Your cart is empty. Add some items to it now.';
 }
