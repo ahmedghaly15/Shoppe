@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart'
 
 import '../../core/utils/utils.dart' show DebugLogger;
 import '../../features/login/data/models/login_request_response.dart';
+import '../../features/profile/data/models/shoppe_user.dart';
 
 part 'cache_keys.dart';
 part 'cache_helper.dart';

@@ -39,3 +39,21 @@ extension OnboardingCache on SecureStorageHelper {
     await removeSecuredData('${CacheKeys.onboarding}_$email');
   }
 }
+
+extension ShoppeUserSecureCache on SecureStorageHelper {
+  Future<void> cacheShoppeUser(ShoppeUser user) async {
+    final jsonString = jsonEncode(user.toJson());
+    await setSecuredString(CacheKeys.shoppeUser, jsonString);
+  }
+
+  Future<ShoppeUser?> getShoppeUser() async {
+    final jsonString = await getSecuredString(CacheKeys.shoppeUser);
+    if (jsonString == null) return null;
+    final Map<String, dynamic> jsonMap = jsonDecode(jsonString);
+    return ShoppeUser.fromJson(jsonMap);
+  }
+
+  Future<void> clearShoppeUserCache() async {
+    await removeSecuredData(CacheKeys.shoppeUser);
+  }
+}
