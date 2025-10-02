@@ -214,7 +214,7 @@ class ProductDetailsRouteArgs {
 }
 
 /// generated route for
-/// [ProfileView]
+/// [ProfileConsumerView]
 class ProfileRoute extends PageRouteInfo<void> {
   const ProfileRoute({List<PageRouteInfo>? children})
     : super(ProfileRoute.name, initialChildren: children);
@@ -224,7 +224,7 @@ class ProfileRoute extends PageRouteInfo<void> {
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const ProfileView();
+      return const ProfileConsumerView();
     },
   );
 }

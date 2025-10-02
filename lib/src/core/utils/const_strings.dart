@@ -5,4 +5,6 @@ class ConstStrings {
 
   static const String appName = 'Shoppe';
   static const String fontFamily = 'Raleway';
+  static const String profileImgUrl =
+      'https://t4.ftcdn.net/jpg/05/23/62/91/360_F_523629123_RpAModBJXgCTPfilfYaCIbPaalFIjbvv.jpg';
 }

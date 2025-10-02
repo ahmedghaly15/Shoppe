@@ -15,7 +15,7 @@ import '../../features/orders/orders.dart' show OrdersView;
 import '../../features/otp/otp.dart' show OtpView;
 import '../../features/product_details/product_details.dart'
     show ProductDetailsView;
-import '../../features/profile/profile.dart' show ProfileView;
+import '../../features/profile/profile.dart' show ProfileConsumerView;
 import '../../features/register/register.dart' show RegisterView;
 import '../../features/reset_pass/reset_pass.dart'
     show ResetPassView, ResetPassViewParams;

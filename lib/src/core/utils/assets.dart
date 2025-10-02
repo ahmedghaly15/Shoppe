@@ -41,6 +41,56 @@ class Assets {
   /// assets/images/error.png
   static const String imagesError = "assets/images/error.png";
 
+  /// Assets for imagesMostLikedProducts1
+  /// assets/images/most-liked-products-1.jpg
+  static const String imagesMostLikedProducts1 =
+      "assets/images/most-liked-products-1.jpg";
+
+  /// Assets for imagesMostLikedProducts10
+  /// assets/images/most-liked-products-10.jpg
+  static const String imagesMostLikedProducts10 =
+      "assets/images/most-liked-products-10.jpg";
+
+  /// Assets for imagesMostLikedProducts2
+  /// assets/images/most-liked-products-2.jpg
+  static const String imagesMostLikedProducts2 =
+      "assets/images/most-liked-products-2.jpg";
+
+  /// Assets for imagesMostLikedProducts3
+  /// assets/images/most-liked-products-3.jpg
+  static const String imagesMostLikedProducts3 =
+      "assets/images/most-liked-products-3.jpg";
+
+  /// Assets for imagesMostLikedProducts4
+  /// assets/images/most-liked-products-4.jpg
+  static const String imagesMostLikedProducts4 =
+      "assets/images/most-liked-products-4.jpg";
+
+  /// Assets for imagesMostLikedProducts5
+  /// assets/images/most-liked-products-5.jpg
+  static const String imagesMostLikedProducts5 =
+      "assets/images/most-liked-products-5.jpg";
+
+  /// Assets for imagesMostLikedProducts6
+  /// assets/images/most-liked-products-6.jpg
+  static const String imagesMostLikedProducts6 =
+      "assets/images/most-liked-products-6.jpg";
+
+  /// Assets for imagesMostLikedProducts7
+  /// assets/images/most-liked-products-7.jpg
+  static const String imagesMostLikedProducts7 =
+      "assets/images/most-liked-products-7.jpg";
+
+  /// Assets for imagesMostLikedProducts8
+  /// assets/images/most-liked-products-8.jpg
+  static const String imagesMostLikedProducts8 =
+      "assets/images/most-liked-products-8.jpg";
+
+  /// Assets for imagesMostLikedProducts9
+  /// assets/images/most-liked-products-9.jpg
+  static const String imagesMostLikedProducts9 =
+      "assets/images/most-liked-products-9.jpg";
+
   /// Assets for imagesOffersPageView
   /// assets/images/offers-page-view.png
   static const String imagesOffersPageView =
@@ -110,4 +160,9 @@ class Assets {
   /// Assets for svgsUploadPhoto
   /// assets/svgs/upload_photo.svg
   static const String svgsUploadPhoto = "assets/svgs/upload_photo.svg";
+
+  /// Assets for svgsVoucherExpiration
+  /// assets/svgs/voucher-expiration.svg
+  static const String svgsVoucherExpiration =
+      "assets/svgs/voucher-expiration.svg";
 }

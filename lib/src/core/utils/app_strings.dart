@@ -86,4 +86,10 @@ class AppStrings {
   static const String checkout = 'Checkout';
   static const String reviews = 'Reviews';
   static const String emptyReviews = 'No reviews found for this product.';
+  static const String myActivity = 'My Activity';
+  static const String voucherExpires = 'Your voucher will expire in 3 days';
+  static const String voucherExpiresDescription =
+      'Use your voucher before it’s gone! You have 3 days left to redeem this offer and enjoy your savings.';
+  static const String recentlyViewed = 'Recently Viewed';
+  static const String mostLiked = 'Most Liked';
 }
