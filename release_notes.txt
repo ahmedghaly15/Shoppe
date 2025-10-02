@@ -1,5 +1,3 @@
 New release notes:
-    - Finished add-to-cart logic & UI
-    - Updated product-details UI
-    - Finished fetch-cart logic
-    - Finished cart UI
+    - Finished reviews feature logic
+    - Finished reviews feature UI
