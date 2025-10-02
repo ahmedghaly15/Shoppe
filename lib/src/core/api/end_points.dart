@@ -20,4 +20,5 @@ class EndPoints {
   static const String addToCart = '${cart}items';
   static const String orders = '${baseUrl}orders/';
   static const String checkout = '${orders}checkout';
+  static const String me = '${auth}me';
 }
