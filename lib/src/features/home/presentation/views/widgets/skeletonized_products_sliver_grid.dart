@@ -33,14 +33,14 @@ class SkeletonizedProductsSliverGrid extends ConsumerWidget {
   }
 }
 
-class _ProductsSliverGrid extends StatelessWidget {
+class _ProductsSliverGrid extends ConsumerWidget {
   const _ProductsSliverGrid({this.products, this.isLoading = false});
 
   final List<Product>? products;
   final bool isLoading;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final radius = BorderRadius.all(Radius.circular(9.r));
     return SliverGrid.builder(
       itemCount: products?.length ?? 10,
@@ -55,7 +55,12 @@ class _ProductsSliverGrid extends StatelessWidget {
         return ShadowContainer(
           child: MaterialButton(
             onPressed: product != null
-                ? () => context.pushRoute(ProductDetailsRoute(product: product))
+                ? () {
+                    ref
+                        .read(recentlyViewsProductsProvider.notifier)
+                        .addProduct(product);
+                    context.pushRoute(ProductDetailsRoute(product: product));
+                  }
                 : null,
             padding: EdgeInsets.zero,
             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
