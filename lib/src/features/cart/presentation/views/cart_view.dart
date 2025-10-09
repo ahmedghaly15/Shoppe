@@ -31,11 +31,14 @@ class CartView extends StatelessWidget {
                 ),
               ),
               const CartSliverListConsumer(),
+              const SliverFillRemaining(
+                hasScrollBody: false,
+                child: Column(children: [Spacer(), CheckoutButtonConsumer()]),
+              ),
             ],
           ),
         ),
       ),
-      floatingActionButton: const CheckoutButtonConsumer(),
     );
   }
 }

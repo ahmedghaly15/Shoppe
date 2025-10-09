@@ -11,6 +11,8 @@ import '../../core/api/api_request_result.dart';
 import '../../core/utils/utils.dart';
 import '../../core/api/api_error_model.dart';
 import '../../core/widgets/core_widgets.dart';
+import '../product_details/product_details.dart'
+    show ProductQuantityIconButtonsConsumer, productQuantityProvider;
 import 'data/models/checkout_request_body.dart';
 import 'presentation/providers/checkout_provider.dart';
 import '../product_details/product_details.dart'
@@ -28,3 +30,4 @@ part 'presentation/views/widgets/shipping_address_list_tile.dart';
 part 'presentation/views/widgets/cart_sliver_list_consumer.dart';
 part 'presentation/views/widgets/cart_item_widget.dart';
 part 'presentation/views/widgets/checkout_button_consumer.dart';
+part 'presentation/providers/cart_length_provider.dart';

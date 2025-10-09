@@ -8,46 +8,48 @@ class CartItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Skeleton.leaf(
-      child: Card(
-        elevation: 0,
-        child: Row(
-          spacing: 10.w,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ShadowContainer(
-              child: ClipRRect(
-                borderRadius: Consts.itemRadius,
-                child: CustomCachedNetworkImage(
-                  imageUrl: cartItem?.productCoverUrl ?? '',
-                ),
-              ),
+      child: ListTile(
+        titleAlignment: ListTileTitleAlignment.center,
+        leading: ShadowContainer(
+          child: ClipRRect(
+            borderRadius: Consts.itemRadius,
+            child: CustomCachedNetworkImage(
+              imageUrl: cartItem?.productCoverUrl ?? '',
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: 16.h,
-              children: [
-                Expanded(
-                  child: Text(
-                    cartItem?.productName ?? 'Cart Item Name',
-                    style: AppTextStyles.font15Bold,
-                  ),
-                ),
-                Row(
-                  spacing: 16.w,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      '\$${cartItem?.totalPrice}?? Price',
-                      style: AppTextStyles.font13Bold,
-                    ),
-                    const ProductQuantityIconButtonsConsumer(),
-                  ],
-                ),
-              ],
-            ),
-          ],
+          ),
+        ),
+        title: Text(
+          cartItem?.productName.capitalize() ?? 'Cart Item Name',
+          style: AppTextStyles.font15Bold,
+        ),
+        subtitle: Container(
+          margin: EdgeInsets.only(top: 16.h),
+          child: Row(
+            spacing: 16.w,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              _CartItemTotalPriceConsumer(totalPrice: cartItem!.totalPrice),
+              const ProductQuantityIconButtonsConsumer(),
+            ],
+          ),
         ),
       ),
+    );
+  }
+}
+
+class _CartItemTotalPriceConsumer extends ConsumerWidget {
+  const _CartItemTotalPriceConsumer({required this.totalPrice});
+
+  final double totalPrice;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final quantity = ref.watch(productQuantityProvider);
+    final total = totalPrice * quantity;
+    return Text(
+      '\$${total.toStringAsFixed(1)}',
+      style: AppTextStyles.font13Bold,
     );
   }
 }

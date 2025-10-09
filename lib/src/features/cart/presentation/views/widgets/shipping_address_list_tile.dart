@@ -12,12 +12,17 @@ class ShippingAddressListTile extends StatelessWidget {
       contentPadding: EdgeInsets.symmetric(vertical: 9.h, horizontal: 16.w),
       tileColor: AppColors.colorF9F9F9,
       title: const Text(AppStrings.shippingAddress),
-      titleTextStyle: AppTextStyles.font13Bold,
+      titleTextStyle: AppTextStyles.font13Bold.copyWith(color: Colors.black),
       horizontalTitleGap: 5.h,
-      subtitle: const Text(
-        '26, Duong So 2, Thao Dien Ward, An Phu, District 2, Ho Chi Minh city',
+      subtitle: Container(
+        margin: EdgeInsets.only(top: 8.h),
+        child: const Text(
+          '26, Duong So 2, Thao Dien Ward, An Phu, District 2, Ho Chi Minh city',
+        ),
       ),
-      subtitleTextStyle: AppTextStyles.font10Regular,
+      subtitleTextStyle: AppTextStyles.font10Regular.copyWith(
+        color: Colors.black,
+      ),
       trailing: IconButton.filled(
         style: IconButton.styleFrom(
           shape: const CircleBorder(),

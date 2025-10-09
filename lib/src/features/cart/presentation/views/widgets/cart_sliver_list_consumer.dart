@@ -6,6 +6,7 @@ class CartSliverListConsumer extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final cart = ref.watch(fetchCartProvider);
+    _fetchCartProviderListener(ref);
     return cart.when(
       skipError: true,
       skipLoadingOnRefresh: true,
@@ -16,7 +17,7 @@ class CartSliverListConsumer extends ConsumerWidget {
       ),
       data: (cart) {
         final cartItems = cart.cartItems;
-        return cartItems.isNotEmpty
+        return cartItems.isEmpty
             ? const SliverFillRemaining(
                 hasScrollBody: false,
                 child: EmptyView(description: AppStrings.emptyCart),
@@ -33,6 +34,16 @@ class CartSliverListConsumer extends ConsumerWidget {
       error: (error, _) => SliverFillRemaining(
         hasScrollBody: false,
         child: CustomErrorWidget(error: error.toString()),
+      ),
+    );
+  }
+
+  void _fetchCartProviderListener(WidgetRef ref) {
+    ref.listen(
+      fetchCartProvider,
+      (_, current) => current.whenOrNull(
+        data: (cart) =>
+            ref.read(cartLengthProvider.notifier).set(cart.cartItems.length),
       ),
     );
   }
