@@ -1,4 +1,5 @@
 New release notes:
-    - Handled profile feature caching
-    - Finished profile feature logic
-    - Finished profile feature UI
+    - Fixed bugs in home screen 
+    - Fixed bugs in product-details screen
+    - Fixed bugs in reviews screen 
+    - Fixed bugs in cart screen
