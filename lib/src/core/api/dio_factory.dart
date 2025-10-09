@@ -27,9 +27,9 @@ class DioFactory {
   static void _addDioInterceptors(Ref ref) {
     _dio?.interceptors.add(DioInterceptor());
     _dio?.interceptors.add(AuthInterceptor(ref));
-    _dio?.interceptors.add(
-      LogInterceptor(request: true, requestBody: true, responseBody: true),
-    );
+    // _dio?.interceptors.add(
+    //   LogInterceptor(request: true, requestBody: true, responseBody: true),
+    // );
   }
 
   static void setTokenIntoHeaders(String token) {

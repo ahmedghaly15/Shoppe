@@ -5,7 +5,7 @@ class RecentlyViewedListViewConsumer extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final recentlyViewedProducts = ref.watch(recentlyViewsProductsProvider);
+    final recentlyViewedProducts = ref.watch(recentlyViewedProductsProvider);
     return ListView.separated(
       itemCount: recentlyViewedProducts.length,
       scrollDirection: Axis.horizontal,

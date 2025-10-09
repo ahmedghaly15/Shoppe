@@ -8,6 +8,8 @@ class SkeletonizedProductsSliverGrid extends ConsumerWidget {
     final asyncProducts = ref.watch(fetchProductsProvider);
     _fetchProductsProviderListener(ref, context);
     return asyncProducts.when(
+      skipError: true,
+      skipLoadingOnRefresh: true,
       loading: () => const CustomSkeletonizer(
         type: CustomSkeletonizerType.sliver,
         child: _ProductsSliverGrid(isLoading: true),
@@ -52,53 +54,60 @@ class _ProductsSliverGrid extends ConsumerWidget {
       ),
       itemBuilder: (_, index) {
         final product = products?[index];
-        return ShadowContainer(
+        return Card(
           child: MaterialButton(
             onPressed: product != null
                 ? () {
                     ref
-                        .read(recentlyViewsProductsProvider.notifier)
+                        .read(recentlyViewedProductsProvider.notifier)
                         .addProduct(product);
                     context.pushRoute(ProductDetailsRoute(product: product));
                   }
                 : null,
             padding: EdgeInsets.zero,
             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            child: Column(
-              spacing: 6.h,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: ShadowContainer(
-                    child: isLoading
-                        ? Skeleton.leaf(
-                            child: Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                borderRadius: radius,
-                                color: Colors.white,
+            child: Padding(
+              padding: EdgeInsets.all(5.h),
+              child: Column(
+                spacing: 6.h,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: ShadowContainer(
+                      child: isLoading
+                          ? Skeleton.leaf(
+                              child: Container(
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  borderRadius: radius,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            )
+                          : ClipRRect(
+                              borderRadius: radius,
+                              child: CustomCachedNetworkImage(
+                                imageUrl: product?.coverPictureUrl ?? '',
                               ),
                             ),
-                          )
-                        : ClipRRect(
-                            borderRadius: radius,
-                            child: CustomCachedNetworkImage(
-                              imageUrl: product?.coverPictureUrl ?? '',
-                            ),
-                          ),
+                    ),
                   ),
-                ),
-                Text(
-                  product?.name ?? 'Default name',
-                  style: AppTextStyles.font10Regular,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                Text(
-                  '\$${product?.finalPrice ?? 'Default price'}',
-                  style: AppTextStyles.font15Bold,
-                ),
-              ],
+                  Text(
+                    product?.name ?? 'Default name',
+                    style: AppTextStyles.font12Regular.copyWith(
+                      color: Colors.black,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  Text(
+                    '\$${product?.finalPrice ?? 'Default price'}',
+                    style: AppTextStyles.font15Bold.copyWith(
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );

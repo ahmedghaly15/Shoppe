@@ -9,7 +9,7 @@ part of 'fetch_products_request_response.dart';
 FetchProductsRequestResponse _$FetchProductsRequestResponseFromJson(
   Map<String, dynamic> json,
 ) => FetchProductsRequestResponse(
-  products: (json['item'] as List<dynamic>)
+  products: (json['items'] as List<dynamic>)
       .map((e) => Product.fromJson(e as Map<String, dynamic>))
       .toList(),
   page: (json['page'] as num).toInt(),
@@ -22,7 +22,7 @@ FetchProductsRequestResponse _$FetchProductsRequestResponseFromJson(
 Map<String, dynamic> _$FetchProductsRequestResponseToJson(
   FetchProductsRequestResponse instance,
 ) => <String, dynamic>{
-  'item': instance.products.map((e) => e.toJson()).toList(),
+  'items': instance.products.map((e) => e.toJson()).toList(),
   'page': instance.page,
   'pageSize': instance.pageSize,
   'totalCount': instance.totalCount,

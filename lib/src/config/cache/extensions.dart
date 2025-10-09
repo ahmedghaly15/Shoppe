@@ -43,6 +43,9 @@ extension OnboardingCache on SecureStorageHelper {
 extension ShoppeUserSecureCache on SecureStorageHelper {
   Future<void> cacheShoppeUser(ShoppeUser user) async {
     final jsonString = jsonEncode(user.toJson());
+    DebugLogger.log(
+      'SecureStorageHelper : Cache Key: ${CacheKeys.shoppeUser} With value: $jsonString',
+    );
     await setSecuredString(CacheKeys.shoppeUser, jsonString);
   }
 
@@ -50,6 +53,9 @@ extension ShoppeUserSecureCache on SecureStorageHelper {
     final jsonString = await getSecuredString(CacheKeys.shoppeUser);
     if (jsonString == null) return null;
     final Map<String, dynamic> jsonMap = jsonDecode(jsonString);
+    DebugLogger.log(
+      'SecureStorageHelper : Retrieve Cached value of Key: ${CacheKeys.shoppeUser}',
+    );
     return ShoppeUser.fromJson(jsonMap);
   }
 

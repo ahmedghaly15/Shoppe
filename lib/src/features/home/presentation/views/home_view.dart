@@ -42,7 +42,10 @@ class HomeView extends StatelessWidget {
             const SliverToBoxAdapter(
               child: HomeSectionTitle(titleText: AppStrings.topProducts),
             ),
-            const SkeletonizedProductsSliverGrid(),
+            SliverPadding(
+              padding: EdgeInsets.only(bottom: 8.h),
+              sliver: const SkeletonizedProductsSliverGrid(),
+            ),
           ],
         ),
       ),

@@ -7,7 +7,7 @@ part 'fetch_products_request_response.g.dart';
 @immutable
 @JsonSerializable(explicitToJson: true)
 class FetchProductsRequestResponse {
-  @JsonKey(name: 'item')
+  @JsonKey(name: 'items')
   final List<Product> products;
   final int page, pageSize, totalCount;
   final bool hasNextPage, hasPreviousPage;

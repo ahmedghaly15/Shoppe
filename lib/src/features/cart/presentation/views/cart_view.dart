@@ -14,6 +14,7 @@ class CartView extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             slivers: [
               CustomSliverAppBar(
+                hasLeading: false,
                 centerTitle: false,
                 titleWidget: Row(
                   spacing: 8.w,

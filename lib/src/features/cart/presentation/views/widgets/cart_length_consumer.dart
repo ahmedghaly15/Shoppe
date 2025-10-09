@@ -7,6 +7,8 @@ class CartLengthConsumer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final cart = ref.watch(fetchCartProvider);
     return cart.whenOrNull(
+          skipError: true,
+          skipLoadingOnRefresh: true,
           data: (data) => data.cartItems.isEmpty
               ? const SizedBox.shrink()
               : Text('${data.cartItems.length}'),

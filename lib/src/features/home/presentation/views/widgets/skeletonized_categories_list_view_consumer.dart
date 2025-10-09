@@ -10,6 +10,8 @@ class SkeletonizedCategoriesListViewConsumer extends ConsumerWidget {
     return SizedBox(
       height: 192.h,
       child: asyncCategories.when(
+        skipError: true,
+        skipLoadingOnRefresh: true,
         loading: () => const CustomSkeletonizer(
           child: _CategoriesListView(isLoading: true),
         ),

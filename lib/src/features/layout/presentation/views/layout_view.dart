@@ -7,7 +7,7 @@ class LayoutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
-      routes: const [HomeRoute(), CartRoute(), ProfileRoute()],
+      routes: const [HomeRoute(), CartRoute(), ProfileConsumerRoute()],
       bottomNavigationBuilder: (_, tabsRouter) => NavigationBar(
         animationDuration: const Duration(milliseconds: 300),
         selectedIndex: tabsRouter.activeIndex,

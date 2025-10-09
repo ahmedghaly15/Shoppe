@@ -19,7 +19,7 @@ import '../../core/widgets/core_widgets.dart'
         CustomSkeletonizer,
         CustomSkeletonizerType,
         ShadowContainer;
-import '../profile/profile.dart' show recentlyViewsProductsProvider;
+import '../profile/profile.dart' show recentlyViewedProductsProvider;
 import 'data/api/home_api_service.dart';
 import 'data/models/fetch_categories_response.dart';
 import 'data/models/fetch_offers_request_body.dart';

@@ -29,8 +29,9 @@ class CustomCachedNetworkImage extends StatelessWidget {
       imageBuilder: imageBuilder,
       fadeInDuration: fadeInDuration,
       fadeOutDuration: fadeOutDuration,
-      errorWidget: (_, _, _) =>
-          Icon(LucideIcons.circleAlert, color: Colors.red.shade400),
+      errorWidget: (_, _, _) => Center(
+        child: Icon(LucideIcons.circleAlert, color: Colors.red.shade400),
+      ),
     );
   }
 }

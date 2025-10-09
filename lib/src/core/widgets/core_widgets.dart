@@ -28,3 +28,4 @@ part 'custom_sliver_app_bar.dart';
 part 'shadow_container.dart';
 part 'empty_view.dart';
 part 'custom_error_widget.dart';
+part 'adaptive_refresh_indicator.dart';

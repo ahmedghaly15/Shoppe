@@ -8,6 +8,8 @@ class SkeletonizedOffersListViewConsumer extends ConsumerWidget {
     final asyncOffers = ref.watch(fetchOffersProvider);
     _fetchOffersProviderListener(ref, context);
     return asyncOffers.when(
+      skipError: true,
+      skipLoadingOnRefresh: true,
       loading: () => const CustomSkeletonizer(
         child: _OffersListViewConsumer(isLoading: true),
       ),

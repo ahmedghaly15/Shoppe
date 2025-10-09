@@ -7,6 +7,8 @@ class CartSliverListConsumer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final cart = ref.watch(fetchCartProvider);
     return cart.when(
+      skipError: true,
+      skipLoadingOnRefresh: true,
       loading: () => SliverList.separated(
         itemCount: 10,
         itemBuilder: (_, index) => const CartItemWidget(),

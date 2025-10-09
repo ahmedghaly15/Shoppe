@@ -2,7 +2,7 @@ part of '../../profile.dart';
 
 List<Product> _recentlyViewedProducts = [];
 
-class RecentlyViewsProductsNotifier extends Notifier<List<Product>> {
+class RecentlyViewedProductsNotifier extends Notifier<List<Product>> {
   @override
   List<Product> build() => _recentlyViewedProducts;
 
@@ -17,7 +17,7 @@ class RecentlyViewsProductsNotifier extends Notifier<List<Product>> {
   }
 }
 
-final recentlyViewsProductsProvider =
-    NotifierProvider.autoDispose<RecentlyViewsProductsNotifier, List<Product>>(
-      RecentlyViewsProductsNotifier.new,
+final recentlyViewedProductsProvider =
+    NotifierProvider.autoDispose<RecentlyViewedProductsNotifier, List<Product>>(
+      RecentlyViewedProductsNotifier.new,
     );

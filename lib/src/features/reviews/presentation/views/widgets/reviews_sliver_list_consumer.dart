@@ -8,6 +8,8 @@ class ReviewsSliverListConsumer extends ConsumerWidget {
     final productId = context.routeData.argsAs<ReviewsRouteArgs>().productId;
     final asyncFetchReviews = ref.watch(fetchProductReviewsProvider(productId));
     return asyncFetchReviews.when(
+      skipError: true,
+      skipLoadingOnRefresh: true,
       loading: () => SliverList.separated(
         itemCount: 10,
         itemBuilder: (_, _) => const ReviewItemWidget(),
