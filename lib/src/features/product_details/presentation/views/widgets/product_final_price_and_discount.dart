@@ -18,9 +18,25 @@ class ProductFinalPriceAndDiscount extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               _priceText(),
-              Text(
-                '$discountPercentage% ${AppStrings.off}',
-                style: AppTextStyles.font15Regular,
+              Container(
+                padding: EdgeInsets.all(5.h),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(8.r),
+                    topRight: Radius.circular(8.r),
+                    bottomLeft: Radius.circular(8.r),
+                  ),
+                  gradient: const LinearGradient(
+                    colors: [Color(0xffFF5790), Color(0xffF81140)],
+                    stops: [0, 1],
+                    begin: AlignmentDirectional.bottomEnd,
+                    end: AlignmentDirectional.topStart,
+                  ),
+                ),
+                child: Text(
+                  '-$discountPercentage%',
+                  style: AppTextStyles.font13Bold.copyWith(color: Colors.white),
+                ),
               ),
             ],
           );
@@ -28,10 +44,11 @@ class ProductFinalPriceAndDiscount extends StatelessWidget {
 
   Text _priceText() {
     return Text(
-      '\$$price',
+      '\$${price.toStringAsFixed(1)}',
       style: AppTextStyles.font15Bold.copyWith(
         decoration: TextDecoration.lineThrough,
         color: AppColors.colorF1AEAE,
+        decorationColor: AppColors.colorF1AEAE,
       ),
     );
   }

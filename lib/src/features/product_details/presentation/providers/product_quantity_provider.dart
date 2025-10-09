@@ -5,7 +5,11 @@ class ProductQuantityNotifier extends Notifier<int> {
   int build() => 1;
 
   void increment() => state++;
-  void decrement() => state--;
+  void decrement() {
+    if (state > 1) {
+      state--;
+    }
+  }
 }
 
 final productQuantityProvider =

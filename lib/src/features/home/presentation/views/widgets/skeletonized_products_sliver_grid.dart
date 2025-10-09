@@ -101,7 +101,7 @@ class _ProductsSliverGrid extends ConsumerWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                   Text(
-                    '\$${product?.finalPrice ?? 'Default price'}',
+                    '\$${product?.finalPrice.toStringAsFixed(1) ?? 'Default price'}',
                     style: AppTextStyles.font15Bold.copyWith(
                       color: Colors.black,
                     ),

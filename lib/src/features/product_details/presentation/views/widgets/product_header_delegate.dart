@@ -18,10 +18,6 @@ class ProductHeaderDelegate extends SliverPersistentHeaderDelegate {
   ) {
     final mediaPadding = MediaQuery.of(context).padding;
 
-    final double maxShrink = expandedHeight - kToolbarHeight;
-    final double shrinkRatio = (shrinkOffset / maxShrink).clamp(0.0, 1.0);
-    // 0 → expanded, 1 → collapsed
-
     return Stack(
       fit: StackFit.expand,
       children: [
@@ -44,49 +40,7 @@ class ProductHeaderDelegate extends SliverPersistentHeaderDelegate {
         PositionedDirectional(
           top: mediaPadding.top + (kToolbarHeight - 36) / 2,
           start: 8,
-          child: FadeTransition(
-            opacity: AlwaysStoppedAnimation(shrinkRatio),
-            child: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.arrow_back_ios_new,
-                color: Colors.black,
-                size: 16.h,
-              ),
-            ),
-          ),
-        ),
-
-        // Product thumbnail (only visible when collapsed)
-        PositionedDirectional(
-          top: mediaPadding.top + (kToolbarHeight - 36) / 2,
-          end: 8,
-          child: FadeTransition(
-            opacity: AlwaysStoppedAnimation(shrinkRatio),
-            child: CircleAvatar(
-              backgroundImage: NetworkImage(imgUrl),
-              radius: 18,
-            ),
-          ),
-        ),
-
-        // Title (fades in as it collapses)
-        PositionedDirectional(
-          top: mediaPadding.top,
-          start: 0,
-          end: 0,
-          height: kToolbarHeight,
-          child: Opacity(
-            opacity: shrinkRatio,
-            child: Center(
-              child: Text(
-                name,
-                style: AppTextStyles.font19Bold,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-          ),
+          child: const ArrowBackIconButton(),
         ),
       ],
     );

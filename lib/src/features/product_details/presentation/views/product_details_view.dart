@@ -22,93 +22,142 @@ class ProductDetailsView extends StatelessWidget {
                 name: product.name!,
               ),
             ),
-          SliverToBoxAdapter(
-            child: Container(
-              margin: EdgeInsets.only(top: 18.h, bottom: 5.h),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    '\$${product.finalPrice}',
-                    style: AppTextStyles.font21Bold,
-                  ),
-                  const ProductQuantityIconButtonsConsumer(),
-                ],
+          SliverPadding(
+            padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 20.h),
+            sliver: SliverToBoxAdapter(
+              child: Text(
+                product.name!.capitalize(),
+                style: AppTextStyles.font28Bold,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
               ),
             ),
           ),
-          SliverToBoxAdapter(
-            child: ProductFinalPriceAndDiscount(
-              price: product.price!,
-              discountPercentage: product.discountPercentage,
+          SliverPadding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            sliver: SliverToBoxAdapter(
+              child: Container(
+                margin: EdgeInsets.only(top: 18.h, bottom: 16.h),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '\$${product.finalPrice.toStringAsFixed(1)}',
+                      style: AppTextStyles.font21Bold,
+                    ),
+                    const ProductQuantityIconButtonsConsumer(),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          SliverPadding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            sliver: SliverToBoxAdapter(
+              child: ProductFinalPriceAndDiscount(
+                price: product.price!,
+                discountPercentage: product.discountPercentage,
+              ),
             ),
           ),
           if (product.description != null)
-            SliverToBoxAdapter(
-              child: Container(
-                margin: EdgeInsets.only(top: 13.h),
-                child: Text(
-                  product.description!,
-                  style: AppTextStyles.font12Regular,
+            SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              sliver: SliverToBoxAdapter(
+                child: Container(
+                  margin: EdgeInsets.only(top: 13.h),
+                  child: Text(
+                    product.description!,
+                    style: AppTextStyles.font12Regular,
+                  ),
                 ),
               ),
             ),
           if (product.categories != null)
-            const SliverToBoxAdapter(
-              child: ProductDetailSectionTitle(title: AppStrings.categories),
+            SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              sliver: const SliverToBoxAdapter(
+                child: ProductDetailSectionTitle(title: AppStrings.categories),
+              ),
             ),
           if (product.categories != null)
-            SliverToBoxAdapter(
-              child: Row(
-                spacing: 8.w,
-                children: product.categories!
-                    .map(
-                      (category) =>
-                          Text(category, style: AppTextStyles.font15Regular),
-                    )
-                    .toList(),
+            SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              sliver: SliverToBoxAdapter(
+                child: Row(
+                  spacing: 8.w,
+                  children: product.categories!.map((category) {
+                    final hasManyCategories = product.categories!.length > 1;
+                    return hasManyCategories
+                        ? Text(
+                            '$category | '.capitalize(),
+                            style: AppTextStyles.font15Regular,
+                          )
+                        : Text(
+                            category.capitalize(),
+                            style: AppTextStyles.font15Regular,
+                          );
+                  }).toList(),
+                ),
               ),
             ),
           if (product.productPictures != null)
-            SliverToBoxAdapter(
-              child: SizedBox(
-                height: 75.h,
-                child: ProductPicturesListView(
-                  productPictures: product.productPictures!,
+            SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              sliver: SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 75.h,
+                  child: ProductPicturesListView(
+                    productPictures: product.productPictures!,
+                  ),
                 ),
               ),
             ),
-          const SliverToBoxAdapter(
-            child: ProductDetailSectionTitle(title: AppStrings.rating),
+          SliverPadding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            sliver: const SliverToBoxAdapter(
+              child: ProductDetailSectionTitle(title: AppStrings.rating),
+            ),
           ),
           if (product.rating != null)
-            SliverToBoxAdapter(
-              child: RatingBar.builder(
-                initialRating: product.rating!,
-                minRating: 1,
-                direction: Axis.horizontal,
-                allowHalfRating: true,
-                itemCount: 5,
-                itemPadding: EdgeInsets.symmetric(horizontal: 7.w),
-                itemBuilder: (context, _) =>
-                    const Icon(Icons.star, color: AppColors.colorECA61B),
-                onRatingUpdate: (rate) {},
+            SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              sliver: SliverToBoxAdapter(
+                child: RatingBar.builder(
+                  itemSize: 24.h,
+                  initialRating: product.rating!,
+                  minRating: 1,
+                  direction: Axis.horizontal,
+                  allowHalfRating: true,
+                  itemCount: 5,
+                  itemPadding: EdgeInsetsDirectional.only(end: 7.w),
+                  itemBuilder: (context, _) =>
+                      const Icon(Icons.star, color: AppColors.colorECA61B),
+                  onRatingUpdate: (rate) {},
+                ),
               ),
             ),
-          SliverToBoxAdapter(
-            child: Container(
-              margin: EdgeInsets.symmetric(vertical: 20.h),
-              child: PrimaryButton(
-                onPressed: () =>
-                    context.pushRoute(ReviewsRoute(productId: product.id!)),
-                text: AppStrings.viewAllReviews,
+          SliverPadding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            sliver: SliverToBoxAdapter(
+              child: Container(
+                margin: EdgeInsets.symmetric(vertical: 20.h),
+                child: PrimaryButton(
+                  onPressed: () =>
+                      context.pushRoute(ReviewsRoute(productId: product.id!)),
+                  text: AppStrings.viewAllReviews,
+                ),
               ),
             ),
           ),
-          SliverToBoxAdapter(
-            child: Container(
-              margin: EdgeInsets.only(bottom: 16.h),
-              child: const AddToCartAndBuyNowButtons(),
+          SliverPadding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            sliver: SliverToBoxAdapter(
+              child: Container(
+                margin: EdgeInsets.only(bottom: 16.h),
+                child: const AddToCartAndBuyNowButtons(),
+              ),
             ),
           ),
         ],

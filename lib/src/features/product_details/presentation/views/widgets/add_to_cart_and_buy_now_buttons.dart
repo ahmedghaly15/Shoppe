@@ -8,7 +8,7 @@ class AddToCartAndBuyNowButtons extends StatelessWidget {
     return Row(
       spacing: 16.w,
       children: [
-        const AddToCartConsumerButton(),
+        const Expanded(child: AddToCartConsumerButton()),
         Expanded(
           child: PrimaryButton(onPressed: () {}, text: AppStrings.buyNow),
         ),

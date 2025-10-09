@@ -21,12 +21,15 @@ class ProductQuantityIconButtonsConsumer extends ConsumerWidget {
     );
   }
 
-  IconButton _outlinedIconButton(void Function()? onPressed, IconData icon) {
-    return IconButton.outlined(
-      color: AppColors.primaryColor,
-      style: IconButton.styleFrom(foregroundColor: AppColors.primaryColor),
+  ShadButton _outlinedIconButton(void Function()? onPressed, IconData icon) {
+    return ShadButton.outline(
+      decoration: ShadDecoration(
+        border: ShadBorder.all(color: AppColors.primaryColor),
+        shape: BoxShape.circle,
+      ),
+      foregroundColor: AppColors.primaryColor,
       onPressed: onPressed,
-      icon: Icon(icon),
+      child: Icon(icon),
     );
   }
 }

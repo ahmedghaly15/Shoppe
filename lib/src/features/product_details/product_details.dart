@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shadcn_ui/shadcn_ui.dart' show LucideIcons;
+import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:shoppe/src/core/helpers/helpers.dart';
 
 import '../../config/router/app_router.dart';
@@ -16,6 +16,7 @@ import '../../core/utils/utils.dart'
 import '../../core/widgets/core_widgets.dart'
     show
         AdaptiveCircularProgressIndicator,
+        ArrowBackIconButton,
         CustomCachedNetworkImage,
         PrimaryButton;
 import 'data/api/product_details_api_service.dart';

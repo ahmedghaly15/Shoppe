@@ -13,10 +13,10 @@ class AddToCartConsumerButton extends ConsumerWidget {
     _addToCartProviderListener(ref, context);
     return PrimaryButton(
       onPressed: asyncAddToCart.isLoading
-          ? () {
+          ? null
+          : () {
               ref.read(addToCartProvider.notifier).addToCart(productId!);
-            }
-          : null,
+            },
       backgroundColor: AppColors.color202020,
       text: AppStrings.addToCart,
       child: asyncAddToCart.isLoading
