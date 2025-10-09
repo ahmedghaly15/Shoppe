@@ -23,6 +23,7 @@ class ReviewsSliverListConsumer extends ConsumerWidget {
                 child: EmptyView(description: AppStrings.emptyReviews),
               )
             : SliverList.separated(
+                itemCount: reviews.length,
                 itemBuilder: (_, index) {
                   final review = reviews[index];
                   return ReviewItemWidget(review: review);

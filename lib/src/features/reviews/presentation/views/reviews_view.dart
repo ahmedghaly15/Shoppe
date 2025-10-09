@@ -11,13 +11,16 @@ class ReviewsView extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+          padding: EdgeInsets.symmetric(vertical: 16.h),
           child: CustomScrollView(
             physics: const BouncingScrollPhysics(),
             slivers: [
-              const CustomSliverAppBar(titleText: AppStrings.reviews),
+              const CustomSliverAppBar(
+                centerTitle: false,
+                titleText: AppStrings.reviews,
+              ),
               SliverPadding(
-                padding: EdgeInsets.only(top: 26.h),
+                padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 26.h),
                 sliver: const ReviewsSliverListConsumer(),
               ),
             ],
