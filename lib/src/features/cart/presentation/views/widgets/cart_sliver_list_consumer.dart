@@ -29,7 +29,17 @@ class CartSliverListConsumer extends ConsumerWidget {
                 itemCount: cartItems.length,
                 itemBuilder: (_, index) {
                   final cartItem = cartItems[index];
-                  return CartItemWidget(cartItem: cartItem);
+                  return MaterialButton(
+                    onPressed: () async =>
+                        await _fetchProductAndPushProductDetails(
+                          ref,
+                          cartItem.productId,
+                          context,
+                        ),
+                    padding: EdgeInsets.zero,
+                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    child: CartItemWidget(cartItem: cartItem),
+                  );
                 },
                 separatorBuilder: (_, _) => 16.verticalSpace,
               );
@@ -39,6 +49,15 @@ class CartSliverListConsumer extends ConsumerWidget {
         child: CustomErrorWidget(error: error.toString()),
       ),
     );
+  }
+
+  Future<void> _fetchProductAndPushProductDetails(
+    WidgetRef ref,
+    String productId,
+    BuildContext context,
+  ) async {
+    final product = await ref.read(fetchProductProvider(productId).future);
+    context.pushRoute(ProductDetailsRoute(product: product));
   }
 
   void _fetchCartProviderListener(WidgetRef ref) {
