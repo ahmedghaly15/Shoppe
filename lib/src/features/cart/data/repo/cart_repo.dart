@@ -10,6 +10,7 @@ abstract class CartRepo {
   Future<ApiRequestResult<CheckoutRequestResponse>> checkout(
     CheckoutRequestBody body,
   );
+  Future<ApiRequestResult<Product>> fetchProduct(String productId);
 }
 
 class CartRepoImpl extends CartRepo {
@@ -29,4 +30,10 @@ class CartRepoImpl extends CartRepo {
   ) => executeAndHandleApiRequest<CheckoutRequestResponse>(
     () async => await _apiService.checkout(body),
   );
+
+  @override
+  Future<ApiRequestResult<Product>> fetchProduct(String productId) =>
+      executeAndHandleApiRequest<Product>(
+        () async => await _apiService.fetchProduct(productId),
+      );
 }

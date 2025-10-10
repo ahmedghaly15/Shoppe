@@ -18,10 +18,6 @@ class LayoutView extends StatelessWidget {
             label: AppStrings.home,
           ),
           CustomNavigationDestination(
-            icon: LucideIcons.heart,
-            label: AppStrings.wishlist,
-          ),
-          CustomNavigationDestination(
             icon: LucideIcons.shoppingCart,
             label: AppStrings.cart,
           ),

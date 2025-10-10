@@ -7,6 +7,7 @@ import 'package:shoppe/src/core/helpers/helpers.dart';
 
 import '../../config/theming/theming.dart' show AppColors, AppTextStyles;
 import '../../core/api/api_request_result.dart';
+import '../../core/models/product.dart';
 import '../../core/utils/utils.dart';
 import '../../core/api/api_error_model.dart';
 import '../../core/widgets/core_widgets.dart';
@@ -29,3 +30,4 @@ part 'presentation/views/widgets/cart_item_widget.dart';
 part 'presentation/views/widgets/checkout_button_consumer.dart';
 part 'presentation/providers/cart_length_provider.dart';
 part 'presentation/views/widgets/total_price_and_checkout_button.dart';
+part 'presentation/providers/fetch_product_provider.dart';
