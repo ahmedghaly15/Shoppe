@@ -11,7 +11,9 @@ class ProfileConsumerView extends ConsumerWidget {
     return asyncFetchProfile.when(
       skipError: true,
       skipLoadingOnRefresh: true,
-      loading: () => const Center(child: AdaptiveCircularProgressIndicator()),
+      loading: () => const Center(
+        child: AdaptiveCircularProgressIndicator(color: AppColors.primaryColor),
+      ),
       data: (shoppeUser) => const ProfileViewContent(),
       error: (error, _) => CustomErrorWidget(error: error.toString()),
     );

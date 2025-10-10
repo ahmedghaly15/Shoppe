@@ -9,13 +9,13 @@ sealed class ShoppeUser with _$ShoppeUser {
     required String userId,
     required String email,
     required String fullName,
-    required String profilePicture,
+    String? profilePicture,
   }) = _ShoppeUser;
 
   factory ShoppeUser.fromJson(Map<String, dynamic> json) =>
       _$ShoppeUserFromJson(json);
   factory ShoppeUser.initial() =>
-      const ShoppeUser(userId: '', email: '', fullName: '', profilePicture: '');
+      const ShoppeUser(userId: '', email: '', fullName: '');
 }
 
 extension IsEmptyShoppeUser on ShoppeUser {

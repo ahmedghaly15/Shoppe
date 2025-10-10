@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ShoppeUser {
 
- String get userId; String get email; String get fullName; String get profilePicture;
+ String get userId; String get email; String get fullName; String? get profilePicture;
 /// Create a copy of ShoppeUser
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ShoppeUserCopyWith<$Res>  {
   factory $ShoppeUserCopyWith(ShoppeUser value, $Res Function(ShoppeUser) _then) = _$ShoppeUserCopyWithImpl;
 @useResult
 $Res call({
- String userId, String email, String fullName, String profilePicture
+ String userId, String email, String fullName, String? profilePicture
 });
 
 
@@ -65,13 +65,13 @@ class _$ShoppeUserCopyWithImpl<$Res>
 
 /// Create a copy of ShoppeUser
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? userId = null,Object? email = null,Object? fullName = null,Object? profilePicture = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? userId = null,Object? email = null,Object? fullName = null,Object? profilePicture = freezed,}) {
   return _then(_self.copyWith(
 userId: null == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
 as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
 as String,fullName: null == fullName ? _self.fullName : fullName // ignore: cast_nullable_to_non_nullable
-as String,profilePicture: null == profilePicture ? _self.profilePicture : profilePicture // ignore: cast_nullable_to_non_nullable
-as String,
+as String,profilePicture: freezed == profilePicture ? _self.profilePicture : profilePicture // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -153,7 +153,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String userId,  String email,  String fullName,  String profilePicture)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String userId,  String email,  String fullName,  String? profilePicture)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ShoppeUser() when $default != null:
 return $default(_that.userId,_that.email,_that.fullName,_that.profilePicture);case _:
@@ -174,7 +174,7 @@ return $default(_that.userId,_that.email,_that.fullName,_that.profilePicture);ca
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String userId,  String email,  String fullName,  String profilePicture)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String userId,  String email,  String fullName,  String? profilePicture)  $default,) {final _that = this;
 switch (_that) {
 case _ShoppeUser():
 return $default(_that.userId,_that.email,_that.fullName,_that.profilePicture);}
@@ -191,7 +191,7 @@ return $default(_that.userId,_that.email,_that.fullName,_that.profilePicture);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String userId,  String email,  String fullName,  String profilePicture)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String userId,  String email,  String fullName,  String? profilePicture)?  $default,) {final _that = this;
 switch (_that) {
 case _ShoppeUser() when $default != null:
 return $default(_that.userId,_that.email,_that.fullName,_that.profilePicture);case _:
@@ -206,13 +206,13 @@ return $default(_that.userId,_that.email,_that.fullName,_that.profilePicture);ca
 @JsonSerializable()
 
 class _ShoppeUser implements ShoppeUser {
-  const _ShoppeUser({required this.userId, required this.email, required this.fullName, required this.profilePicture});
+  const _ShoppeUser({required this.userId, required this.email, required this.fullName, this.profilePicture});
   factory _ShoppeUser.fromJson(Map<String, dynamic> json) => _$ShoppeUserFromJson(json);
 
 @override final  String userId;
 @override final  String email;
 @override final  String fullName;
-@override final  String profilePicture;
+@override final  String? profilePicture;
 
 /// Create a copy of ShoppeUser
 /// with the given fields replaced by the non-null parameter values.
@@ -247,7 +247,7 @@ abstract mixin class _$ShoppeUserCopyWith<$Res> implements $ShoppeUserCopyWith<$
   factory _$ShoppeUserCopyWith(_ShoppeUser value, $Res Function(_ShoppeUser) _then) = __$ShoppeUserCopyWithImpl;
 @override @useResult
 $Res call({
- String userId, String email, String fullName, String profilePicture
+ String userId, String email, String fullName, String? profilePicture
 });
 
 
@@ -264,13 +264,13 @@ class __$ShoppeUserCopyWithImpl<$Res>
 
 /// Create a copy of ShoppeUser
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? userId = null,Object? email = null,Object? fullName = null,Object? profilePicture = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? userId = null,Object? email = null,Object? fullName = null,Object? profilePicture = freezed,}) {
   return _then(_ShoppeUser(
 userId: null == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
 as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
 as String,fullName: null == fullName ? _self.fullName : fullName // ignore: cast_nullable_to_non_nullable
-as String,profilePicture: null == profilePicture ? _self.profilePicture : profilePicture // ignore: cast_nullable_to_non_nullable
-as String,
+as String,profilePicture: freezed == profilePicture ? _self.profilePicture : profilePicture // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
