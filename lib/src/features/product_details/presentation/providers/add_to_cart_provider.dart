@@ -18,7 +18,7 @@ class AddToCart extends _$AddToCart {
     state = const AsyncLoading();
     final body = AddToCartRequestBody(
       productId: productId,
-      quantity: ref.watch(productQuantityProvider),
+      quantity: ref.watch(productQuantityProvider(productId)),
     );
     final result = await ref.read(productDetailsRepoProvider).addToCart(body);
     result.when(

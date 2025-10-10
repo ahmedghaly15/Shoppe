@@ -28,8 +28,11 @@ class CartItemWidget extends StatelessWidget {
             spacing: 16.w,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _CartItemTotalPriceConsumer(totalPrice: cartItem!.totalPrice),
-              const ProductQuantityIconButtonsConsumer(),
+              _CartItemTotalPriceConsumer(
+                unitPrice: cartItem!.totalPrice,
+                productId: cartItem!.productId,
+              ),
+              ProductQuantityIconButtonsConsumer(quantity: cartItem?.quantity),
             ],
           ),
         ),
@@ -39,14 +42,18 @@ class CartItemWidget extends StatelessWidget {
 }
 
 class _CartItemTotalPriceConsumer extends ConsumerWidget {
-  const _CartItemTotalPriceConsumer({required this.totalPrice});
+  const _CartItemTotalPriceConsumer({
+    required this.unitPrice,
+    required this.productId,
+  });
 
-  final double totalPrice;
+  final double unitPrice;
+  final String productId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final quantity = ref.watch(productQuantityProvider);
-    final total = totalPrice * quantity;
+    final quantity = ref.watch(productQuantityProvider(productId));
+    final total = unitPrice * quantity;
     return Text(
       '\$${total.toStringAsFixed(1)}',
       style: AppTextStyles.font13Bold,
