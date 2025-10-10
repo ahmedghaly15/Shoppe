@@ -3,3 +3,4 @@ New release notes:
     - Handled increase/decrease of product-quantity & total-cart-items-price logic
     - Handled fetch-product logic 
     - Updated cart screen UI
+    - Updated shoppe-user model 
