@@ -15,26 +15,32 @@ class EmptyView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      spacing: 16.h,
-      children: [
-        Expanded(
-          child: switch (imgType) {
-            EmptyViewImgType.regular => Image.asset(imgPath, fit: BoxFit.cover),
-            EmptyViewImgType.svg => SvgPicture.asset(
-              imgPath,
-              fit: BoxFit.cover,
-            ),
-          },
-        ),
-        Text(
-          description,
-          style: AppTextStyles.font19Regular,
-          textAlign: TextAlign.center,
-        ),
-      ],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        spacing: 16.h,
+        children: [
+          Expanded(
+            child: switch (imgType) {
+              EmptyViewImgType.regular => Image.asset(
+                imgPath,
+                fit: BoxFit.cover,
+              ),
+              EmptyViewImgType.svg => SvgPicture.asset(
+                imgPath,
+                fit: BoxFit.cover,
+              ),
+            },
+          ),
+          Text(
+            description,
+            style: AppTextStyles.font19Regular,
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
   }
 }

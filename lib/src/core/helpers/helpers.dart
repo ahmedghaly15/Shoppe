@@ -7,3 +7,4 @@ import '../utils/utils.dart' show AppRegex, AppStrings;
 
 part 'extensions.dart';
 part 'input_field_validator.dart';
+part 'enums.dart';

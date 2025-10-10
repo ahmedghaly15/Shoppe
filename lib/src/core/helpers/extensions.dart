@@ -40,6 +40,7 @@ extension ShowToast on BuildContext {
 
 extension ShowAdaptiveDialog<T> on BuildContext {
   Future<T?> showDialog({
+    AdaptiveDialogState state = AdaptiveDialogState.success,
     bool barrierDismissible = true,
     Widget? title,
     String? titleText,
@@ -59,9 +60,11 @@ extension ShowAdaptiveDialog<T> on BuildContext {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16.r),
         ),
-        title: title ?? Text(titleText!, style: AppTextStyles.font19Bold),
+        title: (titleText == null && title == null)
+            ? null
+            : title ?? Text(titleText!, style: AppTextStyles.font19Bold),
         titlePadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-        icon: Icon(LucideIcons.circleAlert, color: Colors.red, size: 40.h),
+        icon: Icon(_getIcon(state), color: _iconColor(state), size: 32.h),
         content:
             content ??
             Text(
@@ -79,6 +82,18 @@ extension ShowAdaptiveDialog<T> on BuildContext {
       ),
     );
   }
+
+  IconData _getIcon(AdaptiveDialogState state) => switch (state) {
+    AdaptiveDialogState.success => LucideIcons.circleCheck,
+    AdaptiveDialogState.warning => LucideIcons.triangleAlert,
+    AdaptiveDialogState.error => LucideIcons.circleX,
+  };
+
+  Color _iconColor(AdaptiveDialogState state) => switch (state) {
+    AdaptiveDialogState.success => Colors.green,
+    AdaptiveDialogState.warning => Colors.yellow,
+    AdaptiveDialogState.error => Colors.red,
+  };
 }
 
 extension EmptyOrNullList on List? {

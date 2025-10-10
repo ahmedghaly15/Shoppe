@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shadcn_ui/shadcn_ui.dart' show LucideIcons;
 import 'package:shoppe/src/core/helpers/helpers.dart';
-import 'package:skeletonizer/skeletonizer.dart' show Skeleton;
 
 import '../../config/theming/theming.dart' show AppColors, AppTextStyles;
 import '../../core/api/api_request_result.dart';

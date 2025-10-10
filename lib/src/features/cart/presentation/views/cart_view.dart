@@ -34,6 +34,8 @@ class CartView extends StatelessWidget {
               const SliverFillRemaining(
                 hasScrollBody: false,
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [Spacer(), TotalPriceAndCheckoutButton()],
                 ),
               ),
