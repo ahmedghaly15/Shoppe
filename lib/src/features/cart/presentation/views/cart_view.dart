@@ -33,7 +33,9 @@ class CartView extends StatelessWidget {
               const CartSliverListConsumer(),
               const SliverFillRemaining(
                 hasScrollBody: false,
-                child: Column(children: [Spacer(), CheckoutButtonConsumer()]),
+                child: Column(
+                  children: [Spacer(), TotalPriceAndCheckoutButton()],
+                ),
               ),
             ],
           ),
