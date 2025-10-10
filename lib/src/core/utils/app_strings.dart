@@ -91,4 +91,5 @@ class AppStrings {
       'Use your voucher before it’s gone! You have 3 days left to redeem this offer and enjoy your savings.';
   static const String recentlyViewed = 'Recently Viewed';
   static const String mostLiked = 'Most Liked';
+  static const String total = 'Total';
 }

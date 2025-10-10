@@ -63,7 +63,12 @@ extension ShowAdaptiveDialog<T> on BuildContext {
         titlePadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         icon: Icon(LucideIcons.circleAlert, color: Colors.red, size: 40.h),
         content:
-            content ?? Text(contentText!, style: AppTextStyles.font15Regular),
+            content ??
+            Text(
+              contentText!,
+              style: AppTextStyles.font15Regular,
+              textAlign: TextAlign.center,
+            ),
         contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         actions: actions,
         actionsOverflowDirection: VerticalDirection.down,

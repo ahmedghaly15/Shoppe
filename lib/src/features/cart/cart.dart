@@ -15,8 +15,6 @@ import '../product_details/product_details.dart'
     show ProductQuantityIconButtonsConsumer, productQuantityProvider;
 import 'data/models/checkout_request_body.dart';
 import 'presentation/providers/checkout_provider.dart';
-import '../product_details/product_details.dart'
-    show ProductQuantityIconButtonsConsumer;
 import 'data/api/cart_api_service.dart';
 
 import 'data/models/checkout_request_response.dart';
@@ -31,3 +29,4 @@ part 'presentation/views/widgets/cart_sliver_list_consumer.dart';
 part 'presentation/views/widgets/cart_item_widget.dart';
 part 'presentation/views/widgets/checkout_button_consumer.dart';
 part 'presentation/providers/cart_length_provider.dart';
+part 'presentation/views/widgets/total_price_and_checkout_button.dart';

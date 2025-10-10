@@ -19,6 +19,7 @@ import '../../core/widgets/core_widgets.dart'
         ArrowBackIconButton,
         CustomCachedNetworkImage,
         PrimaryButton;
+import '../cart/cart.dart' show cartItemsProvider;
 import 'data/api/product_details_api_service.dart';
 import 'data/models/add_to_cart_request_body.dart';
 import 'data/models/add_to_cart_request_response.dart';
