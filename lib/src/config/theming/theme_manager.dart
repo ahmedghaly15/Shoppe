@@ -10,7 +10,7 @@ class ThemeManager {
       foreground: Colors.black, // ensures general text is dark
       primaryForeground: Colors.white, // ensures primary button text dark
     ),
-    brightness: Brightness.dark,
+    brightness: Brightness.light,
     primaryButtonTheme: ShadButtonTheme(
       size: ShadButtonSize.lg,
       backgroundColor: AppColors.primaryColor,

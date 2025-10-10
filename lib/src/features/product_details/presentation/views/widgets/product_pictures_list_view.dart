@@ -10,7 +10,7 @@ class ProductPicturesListView extends StatelessWidget {
     return ListView.separated(
       itemCount: productPictures.length,
       scrollDirection: Axis.horizontal,
-      padding: EdgeInsetsDirectional.only(start: 12.w),
+      padding: EdgeInsetsDirectional.only(end: 12.w),
       physics: const BouncingScrollPhysics(),
       itemBuilder: (_, index) {
         final imgUrl = productPictures[index];
@@ -22,7 +22,7 @@ class ProductPicturesListView extends StatelessWidget {
           ),
         );
       },
-      separatorBuilder: (_, _) => SizedBox(width: 6.w),
+      separatorBuilder: (_, _) => 6.horizontalSpace,
     );
   }
 }

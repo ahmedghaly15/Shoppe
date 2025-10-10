@@ -6,7 +6,9 @@ class CartSliverListConsumer extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final cart = ref.watch(fetchCartProvider);
+    final asyncFetchProduct = ref.watch(fetchProductProvider);
     _fetchCartProviderListener(ref);
+    _fetchProductProviderListener(ref, context);
     return cart.when(
       skipError: true,
       skipLoadingOnRefresh: true,
@@ -30,12 +32,11 @@ class CartSliverListConsumer extends ConsumerWidget {
                 itemBuilder: (_, index) {
                   final cartItem = cartItems[index];
                   return MaterialButton(
-                    onPressed: () async =>
-                        await _fetchProductAndPushProductDetails(
-                          ref,
-                          cartItem.productId,
-                          context,
-                        ),
+                    onPressed: asyncFetchProduct.isLoading
+                        ? null
+                        : () => ref
+                              .read(fetchProductProvider.notifier)
+                              .fetchProduct(cartItem.productId),
                     padding: EdgeInsets.zero,
                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     child: CartItemWidget(cartItem: cartItem),
@@ -51,13 +52,15 @@ class CartSliverListConsumer extends ConsumerWidget {
     );
   }
 
-  Future<void> _fetchProductAndPushProductDetails(
-    WidgetRef ref,
-    String productId,
-    BuildContext context,
-  ) async {
-    final product = await ref.read(fetchProductProvider(productId).future);
-    context.pushRoute(ProductDetailsRoute(product: product));
+  void _fetchProductProviderListener(WidgetRef ref, BuildContext context) {
+    ref.listen(
+      fetchProductProvider,
+      (_, current) => current.whenOrNull(
+        error: (error, _) => context.showToast(error.toString()),
+        data: (product) =>
+            context.pushRoute(ProductDetailsRoute(product: product)),
+      ),
+    );
   }
 
   void _fetchCartProviderListener(WidgetRef ref) {

@@ -106,8 +106,9 @@ class ProductDetailsView extends StatelessWidget {
             SliverPadding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               sliver: SliverToBoxAdapter(
-                child: SizedBox(
+                child: Container(
                   height: 75.h,
+                  margin: EdgeInsets.symmetric(vertical: 16.h),
                   child: ProductPicturesListView(
                     productPictures: product.productPictures!,
                   ),
