@@ -43,6 +43,7 @@ class Product {
       _$ProductFromJson(json);
 
   Map<String, dynamic> toJson() => _$ProductToJson(this);
+  factory Product.empty() => const Product();
 }
 
 extension GetFinalPrice on Product {

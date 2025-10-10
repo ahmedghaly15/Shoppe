@@ -1,5 +1,5 @@
 New release notes:
-    - Fixed bugs in home screen 
-    - Fixed bugs in product-details screen
-    - Fixed bugs in reviews screen 
-    - Fixed bugs in cart screen
+    - Updated dialog UI
+    - Handled increase/decrease of product-quantity & total-cart-items-price logic
+    - Handled fetch-product logic 
+    - Updated cart screen UI

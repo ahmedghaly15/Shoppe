@@ -7,18 +7,21 @@ class CustomErrorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      spacing: 16.h,
-      children: [
-        Expanded(child: Image.asset(Assets.imagesError, fit: BoxFit.cover)),
-        Text(
-          error,
-          style: AppTextStyles.font15Regular,
-          textAlign: TextAlign.center,
-        ),
-      ],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        spacing: 16.h,
+        children: [
+          Expanded(child: Image.asset(Assets.imagesError, fit: BoxFit.cover)),
+          Text(
+            error,
+            style: AppTextStyles.font15Regular,
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
   }
 }
