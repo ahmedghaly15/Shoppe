@@ -1,30 +1,30 @@
 part of '../../../product_details.dart';
 
 class ProductQuantityIconButtonsConsumer extends ConsumerWidget {
-  const ProductQuantityIconButtonsConsumer({super.key, this.quantity});
+  const ProductQuantityIconButtonsConsumer({
+    super.key,
+    this.quantity,
+    required this.productId,
+  });
 
   final int? quantity;
+  final String productId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final productId = context.routeData
-        .argsAs<ProductDetailsRouteArgs>()
-        .product
-        .id;
     return Row(
       spacing: 6.w,
+      mainAxisSize: MainAxisSize.min,
       children: [
         _outlinedIconButton(
-          () => ref
-              .read(productQuantityProvider(productId!).notifier)
-              .decrement(),
+          () =>
+              ref.read(productQuantityProvider(productId).notifier).decrement(),
           LucideIcons.minus,
         ),
-        _QuantityTextConsumer(quantity: quantity),
+        _QuantityTextConsumer(quantity: quantity, productId: productId),
         _outlinedIconButton(
-          () => ref
-              .read(productQuantityProvider(productId!).notifier)
-              .increment(),
+          () =>
+              ref.read(productQuantityProvider(productId).notifier).increment(),
           LucideIcons.plus,
         ),
       ],
@@ -45,17 +45,14 @@ class ProductQuantityIconButtonsConsumer extends ConsumerWidget {
 }
 
 class _QuantityTextConsumer extends ConsumerWidget {
-  const _QuantityTextConsumer({this.quantity});
+  const _QuantityTextConsumer({this.quantity, required this.productId});
 
   final int? quantity;
+  final String productId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final productId = context.routeData
-        .argsAs<ProductDetailsRouteArgs>()
-        .product
-        .id;
-    final quantity = ref.watch(productQuantityProvider(productId!));
+    final quantity = ref.watch(productQuantityProvider(productId));
     return Container(
       padding: EdgeInsets.all(6.h),
       decoration: BoxDecoration(

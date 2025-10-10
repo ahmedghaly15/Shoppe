@@ -46,7 +46,7 @@ class ProductDetailsView extends StatelessWidget {
                       '\$${product.finalPrice.toStringAsFixed(1)}',
                       style: AppTextStyles.font21Bold,
                     ),
-                    const ProductQuantityIconButtonsConsumer(),
+                    ProductQuantityIconButtonsConsumer(productId: product.id!),
                   ],
                 ),
               ),

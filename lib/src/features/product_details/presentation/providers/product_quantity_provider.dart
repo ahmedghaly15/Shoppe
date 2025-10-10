@@ -8,6 +8,7 @@ class ProductQuantityNotifier extends Notifier<int> {
   @override
   int build() {
     final cartItems = ref.watch(cartItemsProvider);
+    if (cartItems.isEmpty) return 1;
     final item = cartItems.firstWhere(
       (cartItem) => cartItem.productId == productId,
     );

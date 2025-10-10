@@ -9,7 +9,7 @@ class TotalPriceAndCheckoutButton extends StatelessWidget {
       spacing: 16.w,
       children: const [
         Expanded(child: _TotalCartItemsTextConsumer()),
-        CheckoutButtonConsumer(),
+        Expanded(child: CheckoutButtonConsumer()),
       ],
     );
   }
