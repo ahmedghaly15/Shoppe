@@ -5,14 +5,14 @@ final sharedPrefProvider = Provider<SharedPreferences>((ref) {
   throw UnimplementedError(); // will be overridden in main
 });
 
-final cacheHelperProvider = Provider<CacheHelper>((ref) {
+final sharedPrefHelperProvider = Provider<SharedPrefHelper>((ref) {
   throw UnimplementedError(); // will be overridden in main
 });
 
-class CacheHelper {
+class SharedPrefHelper {
   final SharedPreferences _sharedPref;
 
-  CacheHelper(this._sharedPref);
+  SharedPrefHelper(this._sharedPref);
 
   /// Removes a value from SharedPreferences with given [key].
   Future<bool> removeData(String key) async {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart' show ProviderScope;
+import 'package:flutter_riverpod/misc.dart' show ProviderException;
 import 'package:flutter_screenutil/flutter_screenutil.dart' show ScreenUtil;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -14,7 +15,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   final sharedPref = await SharedPreferences.getInstance();
-  final cacheHelper = CacheHelper(sharedPref);
+  final sharedPrefHelper = SharedPrefHelper(sharedPref);
 
   const secureStorage = FlutterSecureStorage(
     aOptions: AndroidOptions(encryptedSharedPreferences: true),
@@ -35,10 +36,16 @@ void main() async {
     ProviderScope(
       overrides: [
         sharedPrefProvider.overrideWithValue(sharedPref),
-        cacheHelperProvider.overrideWithValue(cacheHelper),
+        sharedPrefHelperProvider.overrideWithValue(sharedPrefHelper),
         secureStorageProvider.overrideWithValue(secureStorage),
         secureStorageHelperProvider.overrideWithValue(secureStorageHelper),
       ],
+      retry: (retryCount, error) {
+        if (error is ProviderException) return null;
+        if (retryCount > 5) return null;
+
+        return Duration(seconds: retryCount * 2);
+      },
       observers: [RiverpodObserver()],
       child: const ShoppeApp(),
     ),
