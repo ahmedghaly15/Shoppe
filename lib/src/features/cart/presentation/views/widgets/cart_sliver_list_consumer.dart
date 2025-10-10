@@ -10,10 +10,13 @@ class CartSliverListConsumer extends ConsumerWidget {
     return cart.when(
       skipError: true,
       skipLoadingOnRefresh: true,
-      loading: () => SliverList.separated(
-        itemCount: 10,
-        itemBuilder: (_, index) => const CartItemWidget(),
-        separatorBuilder: (_, _) => 16.verticalSpace,
+      loading: () => const SliverFillRemaining(
+        hasScrollBody: false,
+        child: Center(
+          child: AdaptiveCircularProgressIndicator(
+            color: AppColors.primaryColor,
+          ),
+        ),
       ),
       data: (cart) {
         final cartItems = cart.cartItems;

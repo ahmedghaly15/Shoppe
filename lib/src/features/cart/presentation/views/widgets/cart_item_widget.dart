@@ -1,42 +1,51 @@
 part of '../../../cart.dart';
 
 class CartItemWidget extends StatelessWidget {
-  const CartItemWidget({super.key, this.cartItem});
+  const CartItemWidget({super.key, required this.cartItem});
 
-  final CartItem? cartItem;
+  final CartItem cartItem;
 
   @override
   Widget build(BuildContext context) {
-    return Skeleton.leaf(
-      child: ListTile(
-        titleAlignment: ListTileTitleAlignment.center,
-        leading: ShadowContainer(
-          child: ClipRRect(
-            borderRadius: Consts.itemRadius,
-            child: CustomCachedNetworkImage(
-              imageUrl: cartItem?.productCoverUrl ?? '',
+    return Row(
+      spacing: 16.w,
+      children: [
+        Flexible(
+          child: ShadowContainer(
+            child: ClipRRect(
+              borderRadius: Consts.itemRadius,
+              child: CustomCachedNetworkImage(
+                imageUrl: cartItem.productCoverUrl,
+              ),
             ),
           ),
         ),
-        title: Text(
-          cartItem?.productName.capitalize() ?? 'Cart Item Name',
-          style: AppTextStyles.font15Bold,
-        ),
-        subtitle: Container(
-          margin: EdgeInsets.only(top: 16.h),
-          child: Row(
-            spacing: 16.w,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _CartItemTotalPriceConsumer(
-                unitPrice: cartItem!.totalPrice,
-                productId: cartItem!.productId,
+              Text(
+                cartItem.productName.capitalize(),
+                style: AppTextStyles.font15Bold,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
-              ProductQuantityIconButtonsConsumer(quantity: cartItem?.quantity),
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 16.h),
+                child: _CartItemTotalPriceConsumer(
+                  unitPrice: cartItem.totalPrice,
+                  productId: cartItem.productId,
+                ),
+              ),
+              ProductQuantityIconButtonsConsumer(
+                quantity: cartItem.quantity,
+                productId: cartItem.productId,
+              ),
             ],
           ),
         ),
-      ),
+      ],
     );
   }
 }
