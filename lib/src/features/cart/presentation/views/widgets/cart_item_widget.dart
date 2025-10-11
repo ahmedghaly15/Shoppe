@@ -11,13 +11,24 @@ class CartItemWidget extends StatelessWidget {
       spacing: 16.w,
       children: [
         Flexible(
-          child: ShadowContainer(
-            child: ClipRRect(
-              borderRadius: Consts.itemRadius,
-              child: CustomCachedNetworkImage(
-                imageUrl: cartItem.productCoverUrl,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Positioned.fill(
+                child: ShadowContainer(
+                  child: ClipRRect(
+                    borderRadius: Consts.itemRadius,
+                    child: CustomCachedNetworkImage(
+                      imageUrl: cartItem.productCoverUrl,
+                    ),
+                  ),
+                ),
               ),
-            ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(LucideIcons.trash, color: Colors.red),
+              ),
+            ],
           ),
         ),
         Expanded(

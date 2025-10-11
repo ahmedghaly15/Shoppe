@@ -17,7 +17,7 @@ class EndPoints {
   static const String products = '${baseUrl}products';
   static const String reviews = '${baseUrl}reviews';
   static const String cart = '${baseUrl}cart/';
-  static const String addToCart = '${cart}items';
+  static const String cartItems = '${cart}items';
   static const String orders = '${baseUrl}orders/';
   static const String checkout = '${orders}checkout';
   static const String me = '${auth}me';

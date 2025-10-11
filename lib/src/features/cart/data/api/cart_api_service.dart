@@ -27,4 +27,7 @@ abstract class CartApiService {
 
   @GET('${EndPoints.products}/{Id}')
   Future<Product> fetchProduct(@Path('Id') String productId);
+
+  @DELETE('${EndPoints.cartItems}/{Id}')
+  Future<void> removeProductFromCart(@Path('Id') String productId);
 }

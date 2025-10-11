@@ -19,6 +19,6 @@ abstract class ProductDetailsApiService {
   factory ProductDetailsApiService(Dio dio, {String baseUrl}) =
       _ProductDetailsApiService;
 
-  @POST(EndPoints.addToCart)
+  @POST(EndPoints.cartItems)
   Future<AddToCartRequestResponse> addToCart(@Body() AddToCartRequestBody body);
 }
