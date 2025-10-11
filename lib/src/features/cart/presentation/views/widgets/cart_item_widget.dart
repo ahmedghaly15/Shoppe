@@ -24,10 +24,7 @@ class CartItemWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(LucideIcons.trash, color: Colors.red),
-              ),
+              RemoveProductFromCartConsumer(productId: cartItem.productId),
             ],
           ),
         ),
