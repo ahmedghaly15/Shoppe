@@ -6,6 +6,8 @@ class LayoutView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // Used it here because the provider is used in cart & profile screen
+    _fetchProductProviderListener(ref, context);
     final asyncSelectedIndex = ref.watch(layoutActiveIndexProvider);
     return AutoTabsScaffold(
       routes: const [HomeRoute(), CartRoute(), ProfileConsumerRoute()],
@@ -30,6 +32,17 @@ class LayoutView extends ConsumerWidget {
             label: AppStrings.profile,
           ),
         ],
+      ),
+    );
+  }
+
+  void _fetchProductProviderListener(WidgetRef ref, BuildContext context) {
+    ref.listen(
+      fetchProductProvider,
+      (_, current) => current.whenOrNull(
+        error: (error, _) => context.showToast(error.toString()),
+        data: (product) =>
+            context.pushRoute(ProductDetailsRoute(product: product)),
       ),
     );
   }

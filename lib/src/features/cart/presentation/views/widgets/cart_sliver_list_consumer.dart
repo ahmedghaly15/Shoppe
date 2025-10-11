@@ -8,7 +8,6 @@ class CartSliverListConsumer extends ConsumerWidget {
     final cart = ref.watch(fetchCartProvider);
     final asyncFetchProduct = ref.watch(fetchProductProvider);
     _fetchCartProviderListener(ref);
-    _fetchProductProviderListener(ref, context);
     return cart.when(
       skipError: true,
       skipLoadingOnRefresh: true,
@@ -48,17 +47,6 @@ class CartSliverListConsumer extends ConsumerWidget {
       error: (error, _) => SliverFillRemaining(
         hasScrollBody: false,
         child: CustomErrorWidget(error: error.toString()),
-      ),
-    );
-  }
-
-  void _fetchProductProviderListener(WidgetRef ref, BuildContext context) {
-    ref.listen(
-      fetchProductProvider,
-      (_, current) => current.whenOrNull(
-        error: (error, _) => context.showToast(error.toString()),
-        data: (product) =>
-            context.pushRoute(ProductDetailsRoute(product: product)),
       ),
     );
   }

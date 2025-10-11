@@ -6,11 +6,13 @@ import 'package:flutter_riverpod/experimental/persist.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shadcn_ui/shadcn_ui.dart' show LucideIcons;
+import 'package:shoppe/src/core/helpers/helpers.dart';
 
 import '../../config/router/app_router.dart';
 import '../../config/theming/theming.dart';
 import '../../core/providers/core_providers.dart';
 import '../../core/utils/utils.dart';
+import '../cart/cart.dart' show fetchProductProvider;
 
 part 'presentation/views/layout_view.dart';
 part 'presentation/views/widgets/custom_navigation_destination.dart';
