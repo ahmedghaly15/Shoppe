@@ -11,7 +11,9 @@ abstract class CartRepo {
     CheckoutRequestBody body,
   );
   Future<ApiRequestResult<Product>> fetchProduct(String productId);
-  Future<ApiRequestResult<void>> removeProductFromCart(String productId);
+  Future<ApiRequestResult<void>> removeProductFromCart(
+    RemoveProductFromCartRequestBody body,
+  );
 }
 
 class CartRepoImpl extends CartRepo {
@@ -39,8 +41,9 @@ class CartRepoImpl extends CartRepo {
       );
 
   @override
-  Future<ApiRequestResult<void>> removeProductFromCart(String productId) =>
-      executeAndHandleApiRequest<void>(
-        () async => await _apiService.removeProductFromCart(productId),
-      );
+  Future<ApiRequestResult<void>> removeProductFromCart(
+    RemoveProductFromCartRequestBody body,
+  ) => executeAndHandleApiRequest<void>(
+    () async => await _apiService.removeProductFromCart(body.productId, body),
+  );
 }

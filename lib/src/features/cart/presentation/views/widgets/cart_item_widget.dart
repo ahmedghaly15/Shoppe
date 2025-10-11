@@ -14,17 +14,21 @@ class CartItemWidget extends StatelessWidget {
           child: Stack(
             alignment: Alignment.center,
             children: [
-              Positioned.fill(
-                child: ShadowContainer(
-                  child: ClipRRect(
-                    borderRadius: Consts.itemRadius,
-                    child: CustomCachedNetworkImage(
-                      imageUrl: cartItem.productCoverUrl,
-                    ),
+              ShadowContainer(
+                child: ClipRRect(
+                  borderRadius: Consts.itemRadius,
+                  child: CustomCachedNetworkImage(
+                    imageUrl: cartItem.productCoverUrl,
                   ),
                 ),
               ),
-              RemoveProductFromCartConsumer(productId: cartItem.productId),
+              PositionedDirectional(
+                top: 4.h,
+                start: 4.w,
+                child: RemoveProductFromCartConsumer(
+                  productId: cartItem.productId,
+                ),
+              ),
             ],
           ),
         ),

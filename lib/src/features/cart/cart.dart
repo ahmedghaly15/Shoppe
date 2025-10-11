@@ -17,6 +17,7 @@ import '../../core/widgets/core_widgets.dart';
 import '../product_details/product_details.dart'
     show ProductQuantityIconButtonsConsumer, productQuantityProvider;
 import 'data/models/checkout_request_body.dart';
+import 'data/models/remove_product_from_cart_request_body.dart';
 import 'presentation/providers/checkout_provider.dart';
 import 'data/api/cart_api_service.dart';
 

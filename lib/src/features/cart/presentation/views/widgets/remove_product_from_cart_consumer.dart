@@ -9,7 +9,12 @@ class RemoveProductFromCartConsumer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final asyncRemoveProduct = ref.watch(removeProductFromCartProvider);
     _removeProductFromCartProviderListener(ref, context);
-    return IconButton(
+    return IconButton.filledTonal(
+      style: IconButton.styleFrom(
+        foregroundColor: Colors.red,
+        backgroundColor: AppColors.colorFFEBEB,
+        minimumSize: Size(16.w, 16.h),
+      ),
       onPressed: asyncRemoveProduct.isLoading
           ? null
           : () => ref

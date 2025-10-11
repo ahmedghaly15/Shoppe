@@ -74,6 +74,7 @@ class _ProductsSliverGrid extends ConsumerWidget {
                 children: [
                   Expanded(
                     child: ShadowContainer(
+                      width: double.infinity,
                       child: isLoading
                           ? Skeleton.leaf(
                               child: Container(

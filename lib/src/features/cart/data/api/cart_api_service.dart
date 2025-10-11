@@ -7,6 +7,7 @@ import '../../../../core/models/product.dart';
 import '../models/checkout_request_body.dart';
 import '../models/checkout_request_response.dart';
 import '../models/fetch_cart_request_response.dart';
+import '../models/remove_product_from_cart_request_body.dart';
 
 part 'cart_api_service.g.dart';
 
@@ -29,5 +30,8 @@ abstract class CartApiService {
   Future<Product> fetchProduct(@Path('Id') String productId);
 
   @DELETE('${EndPoints.cartItems}/{Id}')
-  Future<void> removeProductFromCart(@Path('Id') String productId);
+  Future<void> removeProductFromCart(
+    @Path('Id') String productId,
+    @Body() RemoveProductFromCartRequestBody body,
+  );
 }

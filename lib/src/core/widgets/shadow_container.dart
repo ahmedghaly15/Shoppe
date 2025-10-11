@@ -6,21 +6,24 @@ class ShadowContainer extends StatelessWidget {
     required this.child,
     this.height,
     this.width,
+    this.radius,
     this.shape = BoxShape.rectangle,
+    this.color = Colors.white,
   });
 
   final Widget child;
-  final double? height, width;
+  final double? height, width, radius;
   final BoxShape shape;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height?.h,
-      width: shape == BoxShape.circle ? width?.h : width?.w,
+      height: shape == BoxShape.circle ? radius?.h : height?.h,
+      width: shape == BoxShape.circle ? radius?.h : width?.w,
       padding: EdgeInsets.all(5.h),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: color,
         borderRadius: shape == BoxShape.circle ? null : Consts.itemRadius,
         boxShadow: [
           BoxShadow(
