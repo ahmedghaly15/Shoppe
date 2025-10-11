@@ -17,3 +17,4 @@ part 'functions/check_if_user_is_logged_in.dart';
 part 'functions/execute_and_handle_api_request.dart';
 part 'debug_logger.dart';
 part 'constants.dart';
+part 'functions/join.dart';
