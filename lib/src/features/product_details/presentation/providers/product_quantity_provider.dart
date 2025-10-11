@@ -9,10 +9,10 @@ class ProductQuantityNotifier extends Notifier<int> {
   int build() {
     final cartItems = ref.watch(cartItemsProvider);
     if (cartItems.isEmpty) return 1;
-    final item = cartItems.firstWhere(
+    final item = cartItems.firstWhereOrNull(
       (cartItem) => cartItem.productId == productId,
     );
-    return item.quantity;
+    return item?.quantity ?? 1;
   }
 
   void increment() => state++;
