@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shadcn_ui/shadcn_ui.dart' show ShadFormState;
+part of 'core_providers.dart';
 
 final emailProvider = Provider.autoDispose<TextEditingController>((ref) {
   return TextEditingController();

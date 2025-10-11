@@ -10,7 +10,8 @@ import '../../config/router/app_router.dart';
 import '../../config/theming/theming.dart' show AppTextStyles;
 import '../../core/api/api_error_model.dart';
 import '../../core/api/api_request_result.dart';
-import '../../core/providers/form_providers.dart';
+import '../../core/providers/core_providers.dart'
+    show emailProvider, formKeyProvider;
 import '../../core/utils/utils.dart';
 import '../../core/widgets/core_widgets.dart';
 import 'data/api/login_api_service.dart';

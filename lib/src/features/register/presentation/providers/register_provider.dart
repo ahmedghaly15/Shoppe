@@ -1,7 +1,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../../core/api/api_request_result.dart';
 
-import '../../../../core/providers/form_providers.dart';
+import '../../../../core/providers/core_providers.dart';
 import '../../data/models/register_request_body.dart';
 import '../../register.dart' show registerRepoProvider;
 

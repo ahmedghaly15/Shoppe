@@ -4,7 +4,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../core/api/api_request_result.dart';
 import '../../../../core/models/email_request_body.dart';
-import '../../../../core/providers/form_providers.dart';
+import '../../../../core/providers/core_providers.dart' show emailProvider;
 import '../../data/models/otp_request_body.dart';
 import '../../otp.dart';
 

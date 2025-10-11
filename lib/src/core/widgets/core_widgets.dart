@@ -10,7 +10,7 @@ import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../config/theming/theming.dart' show AppColors, AppTextStyles;
 import '../api/api.dart' show ApiErrorMessage;
-import '../providers/form_providers.dart';
+import '../providers/core_providers.dart';
 import '../utils/utils.dart' show AppStrings, Assets, Consts;
 
 part 'adaptive_circular_progress_indicator.dart';
