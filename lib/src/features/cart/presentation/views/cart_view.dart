@@ -31,18 +31,31 @@ class CartView extends StatelessWidget {
                 ),
               ),
               const CartSliverListConsumer(),
-              const SliverFillRemaining(
-                hasScrollBody: false,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [Spacer(), TotalPriceAndCheckoutButton()],
-                ),
-              ),
+              const _TotalPriceAndCheckoutButtonConsumer(),
             ],
           ),
         ),
       ),
     );
+  }
+}
+
+class _TotalPriceAndCheckoutButtonConsumer extends ConsumerWidget {
+  const _TotalPriceAndCheckoutButtonConsumer();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final cart = ref.watch(fetchCartProvider);
+    final cartItems = cart.whenOrNull(data: (data) => data.cartItems) ?? [];
+    return cartItems.isEmpty
+        ? const SliverToBoxAdapter(child: SizedBox.shrink())
+        : const SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [Spacer(), TotalPriceAndCheckoutButton()],
+            ),
+          );
   }
 }
