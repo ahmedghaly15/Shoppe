@@ -44,6 +44,6 @@ class CartRepoImpl extends CartRepo {
   Future<ApiRequestResult<void>> removeProductFromCart(
     RemoveProductFromCartRequestBody body,
   ) => executeAndHandleApiRequest<void>(
-    () async => await _apiService.removeProductFromCart(body.productId, body),
+    () async => await _apiService.removeProductFromCart(body.itemId, body),
   );
 }

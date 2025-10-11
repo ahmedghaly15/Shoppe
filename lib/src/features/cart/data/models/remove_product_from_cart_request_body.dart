@@ -4,9 +4,10 @@ part 'remove_product_from_cart_request_body.g.dart';
 
 @JsonSerializable()
 class RemoveProductFromCartRequestBody {
-  const RemoveProductFromCartRequestBody({required this.productId});
+  const RemoveProductFromCartRequestBody({required this.itemId});
 
-  final String productId;
+  @JsonKey(name: 'id')
+  final String itemId;
 
   factory RemoveProductFromCartRequestBody.fromJson(
     Map<String, dynamic> json,

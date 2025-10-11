@@ -8,8 +8,8 @@ part of 'remove_product_from_cart_request_body.dart';
 
 RemoveProductFromCartRequestBody _$RemoveProductFromCartRequestBodyFromJson(
   Map<String, dynamic> json,
-) => RemoveProductFromCartRequestBody(productId: json['productId'] as String);
+) => RemoveProductFromCartRequestBody(itemId: json['id'] as String);
 
 Map<String, dynamic> _$RemoveProductFromCartRequestBodyToJson(
   RemoveProductFromCartRequestBody instance,
-) => <String, dynamic>{'productId': instance.productId};
+) => <String, dynamic>{'id': instance.itemId};

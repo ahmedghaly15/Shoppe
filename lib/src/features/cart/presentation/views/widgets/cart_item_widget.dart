@@ -25,9 +25,7 @@ class CartItemWidget extends StatelessWidget {
               PositionedDirectional(
                 top: 4.h,
                 start: 4.w,
-                child: RemoveProductFromCartConsumer(
-                  productId: cartItem.productId,
-                ),
+                child: RemoveProductFromCartConsumer(itemId: cartItem.itemId),
               ),
             ],
           ),

@@ -1,9 +1,9 @@
 part of '../../../cart.dart';
 
 class RemoveProductFromCartConsumer extends ConsumerWidget {
-  const RemoveProductFromCartConsumer({super.key, required this.productId});
+  const RemoveProductFromCartConsumer({super.key, required this.itemId});
 
-  final String productId;
+  final String itemId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -19,7 +19,7 @@ class RemoveProductFromCartConsumer extends ConsumerWidget {
           ? null
           : () => ref
                 .read(removeProductFromCartProvider.notifier)
-                .removeProduct(productId),
+                .removeProduct(itemId),
       icon: asyncRemoveProduct.isLoading
           ? const AdaptiveCircularProgressIndicator(color: Colors.red)
           : const Icon(LucideIcons.trash, color: Colors.red),

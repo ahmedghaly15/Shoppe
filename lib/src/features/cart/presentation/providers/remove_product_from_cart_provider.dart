@@ -4,11 +4,10 @@ final class RemoveProductFromCart extends AsyncNotifier<bool> {
   @override
   FutureOr<bool> build() => false;
 
-  Future<void> removeProduct(String productId) async {
+  Future<void> removeProduct(String itemId) async {
     state = const AsyncLoading();
-    final result = await ref
-        .read(cartRepoProvider)
-        .removeProductFromCart(productId);
+    final body = RemoveProductFromCartRequestBody(itemId: itemId);
+    final result = await ref.read(cartRepoProvider).removeProductFromCart(body);
     result.when(
       success: (_) => state = const AsyncValue.data(true),
       failure: (error) =>
