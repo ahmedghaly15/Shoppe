@@ -34,3 +34,4 @@ part 'presentation/views/widgets/checkout_button_consumer.dart';
 part 'presentation/providers/cart_length_provider.dart';
 part 'presentation/views/widgets/total_price_and_checkout_button.dart';
 part 'presentation/providers/fetch_product_provider.dart';
+part 'presentation/providers/remove_product_from_cart_provider.dart';

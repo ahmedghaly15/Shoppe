@@ -34,7 +34,7 @@ class AddToCartConsumerButton extends ConsumerWidget {
         ),
         error: (error, _) {
           final apiErrorModel = error as ApiErrorModel;
-          context.showToast(apiErrorModel.getAllErrorMsgs());
+          context.showToast(apiErrorModel.getAllErrorMsgs);
         },
       ),
     );

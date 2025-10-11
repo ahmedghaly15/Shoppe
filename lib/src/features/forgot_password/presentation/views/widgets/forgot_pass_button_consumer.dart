@@ -43,7 +43,7 @@ class ForgotPassButtonConsumer extends ConsumerWidget {
           context.showDialog(
             state: AdaptiveDialogState.error,
             titleText: apiErrorModel.errorTypeName,
-            contentText: apiErrorModel.getAllErrorMsgs(),
+            contentText: apiErrorModel.getAllErrorMsgs,
           );
         },
         loading: () => context.unfocusKeyboard(),

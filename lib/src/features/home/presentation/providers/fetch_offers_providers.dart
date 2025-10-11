@@ -11,7 +11,7 @@ final fetchOffersProvider =
               .update(data.offers?.items?.length);
           return data;
         },
-        failure: (error) => throw error.getAllErrorMsgs(),
+        failure: (error) => throw error.getAllErrorMsgs,
       );
     });
 

@@ -20,7 +20,7 @@ abstract class ApiErrorModel with _$ApiErrorModel {
 }
 
 extension GetAllErrorMsgs on ApiErrorModel {
-  String getAllErrorMsgs() {
+  String get getAllErrorMsgs {
     if (errors == null || (errors is List && (errors as List).isEmpty)) {
       return message ?? ApiErrorMessage.defaultError;
     }

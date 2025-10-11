@@ -32,7 +32,7 @@ class CheckoutButtonConsumer extends ConsumerWidget {
       (_, current) => current.whenOrNull(
         error: (error, _) {
           final apiErrorModel = error as ApiErrorModel;
-          context.showToast(apiErrorModel.getAllErrorMsgs());
+          context.showToast(apiErrorModel.getAllErrorMsgs);
         },
       ),
     );

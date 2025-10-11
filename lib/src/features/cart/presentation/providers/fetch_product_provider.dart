@@ -9,7 +9,7 @@ final class FetchProductProvider extends AsyncNotifier<Product> {
     result.when(
       success: (product) => state = AsyncValue.data(product),
       failure: (error) =>
-          state = AsyncValue.error(error.getAllErrorMsgs(), StackTrace.current),
+          state = AsyncValue.error(error.getAllErrorMsgs, StackTrace.current),
     );
   }
 }

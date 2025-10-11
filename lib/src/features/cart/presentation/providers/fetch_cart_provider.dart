@@ -9,7 +9,7 @@ final fetchCartProvider = FutureProvider.autoDispose<FetchCartRequestResponse>((
       ref.read(cartItemsProvider.notifier).set(data.cartItems);
       return data;
     },
-    failure: (error) => throw error.getAllErrorMsgs(),
+    failure: (error) => throw error.getAllErrorMsgs,
   );
 });
 

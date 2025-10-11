@@ -6,6 +6,6 @@ final fetchProductsProvider =
       final result = await ref.read(homeRepoProvider).fetchProducts(body);
       return result.when(
         success: (data) => data,
-        failure: (error) => throw error.getAllErrorMsgs(),
+        failure: (error) => throw error.getAllErrorMsgs,
       );
     });

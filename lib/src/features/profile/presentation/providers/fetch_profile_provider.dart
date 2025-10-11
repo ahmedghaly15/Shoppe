@@ -10,6 +10,6 @@ final fetchProfileProvider = FutureProvider.autoDispose<ShoppeUser>((
   final result = await ref.read(profileRepoProvider).fetchProfile();
   return result.when(
     success: (data) => data,
-    failure: (error) => throw error.getAllErrorMsgs(),
+    failure: (error) => throw error.getAllErrorMsgs,
   );
 });

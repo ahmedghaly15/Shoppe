@@ -6,6 +6,6 @@ final fetchOrdersProvider =
       final result = await ref.read(ordersRepoProvider).fetchOrders(body);
       return result.when(
         success: (data) => data,
-        failure: (error) => throw error.getAllErrorMsgs(),
+        failure: (error) => throw error.getAllErrorMsgs,
       );
     });

@@ -5,6 +5,6 @@ final fetchCategoriesProvider =
       final result = await ref.read(homeRepoProvider).fetchCategories();
       return result.when(
         success: (data) => data,
-        failure: (error) => throw error.getAllErrorMsgs(),
+        failure: (error) => throw error.getAllErrorMsgs,
       );
     });

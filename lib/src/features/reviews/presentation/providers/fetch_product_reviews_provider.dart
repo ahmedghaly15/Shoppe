@@ -8,6 +8,6 @@ final fetchProductReviewsProvider = FutureProvider.autoDispose
           .fetchProductReviews(body);
       return result.when(
         success: (data) => data,
-        failure: (error) => throw error.getAllErrorMsgs(),
+        failure: (error) => throw error.getAllErrorMsgs,
       );
     });

@@ -27,7 +27,7 @@ class ValidateOtpButtonConsumer extends ConsumerWidget {
           context.showDialog(
             state: AdaptiveDialogState.error,
             titleText: apiErrorModel.errorTypeName,
-            contentText: apiErrorModel.getAllErrorMsgs(),
+            contentText: apiErrorModel.getAllErrorMsgs,
           );
         },
         data: (_) => context.router.popAndPush(
