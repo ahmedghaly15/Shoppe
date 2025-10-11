@@ -7,7 +7,7 @@ class RemoveProductFromCartConsumer extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final asyncRemoveProduct = ref.watch(removeProductFromCartProvider);
+    final asyncRemoveProduct = ref.watch(removeProductFromCartProvider(itemId));
     _removeProductFromCartProviderListener(ref, context);
     return IconButton.filledTonal(
       style: IconButton.styleFrom(
@@ -18,8 +18,8 @@ class RemoveProductFromCartConsumer extends ConsumerWidget {
       onPressed: asyncRemoveProduct.isLoading
           ? null
           : () => ref
-                .read(removeProductFromCartProvider.notifier)
-                .removeProduct(itemId),
+                .read(removeProductFromCartProvider(itemId).notifier)
+                .removeProduct(),
       icon: asyncRemoveProduct.isLoading
           ? const AdaptiveCircularProgressIndicator(color: Colors.red)
           : const Icon(LucideIcons.trash, color: Colors.red),
@@ -31,7 +31,7 @@ class RemoveProductFromCartConsumer extends ConsumerWidget {
     BuildContext context,
   ) {
     ref.listen(
-      removeProductFromCartProvider,
+      removeProductFromCartProvider(itemId),
       (_, current) => current.whenOrNull(
         data: (removed) {
           if (removed) {
