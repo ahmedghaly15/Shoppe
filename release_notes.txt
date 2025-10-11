@@ -1,7 +1,3 @@
 New release notes:
-    - Updated dialog UI
-    - Handled increase/decrease of product-quantity & total-cart-items-price logic
-    - Handled fetch-product logic 
-    - Updated cart screen UI
-    - Updated shoppe-user model
-    - Updated BottomNavBar icons
+    - Finished delete product from cart UI & logic
+    - Handled open the app on the persisted active tab 
