@@ -1,7 +1,11 @@
 part of 'helpers.dart';
 
-extension StringExtension on String? {
+extension NullStringExtension on String? {
   bool get isNullOrEmpty => this?.isEmpty ?? true;
+}
+
+extension StringExtension on String {
+  String capitalize() => '${this[0].toUpperCase()}${substring(1)}';
 }
 
 extension KeyboardUnfocus on BuildContext {
@@ -111,10 +115,6 @@ extension DioExceptionTypeName on DioException {
     DioExceptionType.connectionError => AppStrings.connectionTimeout,
     DioExceptionType.badCertificate => AppStrings.badCertificationError,
   };
-}
-
-extension Capitalize on String {
-  String capitalize() => '${this[0].toUpperCase()}${substring(1)}';
 }
 
 extension IterableExtension<T> on Iterable<T> {

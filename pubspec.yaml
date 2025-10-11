@@ -10,8 +10,12 @@ dependencies:
   flutter:
     sdk: flutter
   # State management
-  flutter_riverpod: ^3.0.0
-  riverpod_annotation: ^3.0.0
+  flutter_riverpod: ^3.0.3
+  riverpod_annotation: ^3.0.3
+  # An adapter to connect riverpod_sqflite with Riverpod
+  riverpod_sqflite: ^0.3.3
+  # Flutter plugin for SQLite
+  sqflite: ^2.4.2
   # A code generator for immutable classes
   freezed_annotation: ^3.1.0
   # A code generator for JSON serialization
@@ -49,11 +53,11 @@ dev_dependencies:
    # A build system for Dart code generation and modular compilation.
   build_runner: ^2.4.14
   # code generator for riverpod
-  riverpod_generator: ^3.0.0
+  riverpod_generator: ^3.0.3
   # Custom Lint rules are a powerful way to improve the maintainability of a project
   custom_lint: ^0.8.0
   # A developer tool for users of Riverpod, designed to help stop common issues and simplify repetitive tasks.
-  riverpod_lint: ^3.0.0
+  riverpod_lint: ^3.0.3
   # A code generator for immutable classes
   freezed: ^3.2.3
   # Automatically generate code for converting to and from JSON by annotating Dart classes.
