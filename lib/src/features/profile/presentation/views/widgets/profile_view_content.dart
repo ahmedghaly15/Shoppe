@@ -1,10 +1,10 @@
 part of '../../../profile.dart';
 
-class ProfileViewContent extends StatelessWidget {
+class ProfileViewContent extends ConsumerWidget {
   const ProfileViewContent({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 27.h, horizontal: 24.w),
@@ -15,18 +15,8 @@ class ProfileViewContent extends StatelessWidget {
               padding: EdgeInsets.only(bottom: 18.h),
               sliver: const SliverToBoxAdapter(child: VoucherExpiryListTile()),
             ),
-            const SliverToBoxAdapter(
-              child: ProfileSectionTitle(title: AppStrings.recentlyViewed),
-            ),
-            SliverPadding(
-              padding: EdgeInsets.only(top: 12.h, bottom: 25.h),
-              sliver: SliverToBoxAdapter(
-                child: SizedBox(
-                  height: 65.h,
-                  child: const RecentlyViewedListViewConsumer(),
-                ),
-              ),
-            ),
+            const SliverToBoxAdapter(child: _RecentlyViewedTextConsumer()),
+            const RecentlyViewedSliverConsumer(),
             const SliverToBoxAdapter(
               child: ProfileSectionTitle(title: AppStrings.mostLiked),
             ),
@@ -41,5 +31,17 @@ class ProfileViewContent extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class _RecentlyViewedTextConsumer extends ConsumerWidget {
+  const _RecentlyViewedTextConsumer();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final recentlyViewedProducts = ref.watch(recentlyViewedProductsProvider);
+    return recentlyViewedProducts.isEmpty
+        ? const SizedBox.shrink()
+        : const ProfileSectionTitle(title: AppStrings.recentlyViewed);
   }
 }

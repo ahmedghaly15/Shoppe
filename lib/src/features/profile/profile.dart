@@ -18,6 +18,7 @@ import '../../core/widgets/core_widgets.dart'
         CustomCachedNetworkImage,
         CustomErrorWidget,
         ShadowContainer;
+import '../cart/cart.dart';
 import 'data/api/profile_api_service.dart';
 import 'data/models/shoppe_user.dart';
 
