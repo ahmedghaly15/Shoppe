@@ -60,7 +60,7 @@ class _ProductsSliverGrid extends ConsumerWidget {
                 ? () {
                     ref
                         .read(recentlyViewedProductsProvider.notifier)
-                        .addProduct(product);
+                        .add(product);
                     context.pushRoute(ProductDetailsRoute(product: product));
                   }
                 : null,

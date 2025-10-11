@@ -1,14 +1,16 @@
 part of '../../profile.dart';
 
-List<Product> _recentlyViewedProducts = [];
-
 class RecentlyViewedProductsNotifier extends Notifier<List<Product>> {
+  List<Product> _recentlyViewedProducts = [];
+
   @override
   List<Product> build() => _recentlyViewedProducts;
 
-  void addProduct(Product product) {
-    state = [...state, product];
-    _recentlyViewedProducts = state;
+  void add(Product product) {
+    if (!state.contains(product)) {
+      state = [...state, product];
+      _recentlyViewedProducts = state;
+    }
   }
 
   void clear() {
